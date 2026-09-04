@@ -1,19 +1,30 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="description" content="Elah Farm - Quality Kenyan farm products including natural honey, cashew nuts, Kenyan coffee, Galla goat meat, bee venom, macadamia nuts, avocado oil and ground nuts. grown in Kenya.">
+<meta name="description"
+content="Elah Farm - Quality Kenyan farm products including natural honey, cashew nuts, Kenyan coffee, Galla goat meat, bee venom, macadamia nuts, avocado oil, ground nuts and fresh kienyeji eggs. Grown and sourced in Kenya.">
 
-<meta name="keywords" content="Elah Farm, Kenyan honey, cashew nuts Kenya, Kenyan coffee, Galla goat meat, bee venom, macadamia nuts, avocado oil, ground nuts, farm products Kenya">
+<meta name="keywords"
+content="Elah Farm, Kenyan farm products, natural honey, cashew nuts, Kenyan coffee, Galla goat meat, bee venom, macadamia nuts, avocado oil, ground nuts, kienyeji eggs, Kenya">
+
+<meta name="author" content="Elah Farm">
 
 <title>Elah Farm | Quality Farm Products from Kenya</title>
 
 <link rel="icon" href="logo.jpg" type="image/jpeg">
 
 <style>
+
+/* =========================================================
+   GLOBAL STYLES
+========================================================= */
+
 :root{
   --green:#23451f;
   --green-2:#365f2c;
@@ -43,11 +54,11 @@ body{
   font-family:Arial, Helvetica, sans-serif;
   background:var(--cream-2);
   color:var(--text);
-  line-height:1.6;
+  line-height:1.7;
 }
 
 img{
-  width:100%;
+  max-width:100%;
   display:block;
 }
 
@@ -68,24 +79,18 @@ textarea{
   margin:auto;
 }
 
-/* TOP BAR */
-.topbar{
-  background:var(--green);
-  color:white;
-  text-align:center;
-  padding:9px 15px;
-  font-size:14px;
-  font-weight:600;
-}
 
-/* NAVIGATION */
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
 .navbar{
   position:sticky;
   top:0;
   z-index:1000;
-  background:rgba(255,253,247,.97);
-  border-bottom:1px solid rgba(35,69,31,.08);
+  background:rgba(255,253,247,.96);
   backdrop-filter:blur(10px);
+  border-bottom:1px solid rgba(35,69,31,.08);
 }
 
 .nav-inner{
@@ -96,131 +101,183 @@ textarea{
   gap:25px;
 }
 
-.brand{
+.logo{
   display:flex;
   align-items:center;
   gap:12px;
-  font-size:21px;
   font-weight:800;
+  font-size:22px;
   color:var(--green);
 }
 
-.brand img{
+.logo img{
   width:52px;
   height:52px;
-  object-fit:contain;
-  border-radius:12px;
+  object-fit:cover;
+  border-radius:50%;
 }
 
 .nav-links{
   display:flex;
   align-items:center;
-  gap:26px;
-  font-weight:600;
-  color:var(--green);
+  gap:24px;
 }
 
 .nav-links a{
-  transition:.25s;
+  font-size:15px;
+  font-weight:600;
+  color:var(--text);
+  transition:.3s ease;
 }
 
 .nav-links a:hover{
-  color:var(--gold);
+  color:var(--green-2);
 }
 
-.nav-btn{
+.nav-order{
   background:var(--green);
-  color:white!important;
+  color:white !important;
   padding:11px 18px;
-  border-radius:999px;
+  border-radius:30px;
 }
 
-.menu-toggle{
-  display:none;
-  border:0;
-  background:var(--green);
-  color:white;
-  width:45px;
-  height:45px;
-  border-radius:12px;
-  cursor:pointer;
-  font-size:22px;
+.nav-order:hover{
+  background:var(--green-2);
 }
 
-/* HERO */
+
+/* =========================================================
+   HERO VIDEO SLIDER
+========================================================= */
+
 .hero{
+  position:relative;
   min-height:650px;
   display:flex;
   align-items:center;
-  background:
-    linear-gradient(90deg,rgba(20,45,18,.90),rgba(20,45,18,.60),rgba(20,45,18,.22)),
-    url("farm-gallery-1.jpg") center/cover no-repeat;
+  justify-content:center;
+  overflow:hidden;
   color:white;
+  background:var(--green);
+}
+
+.hero-videos{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  overflow:hidden;
+  z-index:0;
+}
+
+.hero-video-slide{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  opacity:0;
+  visibility:hidden;
+  transform:scale(1.03);
+  transition:
+    opacity 1.2s ease,
+    transform 8s ease;
+}
+
+.hero-video-slide.active{
+  opacity:1;
+  visibility:visible;
+  transform:scale(1);
+}
+
+.hero-overlay{
+  position:absolute;
+  inset:0;
+  z-index:1;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(20,45,18,.72),
+      rgba(20,45,18,.62),
+      rgba(20,45,18,.72)
+    );
+}
+
+.hero .container{
+  position:relative;
+  z-index:2;
+  width:min(1180px,92%);
 }
 
 .hero-content{
-  max-width:720px;
+  width:100%;
+  max-width:850px;
+  margin:0 auto;
   padding:90px 0;
+  text-align:center;
 }
 
 .eyebrow{
   display:inline-block;
-  background:rgba(255,255,255,.14);
-  border:1px solid rgba(255,255,255,.3);
-  padding:8px 14px;
-  border-radius:999px;
-  margin-bottom:20px;
+  margin-bottom:18px;
+  padding:8px 15px;
+  border:1px solid rgba(255,255,255,.35);
+  background:rgba(255,255,255,.10);
+  border-radius:30px;
   font-size:14px;
   font-weight:700;
 }
 
 .hero h1{
-  font-size:clamp(42px,6vw,76px);
+  font-size:clamp(45px,7vw,76px);
   line-height:1.05;
-  margin-bottom:22px;
+  margin-bottom:25px;
+  letter-spacing:-2px;
 }
 
 .hero h1 span{
-  color:#f1ca75;
+  color:#e1bb6b;
 }
 
 .hero p{
-  font-size:19px;
-  max-width:680px;
-  color:#f5f5f5;
-  margin-bottom:28px;
+  max-width:750px;
+  margin:0 auto 30px;
+  font-size:18px;
+  color:rgba(255,255,255,.91);
 }
 
 .hero-buttons{
   display:flex;
-  gap:14px;
   flex-wrap:wrap;
+  justify-content:center;
+  gap:14px;
 }
 
 .btn{
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  padding:14px 22px;
-  border-radius:999px;
-  font-weight:800;
-  border:2px solid transparent;
-  cursor:pointer;
-  transition:.25s;
+  min-height:50px;
+  padding:0 24px;
+  border-radius:30px;
+  font-weight:700;
+  transition:.3s ease;
 }
 
 .btn-primary{
-  background:#d4a64b;
-  color:#1f351b;
+  background:var(--gold);
+  color:white;
 }
 
 .btn-primary:hover{
   transform:translateY(-2px);
+  background:#c69a4a;
 }
 
 .btn-outline{
-  border-color:white;
+  border:1px solid rgba(255,255,255,.7);
   color:white;
+  background:rgba(255,255,255,.06);
 }
 
 .btn-outline:hover{
@@ -230,49 +287,96 @@ textarea{
 
 .hero-note{
   display:flex;
-  gap:18px;
   flex-wrap:wrap;
+  justify-content:center;
+  align-items:center;
+  gap:18px;
   margin-top:28px;
   font-size:14px;
+  font-weight:600;
 }
 
-/* SECTIONS */
+.hero-note span{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+}
+
+
+/* =========================================================
+   HERO NAVIGATION DOTS
+========================================================= */
+
+.hero-dots{
+  position:absolute;
+  z-index:5;
+  left:50%;
+  bottom:28px;
+  transform:translateX(-50%);
+  display:flex;
+  align-items:center;
+  gap:9px;
+}
+
+.hero-dot{
+  width:11px;
+  height:11px;
+  padding:0;
+  border-radius:50%;
+  border:1px solid white;
+  background:rgba(255,255,255,.45);
+  cursor:pointer;
+  transition:.3s ease;
+}
+
+.hero-dot.active{
+  background:#d4a64b;
+  transform:scale(1.25);
+}
+
+
+/* =========================================================
+   SECTION STYLES
+========================================================= */
+
 section{
   padding:90px 0;
 }
 
-.section-head{
+.section-heading{
   max-width:720px;
-  margin-bottom:45px;
-}
-
-.section-head.center{
-  margin-left:auto;
-  margin-right:auto;
+  margin:0 auto 50px;
   text-align:center;
 }
 
-.section-kicker{
-  color:var(--gold);
-  font-size:14px;
-  text-transform:uppercase;
-  letter-spacing:2px;
-  font-weight:800;
-  margin-bottom:8px;
+.section-heading .eyebrow{
+  color:var(--green);
+  border-color:rgba(35,69,31,.18);
+  background:rgba(35,69,31,.05);
+  margin-bottom:12px;
 }
 
-.section-head h2{
+.section-heading h2{
+  font-size:clamp(32px,5vw,48px);
   color:var(--green);
-  font-size:clamp(32px,4vw,50px);
   line-height:1.15;
   margin-bottom:15px;
 }
 
-.section-head p{
+.section-heading p{
   color:var(--muted);
 }
 
-/* ABOUT */
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about{
+  background:var(--cream);
+}
+
 .about-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
@@ -287,45 +391,51 @@ section{
 }
 
 .about-image img{
-  height:470px;
+  width:100%;
+  height:520px;
   object-fit:cover;
 }
 
-.about-text h3{
+.about-content h2{
   color:var(--green);
-  font-size:30px;
-  margin-bottom:18px;
+  font-size:42px;
+  line-height:1.15;
+  margin-bottom:20px;
 }
 
-.about-text p{
+.about-content p{
   color:var(--muted);
   margin-bottom:18px;
 }
 
 .about-list{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:12px;
+  list-style:none;
   margin-top:25px;
 }
 
-.about-list div{
-  background:var(--cream);
-  padding:14px;
-  border-radius:14px;
-  font-weight:700;
-  color:var(--green);
+.about-list li{
+  margin-bottom:12px;
+  font-weight:600;
 }
 
-/* PRODUCTS */
-.products-section{
-  background:var(--cream);
+.about-list span{
+  color:var(--gold);
+  margin-right:8px;
 }
 
-.products-grid{
+
+/* =========================================================
+   PRODUCTS
+========================================================= */
+
+.products{
+  background:var(--cream-2);
+}
+
+.product-grid{
   display:grid;
   grid-template-columns:repeat(4,1fr);
-  gap:22px;
+  gap:25px;
 }
 
 .product-card{
@@ -333,8 +443,8 @@ section{
   border-radius:var(--radius);
   overflow:hidden;
   box-shadow:var(--shadow);
-  transition:.3s;
-  border:1px solid rgba(35,69,31,.06);
+  border:1px solid rgba(35,69,31,.07);
+  transition:.35s ease;
 }
 
 .product-card:hover{
@@ -342,7 +452,7 @@ section{
 }
 
 .product-image{
-  height:245px;
+  height:235px;
   overflow:hidden;
 }
 
@@ -350,206 +460,198 @@ section{
   width:100%;
   height:100%;
   object-fit:cover;
-  transition:.5s;
+  transition:.5s ease;
 }
 
 .product-card:hover .product-image img{
-  transform:scale(1.05);
+  transform:scale(1.06);
 }
 
 .product-body{
-  padding:23px;
+  padding:24px;
 }
 
 .product-body h3{
   color:var(--green);
   font-size:22px;
-  margin-bottom:8px;
+  margin-bottom:9px;
 }
 
 .product-body p{
   color:var(--muted);
-  font-size:15px;
+  font-size:14px;
   margin-bottom:18px;
 }
 
 .product-btn{
-  display:inline-block;
-  background:var(--green);
-  color:white;
-  padding:10px 16px;
-  border-radius:999px;
-  font-weight:700;
-  font-size:14px;
-}
-
-/* VALUES */
-.values-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:20px;
-}
-
-.value-card{
-  text-align:center;
-  background:white;
-  border:1px solid rgba(35,69,31,.08);
-  padding:30px 22px;
-  border-radius:var(--radius);
-  box-shadow:var(--shadow);
-}
-
-.value-icon{
-  width:62px;
-  height:62px;
-  display:flex;
+  display:inline-flex;
   align-items:center;
   justify-content:center;
-  margin:0 auto 17px;
-  border-radius:50%;
-  background:var(--cream);
-  font-size:28px;
-}
-
-.value-card h3{
-  color:var(--green);
-  margin-bottom:8px;
-}
-
-.value-card p{
-  color:var(--muted);
-  font-size:14px;
-}
-
-/* PROCESS */
-.process-section{
+  padding:10px 18px;
   background:var(--green);
   color:white;
+  border-radius:25px;
+  font-size:14px;
+  font-weight:700;
+  transition:.3s ease;
 }
 
-.process-section .section-head h2{
-  color:white;
+.product-btn:hover{
+  background:var(--green-2);
 }
 
-.process-section .section-head p{
-  color:#dfe8dc;
+
+/* =========================================================
+   FARM PROCESS
+========================================================= */
+
+.process{
+  background:var(--cream);
 }
 
 .process-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:22px;
+  gap:25px;
 }
 
 .process-card{
-  background:rgba(255,255,255,.08);
-  border:1px solid rgba(255,255,255,.12);
+  background:white;
+  padding:32px;
   border-radius:var(--radius);
-  padding:30px;
+  text-align:center;
+  box-shadow:var(--shadow);
 }
 
-.process-number{
-  font-size:42px;
-  font-weight:900;
-  color:#d4a64b;
-  margin-bottom:12px;
+.process-icon{
+  width:65px;
+  height:65px;
+  margin:0 auto 18px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:rgba(183,138,60,.13);
+  font-size:30px;
 }
 
 .process-card h3{
-  margin-bottom:8px;
+  color:var(--green);
+  margin-bottom:10px;
 }
 
 .process-card p{
-  color:#dfe8dc;
+  color:var(--muted);
 }
 
-/* GALLERY */
-.gallery-section{
+
+/* =========================================================
+   GALLERY
+========================================================= */
+
+.gallery{
   background:var(--cream-2);
 }
 
 .gallery-grid{
   display:grid;
-  grid-template-columns:1.25fr .75fr .75fr;
-  grid-template-rows:220px 220px 220px 220px;
+  grid-template-columns:repeat(5,1fr);
   gap:14px;
 }
 
 .gallery-item{
-  border-radius:20px;
+  height:220px;
   overflow:hidden;
-  position:relative;
+  border-radius:18px;
 }
 
 .gallery-item img{
   width:100%;
   height:100%;
   object-fit:cover;
-  transition:.5s;
+  transition:.5s ease;
 }
 
 .gallery-item:hover img{
-  transform:scale(1.06);
+  transform:scale(1.08);
 }
 
-.gallery-item:first-child{
-  grid-row:span 2;
-}
 
-/* ORDER */
-.order-section{
+/* =========================================================
+   ORDER
+========================================================= */
+
+.order{
   background:var(--cream);
 }
 
-.order-grid{
+.order-wrapper{
   display:grid;
-  grid-template-columns:.85fr 1.15fr;
-  gap:45px;
-  align-items:start;
+  grid-template-columns:.8fr 1.2fr;
+  gap:40px;
+  align-items:stretch;
 }
 
 .order-info{
   background:var(--green);
   color:white;
+  padding:45px;
   border-radius:var(--radius);
-  padding:38px;
 }
 
 .order-info h2{
-  font-size:38px;
-  margin-bottom:15px;
+  font-size:40px;
+  line-height:1.15;
+  margin-bottom:18px;
 }
 
 .order-info p{
-  color:#dfe8dc;
-  margin-bottom:24px;
+  color:rgba(255,255,255,.82);
+  margin-bottom:25px;
 }
 
 .order-contact{
   display:grid;
-  gap:13px;
+  gap:15px;
 }
 
 .order-contact div{
+  padding:15px 18px;
   background:rgba(255,255,255,.08);
-  padding:13px 15px;
-  border-radius:12px;
+  border-radius:14px;
+}
+
+.order-contact strong{
+  display:block;
+  color:#e1bb6b;
+  margin-bottom:3px;
 }
 
 .order-form{
   background:white;
-  padding:35px;
+  padding:40px;
   border-radius:var(--radius);
   box-shadow:var(--shadow);
 }
 
+.form-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+}
+
 .form-group{
-  margin-bottom:18px;
+  display:flex;
+  flex-direction:column;
+  gap:7px;
+}
+
+.form-group.full{
+  grid-column:1/-1;
 }
 
 .form-group label{
-  display:block;
-  margin-bottom:7px;
+  font-size:14px;
   font-weight:700;
   color:var(--green);
 }
@@ -558,11 +660,20 @@ section{
 .form-group select,
 .form-group textarea{
   width:100%;
-  border:1px solid #d7ddd3;
+  border:1px solid #dce1d9;
+  background:#fbfcf9;
   padding:13px 15px;
   border-radius:12px;
   outline:none;
-  background:#fff;
+  color:var(--text);
+  transition:.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus{
+  border-color:var(--leaf);
+  background:white;
 }
 
 .form-group textarea{
@@ -570,169 +681,223 @@ section{
   resize:vertical;
 }
 
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus{
-  border-color:var(--green);
-}
-
-.submit-btn{
+.form-submit{
+  margin-top:20px;
   width:100%;
   border:0;
+  cursor:pointer;
+  padding:15px;
+  border-radius:30px;
   background:var(--green);
   color:white;
-  padding:15px;
-  border-radius:999px;
   font-weight:800;
-  cursor:pointer;
+  transition:.3s ease;
 }
 
-/* CONTACT */
-.contact-section{
-  background:white;
+.form-submit:hover{
+  background:var(--green-2);
+  transform:translateY(-2px);
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact{
+  background:var(--cream-2);
 }
 
 .contact-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:20px;
+  gap:25px;
 }
 
 .contact-card{
-  padding:30px;
-  background:var(--cream);
-  border-radius:var(--radius);
   text-align:center;
+  padding:35px 25px;
+  background:white;
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
 }
 
-.contact-card .icon{
-  font-size:30px;
+.contact-icon{
+  font-size:35px;
   margin-bottom:12px;
 }
 
 .contact-card h3{
   color:var(--green);
-  margin-bottom:7px;
+  margin-bottom:8px;
 }
 
 .contact-card p{
   color:var(--muted);
 }
 
-/* FOOTER */
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
 footer{
-  background:#162d13;
+  background:var(--green);
   color:white;
-  padding:55px 0 25px;
+  padding:60px 0 25px;
 }
 
 .footer-grid{
   display:grid;
-  grid-template-columns:1.3fr 1fr 1fr;
-  gap:40px;
-  padding-bottom:35px;
+  grid-template-columns:1.3fr 1fr 1fr 1fr;
+  gap:35px;
 }
 
-.footer-brand{
+.footer-logo{
   display:flex;
   align-items:center;
   gap:12px;
   font-size:24px;
   font-weight:800;
-  margin-bottom:15px;
+  margin-bottom:18px;
 }
 
-.footer-brand img{
+.footer-logo img{
   width:50px;
   height:50px;
-  object-fit:contain;
-  border-radius:10px;
+  object-fit:cover;
+  border-radius:50%;
 }
 
-footer p{
-  color:#cbd7c8;
-}
-
-.footer-col h3{
-  margin-bottom:15px;
-}
-
-.footer-links{
-  display:grid;
-  gap:8px;
-  color:#cbd7c8;
-}
-
-.footer-links a:hover{
-  color:#f1ca75;
-}
-
-.footer-bottom{
-  border-top:1px solid rgba(255,255,255,.1);
-  padding-top:22px;
-  text-align:center;
-  color:#aebcab;
+.footer-column p{
+  color:rgba(255,255,255,.72);
   font-size:14px;
 }
 
-/* WHATSAPP */
+.footer-column h3{
+  margin-bottom:15px;
+  color:#e1bb6b;
+}
+
+.footer-column ul{
+  list-style:none;
+}
+
+.footer-column li{
+  margin-bottom:8px;
+}
+
+.footer-column a{
+  color:rgba(255,255,255,.78);
+  font-size:14px;
+}
+
+.footer-column a:hover{
+  color:white;
+}
+
+.footer-bottom{
+  border-top:1px solid rgba(255,255,255,.12);
+  margin-top:40px;
+  padding-top:20px;
+  text-align:center;
+  color:rgba(255,255,255,.62);
+  font-size:13px;
+}
+
+
+/* =========================================================
+   WHATSAPP FLOATING BUTTON
+========================================================= */
+
 .whatsapp{
   position:fixed;
   right:22px;
   bottom:22px;
-  width:60px;
-  height:60px;
+  z-index:999;
+  width:58px;
+  height:58px;
   border-radius:50%;
   background:#25D366;
   color:white;
   display:flex;
   align-items:center;
   justify-content:center;
-  font-size:29px;
+  font-size:27px;
   box-shadow:0 10px 30px rgba(0,0,0,.2);
-  z-index:999;
+  transition:.3s ease;
 }
 
-/* RESPONSIVE */
-@media(max-width:1100px){
-  .products-grid{
+.whatsapp:hover{
+  transform:scale(1.08);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:1050px){
+
+  .product-grid{
     grid-template-columns:repeat(2,1fr);
   }
 
-  .values-grid{
+  .gallery-grid{
+    grid-template-columns:repeat(3,1fr);
+  }
+
+  .footer-grid{
     grid-template-columns:repeat(2,1fr);
   }
+
 }
 
-@media(max-width:900px){
+
+@media(max-width:800px){
+
+  .nav-inner{
+    min-height:70px;
+  }
+
   .nav-links{
-    position:absolute;
-    top:78px;
-    left:0;
-    right:0;
-    background:var(--cream-2);
     display:none;
-    flex-direction:column;
-    align-items:stretch;
-    padding:20px;
-    box-shadow:var(--shadow);
   }
 
-  .nav-links.active{
-    display:flex;
+  .hero{
+    min-height:650px;
   }
 
-  .nav-links a{
-    padding:10px;
+  .hero-content{
+    padding:80px 0;
+    text-align:center;
   }
 
-  .menu-toggle{
-    display:block;
+  .hero h1{
+    font-size:48px;
+  }
+
+  .hero p{
+    font-size:16px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  .hero-buttons{
+    justify-content:center;
+  }
+
+  .hero-note{
+    justify-content:center;
   }
 
   .about-grid,
-  .order-grid{
+  .order-wrapper{
     grid-template-columns:1fr;
+  }
+
+  .about-image img{
+    height:400px;
   }
 
   .process-grid{
@@ -743,774 +908,1859 @@ footer p{
     grid-template-columns:1fr;
   }
 
-  .footer-grid{
-    grid-template-columns:1fr;
-  }
 }
 
-@media(max-width:760px){
+
+@media(max-width:600px){
+
   section{
-    padding:65px 0;
-  }
-
-  .hero{
-    min-height:600px;
-  }
-
-  .hero-content{
     padding:70px 0;
   }
 
-  .hero h1{
-    font-size:45px;
-  }
-
-  .hero p{
-    font-size:17px;
-  }
-
-  .products-grid{
-    grid-template-columns:1fr;
-  }
-
-  .values-grid{
-    grid-template-columns:1fr;
-  }
-
-  .about-list{
+  .product-grid{
     grid-template-columns:1fr;
   }
 
   .gallery-grid{
-    grid-template-columns:1fr 1fr;
-    grid-template-rows:220px 180px 180px 180px 180px;
+    grid-template-columns:repeat(2,1fr);
   }
 
-  .gallery-item:first-child{
-    grid-column:1/-1;
-    grid-row:auto;
+  .gallery-item{
+    height:180px;
+  }
+
+  .form-grid{
+    grid-template-columns:1fr;
+  }
+
+  .form-group.full{
+    grid-column:auto;
   }
 
   .order-info,
   .order-form{
-    padding:25px;
-  }
-}
-
-@media(max-width:500px){
-  .brand{
-    font-size:18px;
+    padding:28px;
   }
 
-  .brand img{
-    width:45px;
-    height:45px;
+  .hero{
+    min-height:680px;
+  }
+
+  .hero-content{
+    padding:70px 0;
+    text-align:center;
   }
 
   .hero h1{
-    font-size:38px;
+    font-size:42px;
+    letter-spacing:-1px;
+  }
+
+  .hero p{
+    font-size:16px;
+    margin-left:auto;
+    margin-right:auto;
   }
 
   .hero-buttons{
     flex-direction:column;
+    align-items:stretch;
+    justify-content:center;
   }
 
   .btn{
     width:100%;
   }
 
-  .gallery-grid{
-    grid-template-columns:1fr;
-    grid-template-rows:220px;
+  .hero-note{
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
   }
 
-  .gallery-item{
-    height:220px;
+  .footer-grid{
+    grid-template-columns:1fr;
   }
+
 }
+
 </style>
+
 </head>
 
 <body>
 
-<div class="topbar">
-  🌿 Original • Organic • Authentic • Grown in Kenya
-</div>
 
-<nav class="navbar">
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
+<header class="navbar">
+
   <div class="container nav-inner">
 
-    <a href="#home" class="brand">
-      <img src="logo.jpg" alt="Elah Farm Logo">
-      <span>Elah Farm</span>
+    <a href="#home" class="logo">
+
+      <img
+        src="logo.jpg"
+        alt="Elah Farm Logo">
+
+      <span>
+        Elah Farm
+      </span>
+
     </a>
 
-    <button class="menu-toggle" id="menuToggle" aria-label="Open navigation">
-      ☰
-    </button>
 
-    <div class="nav-links" id="navLinks">
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#products">Products</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#order">Order</a>
-      <a href="#contact">Contact</a>
-      <a href="#order" class="nav-btn">Order Now</a>
-    </div>
+    <nav class="nav-links">
+
+      <a href="#home">
+        Home
+      </a>
+
+      <a href="#about">
+        About
+      </a>
+
+      <a href="#products">
+        Products
+      </a>
+
+      <a href="#gallery">
+        Gallery
+      </a>
+
+      <a href="#order">
+        Order
+      </a>
+
+      <a href="#contact">
+        Contact
+      </a>
+
+      <a href="#order" class="nav-order">
+        Order Now
+      </a>
+
+    </nav>
 
   </div>
-</nav>
 
-<!-- HERO -->
+</header>
+
+
+<!-- =====================================================
+     HERO VIDEO SLIDER
+===================================================== -->
+
 <section class="hero" id="home">
+
+
+  <div class="hero-videos" aria-hidden="true">
+
+
+    <!-- VIDEO 1 -->
+
+    <video
+      class="hero-video-slide active"
+      autoplay
+      muted
+      playsinline
+      preload="auto">
+
+      <source
+        src="farm-video-1.mp4"
+        type="video/mp4">
+
+    </video>
+
+
+    <!-- VIDEO 2 -->
+
+    <video
+      class="hero-video-slide"
+      muted
+      playsinline
+      preload="auto">
+
+      <source
+        src="farm-video-2.mp4"
+        type="video/mp4">
+
+    </video>
+
+
+    <!-- VIDEO 3 -->
+
+    <video
+      class="hero-video-slide"
+      muted
+      playsinline
+      preload="auto">
+
+      <source
+        src="farm-video-3.mp4"
+        type="video/mp4">
+
+    </video>
+
+
+  </div>
+
+
+  <!-- DARK OVERLAY -->
+
+  <div class="hero-overlay"></div>
+
+
   <div class="container">
+
+
     <div class="hero-content">
+
 
       <div class="eyebrow">
         🌱 Farm Fresh • Grown in Kenya
       </div>
 
+
       <h1>
+
         From Our Farm<br>
-        <span>To Your Table.</span>
+
+        <span>
+          To Your Table.
+        </span>
+
       </h1>
 
+
       <p>
-        Discover quality farm products from Elah Farm in Ikutha, Kitui, Kenya.
-        We bring you natural honey, cashew nuts, Kenyan coffee, Galla goat meat,
-        bee venom, macadamia nuts, avocado oil and ground nuts.
+
+        Discover quality farm products from Elah Farm in
+        Ikutha, Kitui, Kenya. We bring you natural honey,
+        cashew nuts, Kenyan coffee, Galla goat meat,
+        bee venom, macadamia nuts, avocado oil, ground nuts
+        and fresh kienyeji eggs.
+
       </p>
+
 
       <div class="hero-buttons">
-        <a href="#products" class="btn btn-primary">Explore Products</a>
-        <a href="#order" class="btn btn-outline">Order Now</a>
+
+
+        <a
+          href="#products"
+          class="btn btn-primary">
+
+          Explore Products
+
+        </a>
+
+
+        <a
+          href="#order"
+          class="btn btn-outline">
+
+          Order Now
+
+        </a>
+
+
       </div>
+
 
       <div class="hero-note">
-        <span>✓ Direct from farm</span>
-        <span>✓ Grown in Kenya</span>
-        <span>✓ Quality focused</span>
+
+        <span>
+          ✓ Direct from farm
+        </span>
+
+        <span>
+          ✓ Grown in Kenya
+        </span>
+
+        <span>
+          ✓ Quality focused
+        </span>
+
       </div>
 
+
     </div>
+
+
   </div>
+
+
+  <!-- VIDEO NAVIGATION DOTS -->
+
+  <div class="hero-dots">
+
+
+    <button
+      class="hero-dot active"
+      type="button"
+      aria-label="Show farm video 1">
+    </button>
+
+
+    <button
+      class="hero-dot"
+      type="button"
+      aria-label="Show farm video 2">
+    </button>
+
+
+    <button
+      class="hero-dot"
+      type="button"
+      aria-label="Show farm video 3">
+    </button>
+
+
+  </div>
+
+
 </section>
 
-<!-- ABOUT -->
-<section id="about">
+
+<!-- =====================================================
+     ABOUT
+===================================================== -->
+
+<section class="about" id="about">
+
   <div class="container">
 
-    <div class="section-head">
-      <div class="section-kicker">About Elah Farm</div>
-      <h2>Rooted in Kenya. Growing with Purpose.</h2>
-      <p>
-        Our farm is built around quality, responsible farming and creating
-        products that connect customers with the richness of Kenyan agriculture.
-      </p>
-    </div>
 
     <div class="about-grid">
 
+
       <div class="about-image">
-        <img src="farm-gallery-2.jpg" alt="Elah Farm">
+
+        <img
+          src="farm-gallery-1.jpg"
+          alt="Elah Farm in Kenya">
+
       </div>
 
-      <div class="about-text">
 
-        <h3>Quality products from the heart of Kitui.</h3>
+      <div class="about-content">
 
-        <p>
-          Elah Farm is based in Ikutha, Kitui, Kenya. We are focused on
-          producing and supplying carefully selected agricultural products
-          while supporting local farming and sustainable livelihoods.
-        </p>
 
-        <p>
-          Our product range includes natural honey, cashew nuts, Kenyan coffee,
-          Galla goat meat, bee venom, macadamia nuts, avocado oil and ground nuts.
-        </p>
-
-        <div class="about-list">
-          <div>🌿 Farm Focused</div>
-          <div>🇰🇪 Grown in Kenya</div>
-          <div>🤝 Direct Sales</div>
-          <div>⭐ Quality First</div>
+        <div class="eyebrow">
+          About Elah Farm
         </div>
 
+
+        <h2>
+          Growing Quality Products From Kenya
+        </h2>
+
+
+        <p>
+
+          Elah Farm is a Kenyan agricultural enterprise
+          based in Ikutha, Kitui County. We are committed
+          to producing and sourcing quality farm products
+          for customers in Kenya and beyond.
+
+        </p>
+
+
+        <p>
+
+          From natural honey and farm-fresh eggs to
+          cashew nuts, coffee, goat meat and other
+          agricultural products, our goal is to connect
+          customers with quality products from Kenya.
+
+        </p>
+
+
+        <ul class="about-list">
+
+
+          <li>
+            <span>✓</span>
+            Quality-focused farming
+          </li>
+
+
+          <li>
+            <span>✓</span>
+            Kenyan-grown and sourced products
+          </li>
+
+
+          <li>
+            <span>✓</span>
+            Direct farm supply
+          </li>
+
+
+          <li>
+            <span>✓</span>
+            Serving customers with care
+          </li>
+
+
+        </ul>
+
+
       </div>
 
+
     </div>
+
+
   </div>
+
 </section>
 
-<!-- PRODUCTS -->
-<section class="products-section" id="products">
+
+<!-- =====================================================
+     PRODUCTS
+===================================================== -->
+
+<section class="products" id="products">
+
   <div class="container">
 
-    <div class="section-head center">
-      <div class="section-kicker">Our Products</div>
-      <h2>Natural Products. Kenyan Roots.</h2>
+
+    <div class="section-heading">
+
+
+      <div class="eyebrow">
+        Our Products
+      </div>
+
+
+      <h2>
+        Quality From Farm to Market
+      </h2>
+
+
       <p>
-        Explore our growing range of farm products and contact us directly
-        for availability, quantities and orders.
+
+        Explore our range of Kenyan farm products and
+        contact us to place your order.
+
       </p>
+
+
     </div>
 
-    <div class="products-grid">
+
+    <div class="product-grid">
+
 
       <!-- HONEY -->
+
       <article class="product-card">
+
         <div class="product-image">
-          <img src="honey.jpg" alt="Natural Honey from Elah Farm">
+
+          <img
+            src="honey.jpg"
+            alt="Natural Honey from Elah Farm">
+
         </div>
+
+
         <div class="product-body">
-          <h3>Natural Honey</h3>
+
+          <h3>
+            Natural Honey
+          </h3>
+
+
           <p>
-            Naturally produced honey with a rich taste and quality-focused
-            handling from farm to customer.
+
+            Quality natural honey sourced from Kenyan
+            beekeeping and agricultural production.
+
           </p>
-          <a href="#order" class="product-btn" data-product="Honey">
+
+
+          <a
+            href="#order"
+            class="product-btn"
+            data-product="Honey">
+
             Order Honey
+
           </a>
+
         </div>
+
       </article>
+
 
       <!-- CASHEW NUTS -->
+
       <article class="product-card">
+
         <div class="product-image">
-          <img src="cashew-nuts.jpg" alt="Cashew Nuts from Elah Farm">
+
+          <img
+            src="cashew-nuts.jpg"
+            alt="Cashew Nuts from Kenya">
+
         </div>
+
+
         <div class="product-body">
-          <h3>Cashew Nuts</h3>
+
+          <h3>
+            Cashew Nuts
+          </h3>
+
+
           <p>
-            Quality Kenyan cashew nuts selected for customers looking for
-            authentic farm products.
+
+            Quality Kenyan cashew nuts suitable for
+            personal consumption and commercial supply.
+
           </p>
-          <a href="#order" class="product-btn" data-product="Cashew Nuts">
-            Order Cashews
+
+
+          <a
+            href="#order"
+            class="product-btn"
+            data-product="Cashew Nuts">
+
+            Order Cashew Nuts
+
           </a>
+
         </div>
+
       </article>
+
 
       <!-- COFFEE -->
+
       <article class="product-card">
+
         <div class="product-image">
+
           <img
-            src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=900&q=85"
-            alt="Kenyan Coffee"
-          >
+            src="coffee.jpg"
+            alt="Kenyan Coffee">
+
         </div>
+
+
         <div class="product-body">
-          <h3>Kenyan Coffee</h3>
+
+          <h3>
+            Kenyan Coffee
+          </h3>
+
+
           <p>
-            Kenyan coffee celebrated for its distinctive character and rich
-            aroma.
+
+            Quality Kenyan coffee selected for customers
+            looking for authentic Kenyan coffee.
+
           </p>
-          <a href="#order" class="product-btn" data-product="Coffee">
+
+
+          <a
+            href="#order"
+            class="product-btn"
+            data-product="Coffee">
+
             Order Coffee
+
           </a>
+
         </div>
+
       </article>
+
 
       <!-- GALLA GOAT MEAT -->
+
       <article class="product-card">
+
         <div class="product-image">
-          <img src="galla-goat1.jpg" alt="Galla Goat Meat from Elah Farm">
+
+          <img
+            src="galla-goat.jpg"
+            alt="Galla Goat Meat">
+
         </div>
+
+
         <div class="product-body">
-          <h3>Galla Goat Meat</h3>
+
+          <h3>
+            Galla Goat Meat
+          </h3>
+
+
           <p>
-            Quality Galla goat meat from our farm, supplied according to
-            availability and customer requirements.
+
+            Quality Galla goat products supplied according
+            to availability and customer requirements.
+
           </p>
-          <a href="#order" class="product-btn" data-product="Galla Goat Meat">
+
+
+          <a
+            href="#order"
+            class="product-btn"
+            data-product="Galla Goat Meat">
+
             Order Goat Meat
+
           </a>
+
         </div>
+
       </article>
+
 
       <!-- BEE VENOM -->
+
       <article class="product-card">
+
         <div class="product-image">
-          <img src="bee-venom.jpg" alt="Bee Venom from Elah Farm">
+
+          <img
+            src="bee-venom.jpg"
+            alt="Bee Venom">
+
         </div>
+
+
         <div class="product-body">
-          <h3>Bee Venom</h3>
+
+          <h3>
+            Bee Venom
+          </h3>
+
+
           <p>
-            A specialized bee-related farm product handled with attention
-            to quality and responsible collection.
+
+            Bee venom supplied for appropriate research,
+            processing and commercial applications.
+
           </p>
-          <a href="#order" class="product-btn" data-product="Bee Venom">
-            Enquire
+
+
+          <a
+            href="#order"
+            class="product-btn"
+            data-product="Bee Venom">
+
+            Inquire
+
           </a>
+
         </div>
+
       </article>
 
-      <!-- MACADAMIA NUTS -->
+
+      <!-- MACADAMIA -->
+
       <article class="product-card">
+
         <div class="product-image">
-          <img src="macadamia-nuts.jpg" alt="Macadamia Nuts from Elah Farm">
+
+          <img
+            src="macadamia.jpg"
+            alt="Kenyan Macadamia Nuts">
+
         </div>
+
+
         <div class="product-body">
-          <h3>Macadamia Nuts</h3>
+
+          <h3>
+            Macadamia Nuts
+          </h3>
+
+
           <p>
-            Quality macadamia nuts sourced with a focus on freshness and
-            careful handling.
+
+            Quality Kenyan macadamia nuts supplied for
+            individual and commercial customers.
+
           </p>
-          <a href="#order" class="product-btn" data-product="Macadamia Nuts">
+
+
+          <a
+            href="#order"
+            class="product-btn"
+            data-product="Macadamia Nuts">
+
             Order Macadamia
+
           </a>
+
         </div>
+
       </article>
+
 
       <!-- AVOCADO OIL -->
+
       <article class="product-card">
+
         <div class="product-image">
-          <img src="avocado-oil.jpg" alt="Avocado Oil from Elah Farm">
+
+          <img
+            src="avocado-oil.jpg"
+            alt="Avocado Oil">
+
         </div>
+
+
         <div class="product-body">
-          <h3>Avocado Oil</h3>
+
+          <h3>
+            Avocado Oil
+          </h3>
+
+
           <p>
-            A versatile farm product made from quality avocados and suitable
-            for customers seeking Kenyan agricultural products.
+
+            Quality avocado oil from Kenyan agricultural
+            production.
+
           </p>
-          <a href="#order" class="product-btn" data-product="Avocado Oil">
+
+
+          <a
+            href="#order"
+            class="product-btn"
+            data-product="Avocado Oil">
+
             Order Avocado Oil
+
           </a>
+
         </div>
+
       </article>
+
 
       <!-- GROUND NUTS -->
+
       <article class="product-card">
+
         <div class="product-image">
-          <img src="ground-nuts.jpg" alt="Ground Nuts from Elah Farm">
+
+          <img
+            src="ground-nuts.jpg"
+            alt="Ground Nuts">
+
         </div>
+
+
         <div class="product-body">
-          <h3>Ground Nuts</h3>
+
+          <h3>
+            Ground Nuts
+          </h3>
+
+
           <p>
-            Carefully selected ground nuts supplied fresh and with attention
-            to product quality.
+
+            Quality Kenyan ground nuts suitable for
+            households, retailers and commercial buyers.
+
           </p>
-          <a href="#order" class="product-btn" data-product="Ground Nuts">
+
+
+          <a
+            href="#order"
+            class="product-btn"
+            data-product="Ground Nuts">
+
             Order Ground Nuts
+
           </a>
+
         </div>
+
       </article>
 
+
+      <!-- KIENYEJI EGGS -->
+
+      <article class="product-card">
+
+        <div class="product-image">
+
+          <img
+            src="kienyeji-eggs.jpg"
+            alt="Fresh Kienyeji Eggs from Elah Farm">
+
+        </div>
+
+
+        <div class="product-body">
+
+          <h3>
+            Kienyeji Eggs
+          </h3>
+
+
+          <p>
+
+            Fresh, quality kienyeji eggs from naturally
+            raised chickens, supplied according to
+            availability and customer requirements.
+
+          </p>
+
+
+          <a
+            href="#order"
+            class="product-btn"
+            data-product="Kienyeji Eggs">
+
+            Order Eggs
+
+          </a>
+
+        </div>
+
+      </article>
+
+
     </div>
+
   </div>
+
 </section>
 
-<!-- VALUES -->
-<section>
+
+<!-- =====================================================
+     PROCESS
+===================================================== -->
+
+<section class="process">
+
   <div class="container">
 
-    <div class="section-head center">
-      <div class="section-kicker">Why Elah Farm</div>
-      <h2>Built Around Quality</h2>
+
+    <div class="section-heading">
+
+
+      <div class="eyebrow">
+        Why Elah Farm
+      </div>
+
+
+      <h2>
+        From Farm to Customer
+      </h2>
+
+
       <p>
-        We focus on authentic Kenyan agriculture and direct connections
-        between our farm products and customers.
+
+        We focus on quality, reliability and direct
+        connections with our customers.
+
       </p>
-    </div>
 
-    <div class="values-grid">
-
-      <div class="value-card">
-        <div class="value-icon">🌱</div>
-        <h3>Farm Focused</h3>
-        <p>
-          Our work starts with agriculture and responsible farm practices.
-        </p>
-      </div>
-
-      <div class="value-card">
-        <div class="value-icon">🇰🇪</div>
-        <h3>Grown in Kenya</h3>
-        <p>
-          Proudly connected to the richness and diversity of Kenyan farming.
-        </p>
-      </div>
-
-      <div class="value-card">
-        <div class="value-icon">🤝</div>
-        <h3>Direct Sales</h3>
-        <p>
-          Communicate directly with us for product availability and orders.
-        </p>
-      </div>
-
-      <div class="value-card">
-        <div class="value-icon">⭐</div>
-        <h3>Quality First</h3>
-        <p>
-          We put product quality and customer satisfaction at the centre
-          of our work.
-        </p>
-      </div>
 
     </div>
-  </div>
-</section>
 
-<!-- PROCESS -->
-<section class="process-section">
-  <div class="container">
-
-    <div class="section-head center">
-      <div class="section-kicker">How To Order</div>
-      <h2>Simple. Direct. Convenient.</h2>
-      <p>
-        Choose your preferred product and contact Elah Farm directly through
-        WhatsApp to discuss your order.
-      </p>
-    </div>
 
     <div class="process-grid">
 
-      <div class="process-card">
-        <div class="process-number">01</div>
-        <h3>Choose Your Product</h3>
-        <p>
-          Select from honey, cashew nuts, coffee, Galla goat meat, bee venom,
-          macadamia nuts, avocado oil and ground nuts.
-        </p>
-      </div>
 
       <div class="process-card">
-        <div class="process-number">02</div>
-        <h3>Send Your Request</h3>
+
+
+        <div class="process-icon">
+          🌱
+        </div>
+
+
+        <h3>
+          Quality Products
+        </h3>
+
+
         <p>
-          Complete the order form and provide the product and quantity
-          you are interested in.
+
+          We focus on quality farm products including
+          honey, nuts, coffee, goat products and
+          kienyeji eggs.
+
         </p>
+
+
       </div>
 
+
       <div class="process-card">
-        <div class="process-number">03</div>
-        <h3>Confirm Your Order</h3>
+
+
+        <div class="process-icon">
+          🚜
+        </div>
+
+
+        <h3>
+          Farm Direct
+        </h3>
+
+
         <p>
-          We will communicate with you directly to confirm availability,
-          pricing, delivery or collection arrangements.
+
+          Our goal is to connect customers directly
+          with agricultural products from Kenya.
+
         </p>
+
+
       </div>
+
+
+      <div class="process-card">
+
+
+        <div class="process-icon">
+          📦
+        </div>
+
+
+        <h3>
+          Easy Ordering
+        </h3>
+
+
+        <p>
+
+          Choose your product, tell us what you need
+          and contact us through WhatsApp to place
+          your order.
+
+        </p>
+
+
+      </div>
+
 
     </div>
+
+
   </div>
+
 </section>
 
-<!-- GALLERY -->
-<section class="gallery-section" id="gallery">
+
+<!-- =====================================================
+     GALLERY
+===================================================== -->
+
+<section class="gallery" id="gallery">
+
   <div class="container">
 
-    <div class="section-head center">
-      <div class="section-kicker">Farm Gallery</div>
-      <h2>A Glimpse of Elah Farm</h2>
+
+    <div class="section-heading">
+
+
+      <div class="eyebrow">
+        Farm Gallery
+      </div>
+
+
+      <h2>
+        Life at Elah Farm
+      </h2>
+
+
       <p>
-        Explore moments and products from our farm.
+
+        A glimpse of our farm, products and agricultural
+        activities in Kenya.
+
       </p>
+
+
     </div>
+
 
     <div class="gallery-grid">
 
-      <div class="gallery-item">
-        <img src="farm-gallery-1.jpg" alt="Elah Farm gallery image 1">
-      </div>
 
       <div class="gallery-item">
-        <img src="farm-gallery-2.jpg" alt="Elah Farm gallery image 2">
+        <img
+          src="farm-gallery-1.jpg"
+          alt="Elah Farm">
       </div>
 
-      <div class="gallery-item">
-        <img src="farm-gallery-3.jpg" alt="Elah Farm gallery image 3">
-      </div>
 
       <div class="gallery-item">
-        <img src="farm-gallery-4.jpg" alt="Elah Farm gallery image 4">
+        <img
+          src="farm-gallery-2.jpg"
+          alt="Elah Farm agriculture">
       </div>
 
-      <div class="gallery-item">
-        <img src="farm-gallery-5.jpg" alt="Elah Farm gallery image 5">
-      </div>
 
       <div class="gallery-item">
-        <img src="farm-gallery-6.jpg" alt="Elah Farm gallery image 6">
+        <img
+          src="farm-gallery-3.jpg"
+          alt="Farm products">
       </div>
 
-      <div class="gallery-item">
-        <img src="farm-gallery-7.jpg" alt="Elah Farm gallery image 7">
-      </div>
 
       <div class="gallery-item">
-        <img src="farm-gallery-8.jpg" alt="Elah Farm gallery image 8">
+        <img
+          src="farm-gallery-4.jpg"
+          alt="Kenyan farming">
       </div>
 
-      <!-- NEW GALLERY PHOTO 9 -->
+
       <div class="gallery-item">
-        <img src="farm-gallery-9.jpg" alt="Elah Farm gallery image 9">
+        <img
+          src="farm-gallery-5.jpg"
+          alt="Elah Farm products">
       </div>
 
-      <!-- NEW GALLERY PHOTO 10 -->
+
       <div class="gallery-item">
-        <img src="farm-gallery-10.jpg" alt="Elah Farm gallery image 10">
+        <img
+          src="farm-gallery-6.jpg"
+          alt="Agricultural production">
       </div>
+
+
+      <div class="gallery-item">
+        <img
+          src="farm-gallery-7.jpg"
+          alt="Farm activities">
+      </div>
+
+
+      <div class="gallery-item">
+        <img
+          src="farm-gallery-8.jpg"
+          alt="Kenyan farm">
+      </div>
+
+
+      <div class="gallery-item">
+        <img
+          src="farm-gallery-9.jpg"
+          alt="Farm products Kenya">
+      </div>
+
+
+      <div class="gallery-item">
+        <img
+          src="farm-gallery-10.jpg"
+          alt="Elah Farm Kenya">
+      </div>
+
 
     </div>
+
   </div>
+
 </section>
 
-<!-- ORDER -->
-<section class="order-section" id="order">
+
+<!-- =====================================================
+     ORDER SECTION
+===================================================== -->
+
+<section class="order" id="order">
+
   <div class="container">
 
-    <div class="order-grid">
+
+    <div class="order-wrapper">
+
 
       <div class="order-info">
 
-        <h2>Place Your Order</h2>
+
+        <h2>
+          Place Your Order
+        </h2>
+
 
         <p>
-          Tell us what you need and we will contact you through WhatsApp
-          to confirm availability, pricing and delivery or collection.
+
+          Select the product you are interested in,
+          tell us the quantity and send your request.
+          We will get back to you through WhatsApp.
+
         </p>
 
+
         <div class="order-contact">
-          <div>📱 +254 710 666 222</div>
-          <div>📧 elah.farm@gmail.com</div>
-          <div>📍 Ikutha, Kitui, Kenya</div>
+
+
+          <div>
+
+            <strong>
+              📍 Location
+            </strong>
+
+            Ikutha, Kitui, Kenya
+
+          </div>
+
+
+          <div>
+
+            <strong>
+              📞 Phone
+            </strong>
+
+            +254 710 666 222
+
+          </div>
+
+
+          <div>
+
+            <strong>
+              💬 WhatsApp
+            </strong>
+
+            +254 710 666 222
+
+          </div>
+
+
+          <div>
+
+            <strong>
+              ✉ Email
+            </strong>
+
+            elah.farm@gmail.com
+
+          </div>
+
+
         </div>
+
 
       </div>
 
-      <form class="order-form" id="orderForm">
 
-        <div class="form-group">
-          <label for="name">Your Name</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            placeholder="Enter your name"
-            required
-          >
+      <form
+        class="order-form"
+        id="orderForm">
+
+
+        <div class="form-grid">
+
+
+          <div class="form-group">
+
+            <label for="name">
+              Your Name
+            </label>
+
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Enter your name"
+              required>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="phone">
+              Phone Number
+            </label>
+
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="e.g. 0710 666 222"
+              required>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="product">
+              Product
+            </label>
+
+            <select
+              id="product"
+              name="product"
+              required>
+
+
+              <option value="">
+                Choose a product
+              </option>
+
+
+              <option value="Honey">
+                Natural Honey
+              </option>
+
+
+              <option value="Cashew Nuts">
+                Cashew Nuts
+              </option>
+
+
+              <option value="Coffee">
+                Kenyan Coffee
+              </option>
+
+
+              <option value="Galla Goat Meat">
+                Galla Goat Meat
+              </option>
+
+
+              <option value="Bee Venom">
+                Bee Venom
+              </option>
+
+
+              <option value="Macadamia Nuts">
+                Macadamia Nuts
+              </option>
+
+
+              <option value="Avocado Oil">
+                Avocado Oil
+              </option>
+
+
+              <option value="Ground Nuts">
+                Ground Nuts
+              </option>
+
+
+              <option value="Kienyeji Eggs">
+                Kienyeji Eggs
+              </option>
+
+
+            </select>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="quantity">
+              Quantity
+            </label>
+
+            <input
+              type="text"
+              id="quantity"
+              name="quantity"
+              placeholder="e.g. 5 kg, 2 trays"
+              required>
+
+          </div>
+
+
+          <div class="form-group full">
+
+            <label for="message">
+              Additional Message
+            </label>
+
+            <textarea
+              id="message"
+              name="message"
+              placeholder="Tell us anything else about your order..."></textarea>
+
+          </div>
+
+
         </div>
 
-        <div class="form-group">
-          <label for="phone">Phone Number</label>
-          <input
-            type="tel"
-            id="phone"
-            name="phone"
-            placeholder="Enter your phone number"
-            required
-          >
-        </div>
 
-        <div class="form-group">
-          <label for="product">Select Product</label>
+        <button
+          type="submit"
+          class="form-submit">
 
-          <select id="product" name="product" required>
-            <option value="">Choose a product</option>
-            <option value="Honey">Natural Honey</option>
-            <option value="Cashew Nuts">Cashew Nuts</option>
-            <option value="Coffee">Kenyan Coffee</option>
-            <option value="Galla Goat Meat">Galla Goat Meat</option>
-            <option value="Bee Venom">Bee Venom</option>
-            <option value="Macadamia Nuts">Macadamia Nuts</option>
-            <option value="Avocado Oil">Avocado Oil</option>
-            <option value="Ground Nuts">Ground Nuts</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label for="quantity">Quantity</label>
-
-          <input
-            type="text"
-            id="quantity"
-            name="quantity"
-            placeholder="Example: 5 kg, 10 bottles, etc."
-            required
-          >
-        </div>
-
-        <div class="form-group">
-          <label for="message">Additional Message</label>
-
-          <textarea
-            id="message"
-            name="message"
-            placeholder="Tell us anything else about your order..."
-          ></textarea>
-        </div>
-
-        <button type="submit" class="submit-btn">
           Send Order via WhatsApp
+
         </button>
+
 
       </form>
 
+
     </div>
+
   </div>
+
 </section>
 
-<!-- CONTACT -->
-<section class="contact-section" id="contact">
+
+<!-- =====================================================
+     CONTACT
+===================================================== -->
+
+<section class="contact" id="contact">
+
   <div class="container">
 
-    <div class="section-head center">
-      <div class="section-kicker">Contact Us</div>
-      <h2>Let's Connect</h2>
+
+    <div class="section-heading">
+
+
+      <div class="eyebrow">
+        Contact Elah Farm
+      </div>
+
+
+      <h2>
+        Let's Connect
+      </h2>
+
+
       <p>
-        Contact Elah Farm for product enquiries, orders and farm-related
-        information.
+
+        Contact us for product availability, orders,
+        wholesale inquiries and other questions.
+
       </p>
+
+
     </div>
+
 
     <div class="contact-grid">
 
-      <div class="contact-card">
-        <div class="icon">📱</div>
-        <h3>Phone / WhatsApp</h3>
-        <p>+254 710 666 222</p>
-      </div>
 
       <div class="contact-card">
-        <div class="icon">📧</div>
-        <h3>Email</h3>
-        <p>elah.farm@gmail.com</p>
+
+        <div class="contact-icon">
+          📍
+        </div>
+
+        <h3>
+          Location
+        </h3>
+
+        <p>
+
+          Ikutha, Kitui County<br>
+          Kenya
+
+        </p>
+
       </div>
 
+
       <div class="contact-card">
-        <div class="icon">📍</div>
-        <h3>Location</h3>
-        <p>Ikutha, Kitui, Kenya</p>
+
+        <div class="contact-icon">
+          📞
+        </div>
+
+        <h3>
+          Phone & WhatsApp
+        </h3>
+
+        <p>
+          +254 710 666 222
+        </p>
+
       </div>
+
+
+      <div class="contact-card">
+
+        <div class="contact-icon">
+          ✉
+        </div>
+
+        <h3>
+          Email
+        </h3>
+
+        <p>
+          elah.farm@gmail.com
+        </p>
+
+      </div>
+
 
     </div>
 
   </div>
+
 </section>
 
-<!-- FOOTER -->
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
 <footer>
 
   <div class="container">
 
+
     <div class="footer-grid">
 
-      <div>
 
-        <div class="footer-brand">
-          <img src="logo.jpg" alt="Elah Farm Logo">
-          <span>Elah Farm</span>
+      <div class="footer-column">
+
+
+        <div class="footer-logo">
+
+
+          <img
+            src="logo.jpg"
+            alt="Elah Farm Logo">
+
+
+          <span>
+            Elah Farm
+          </span>
+
+
         </div>
+
 
         <p>
-          Quality farm products from Ikutha, Kitui, Kenya.
-          Natural, authentic and connected to Kenyan agriculture.
+
+          Quality Kenyan farm products from Ikutha,
+          Kitui. From our farm to your table.
+
         </p>
 
-      </div>
-
-      <div class="footer-col">
-
-        <h3>Quick Links</h3>
-
-        <div class="footer-links">
-          <a href="#home">Home</a>
-          <a href="#about">About</a>
-          <a href="#products">Products</a>
-          <a href="#gallery">Gallery</a>
-          <a href="#order">Order</a>
-          <a href="#contact">Contact</a>
-        </div>
 
       </div>
 
-      <div class="footer-col">
 
-        <h3>Our Products</h3>
+      <div class="footer-column">
 
-        <div class="footer-links">
-          <a href="#products">Natural Honey</a>
-          <a href="#products">Cashew Nuts</a>
-          <a href="#products">Kenyan Coffee</a>
-          <a href="#products">Galla Goat Meat</a>
-          <a href="#products">Bee Venom</a>
-          <a href="#products">Macadamia Nuts</a>
-          <a href="#products">Avocado Oil</a>
-          <a href="#products">Ground Nuts</a>
-        </div>
+
+        <h3>
+          Products
+        </h3>
+
+
+        <ul>
+
+
+          <li>
+            <a href="#products">
+              Natural Honey
+            </a>
+          </li>
+
+
+          <li>
+            <a href="#products">
+              Cashew Nuts
+            </a>
+          </li>
+
+
+          <li>
+            <a href="#products">
+              Kenyan Coffee
+            </a>
+          </li>
+
+
+          <li>
+            <a href="#products">
+              Galla Goat Meat
+            </a>
+          </li>
+
+
+          <li>
+            <a href="#products">
+              Kienyeji Eggs
+            </a>
+          </li>
+
+
+        </ul>
+
 
       </div>
+
+
+      <div class="footer-column">
+
+
+        <h3>
+          More Products
+        </h3>
+
+
+        <ul>
+
+
+          <li>
+            <a href="#products">
+              Bee Venom
+            </a>
+          </li>
+
+
+          <li>
+            <a href="#products">
+              Macadamia Nuts
+            </a>
+          </li>
+
+
+          <li>
+            <a href="#products">
+              Avocado Oil
+            </a>
+          </li>
+
+
+          <li>
+            <a href="#products">
+              Ground Nuts
+            </a>
+          </li>
+
+
+        </ul>
+
+
+      </div>
+
+
+      <div class="footer-column">
+
+
+        <h3>
+          Quick Links
+        </h3>
+
+
+        <ul>
+
+
+          <li>
+            <a href="#home">
+              Home
+            </a>
+          </li>
+
+
+          <li>
+            <a href="#about">
+              About
+            </a>
+          </li>
+
+
+          <li>
+            <a href="#gallery">
+              Gallery
+            </a>
+          </li>
+
+
+          <li>
+            <a href="#order">
+              Order Now
+            </a>
+          </li>
+
+
+          <li>
+            <a href="#contact">
+              Contact
+            </a>
+          </li>
+
+
+        </ul>
+
+
+      </div>
+
 
     </div>
+
 
     <div class="footer-bottom">
-      © <span id="year"></span> Elah Farm. All Rights Reserved.
+
+      © 2026 Elah Farm. All Rights Reserved.
+      | Ikutha, Kitui, Kenya
+
     </div>
+
 
   </div>
 
 </footer>
 
-<!-- WHATSAPP -->
+
+<!-- =====================================================
+     FLOATING WHATSAPP BUTTON
+===================================================== -->
+
 <a
-  href="https://wa.me/254710666222"
   class="whatsapp"
+  href="https://wa.me/254710666222"
   target="_blank"
-  rel="noopener"
-  aria-label="Chat with Elah Farm on WhatsApp"
->
-  ☎
+  rel="noopener noreferrer"
+  aria-label="Chat with Elah Farm on WhatsApp">
+
+  💬
+
 </a>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
 
 <script>
 
-/* MOBILE MENU */
-const menuToggle = document.getElementById("menuToggle");
-const navLinks = document.getElementById("navLinks");
 
-menuToggle.addEventListener("click", function(){
-  navLinks.classList.toggle("active");
+/* =========================================================
+   HERO VIDEO SLIDER
+========================================================= */
+
+const heroVideos =
+  document.querySelectorAll(".hero-video-slide");
+
+const heroDots =
+  document.querySelectorAll(".hero-dot");
+
+let currentHeroVideo = 0;
+
+
+/*
+|--------------------------------------------------------------------------
+| SHOW SELECTED VIDEO
+|--------------------------------------------------------------------------
+*/
+
+function showHeroVideo(index){
+
+  if(
+    index === currentHeroVideo &&
+    heroVideos[index].classList.contains("active")
+  ){
+
+    return;
+
+  }
+
+
+  heroVideos[currentHeroVideo].pause();
+
+  heroVideos[currentHeroVideo]
+    .classList.remove("active");
+
+  heroDots[currentHeroVideo]
+    .classList.remove("active");
+
+
+  currentHeroVideo = index;
+
+
+  heroVideos[currentHeroVideo]
+    .classList.add("active");
+
+  heroDots[currentHeroVideo]
+    .classList.add("active");
+
+
+  heroVideos[currentHeroVideo].currentTime = 0;
+
+
+  heroVideos[currentHeroVideo]
+    .play()
+    .catch(function(error){
+
+      console.log(
+        "Video autoplay was prevented:",
+        error
+      );
+
+    });
+
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| AUTOMATICALLY MOVE TO NEXT VIDEO
+|--------------------------------------------------------------------------
+*/
+
+heroVideos.forEach(function(video,index){
+
+  video.addEventListener(
+    "ended",
+    function(){
+
+      const nextIndex =
+        (index + 1) % heroVideos.length;
+
+      showHeroVideo(nextIndex);
+
+    }
+  );
+
 });
 
-document.querySelectorAll(".nav-links a").forEach(function(link){
-  link.addEventListener("click", function(){
-    navLinks.classList.remove("active");
-  });
+
+/*
+|--------------------------------------------------------------------------
+| HERO DOT BUTTONS
+|--------------------------------------------------------------------------
+*/
+
+heroDots.forEach(function(dot,index){
+
+  dot.addEventListener(
+    "click",
+    function(){
+
+      showHeroVideo(index);
+
+    }
+  );
+
 });
 
 
-/* PRODUCT ORDER BUTTONS */
-document.querySelectorAll(".product-btn").forEach(function(button){
+/*
+|--------------------------------------------------------------------------
+| START FIRST VIDEO
+|--------------------------------------------------------------------------
+*/
 
-  button.addEventListener("click", function(){
+window.addEventListener(
+  "load",
+  function(){
 
-    const selectedProduct = this.getAttribute("data-product");
-    const productSelect = document.getElementById("product");
+    heroVideos[0]
+      .play()
+      .catch(function(error){
 
-    productSelect.value = selectedProduct;
+        console.log(
+          "Hero video autoplay was prevented:",
+          error
+        );
 
-  });
+      });
+
+  }
+);
+
+
+/* =========================================================
+   PRODUCT ORDER BUTTONS
+========================================================= */
+
+const productButtons =
+  document.querySelectorAll(".product-btn");
+
+const productSelect =
+  document.getElementById("product");
+
+
+productButtons.forEach(function(button){
+
+  button.addEventListener(
+    "click",
+    function(){
+
+      const product =
+        button.getAttribute("data-product");
+
+
+      if(
+        productSelect &&
+        product
+      ){
+
+        productSelect.value = product;
+
+      }
+
+    }
+  );
 
 });
 
 
-/* WHATSAPP ORDER FORM */
-document.getElementById("orderForm").addEventListener("submit", function(event){
+/* =========================================================
+   ORDER FORM
+========================================================= */
 
-  event.preventDefault();
+document
+  .getElementById("orderForm")
+  .addEventListener(
+    "submit",
+    function(event){
 
-  const name = document.getElementById("name").value.trim();
-  const phone = document.getElementById("phone").value.trim();
-  const product = document.getElementById("product").value;
-  const quantity = document.getElementById("quantity").value.trim();
-  const message = document.getElementById("message").value.trim();
+      event.preventDefault();
 
-  const whatsappMessage =
+
+      const name =
+        document
+          .getElementById("name")
+          .value
+          .trim();
+
+
+      const phone =
+        document
+          .getElementById("phone")
+          .value
+          .trim();
+
+
+      const product =
+        document
+          .getElementById("product")
+          .value;
+
+
+      const quantity =
+        document
+          .getElementById("quantity")
+          .value
+          .trim();
+
+
+      const message =
+        document
+          .getElementById("message")
+          .value
+          .trim();
+
+
+      const whatsappMessage =
 `Hello Elah Farm,
 
 I would like to place an order.
@@ -1525,21 +2775,24 @@ ${message || "No additional message."}
 
 Thank you.`;
 
-  const whatsappURL =
-    "https://wa.me/254710666222?text=" +
-    encodeURIComponent(whatsappMessage);
 
-  window.open(whatsappURL, "_blank");
-
-});
+      const whatsappURL =
+        "https://wa.me/254710666222?text=" +
+        encodeURIComponent(whatsappMessage);
 
 
-/* CURRENT YEAR */
-document.getElementById("year").textContent = new Date().getFullYear();
+      window.open(
+        whatsappURL,
+        "_blank"
+      );
+
+    }
+  );
+
 
 </script>
 
-</body>
-</html>
-```
 
+</body>
+
+</html>
