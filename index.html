@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
@@ -8,1511 +9,986 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <meta name="description"
-content="Elah Safaris - Bespoke Sub-Saharan safari, wildlife, cultural and coastal tours from Nairobi, Kenya.">
+content="Elah Farm - Quality Kenyan farm products including natural honey, cashew nuts, Kenyan coffee, Galla goat meat, bee venom, macadamia nuts, avocado oil, ground nuts and fresh kienyeji eggs. Grown and sourced in Kenya.">
 
-<title>Elah Safaris | Explore. Dream. Discover Africa.</title>
+<meta name="keywords"
+content="Elah Farm, Kenyan farm products, natural honey, cashew nuts, Kenyan coffee, Galla goat meat, bee venom, macadamia nuts, avocado oil, ground nuts, kienyeji eggs, Kenya">
 
-<link rel="icon" href="logo.png" type="image/png">
+<meta name="author" content="Elah Farm">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<title>Elah Farm | Quality Farm Products from Kenya</title>
 
-<link
-href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap"
-rel="stylesheet">
+<link rel="icon" href="logo.jpg" type="image/jpeg">
 
 <style>
 
 /* =========================================================
-   GLOBAL
+   GLOBAL STYLES
 ========================================================= */
 
-* {
-    box-sizing: border-box;
+:root{
+  --green:#23451f;
+  --green-2:#365f2c;
+  --leaf:#668a45;
+  --cream:#f8f3e7;
+  --cream-2:#fffdf7;
+  --brown:#5b341c;
+  --gold:#b78a3c;
+  --text:#243025;
+  --muted:#687267;
+  --white:#fff;
+  --shadow:0 18px 50px rgba(35,69,31,.12);
+  --radius:22px;
 }
 
-html {
-    scroll-behavior: smooth;
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
-body {
-    margin: 0;
-    font-family: "DM Sans", sans-serif;
-    background: #fffdf8;
-    color: #30291f;
-    line-height: 1.6;
+html{
+  scroll-behavior:smooth;
 }
 
-body.modal-open {
-    overflow: hidden;
+body{
+  font-family:Arial, Helvetica, sans-serif;
+  background:var(--cream-2);
+  color:var(--text);
+  line-height:1.7;
 }
 
-a {
-    color: inherit;
+img{
+  max-width:100%;
+  display:block;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
 }
 
 button,
 input,
 select,
-textarea {
-    font-family: inherit;
+textarea{
+  font:inherit;
 }
 
-.container {
-    width: min(1180px, calc(100% - 40px));
-    margin: auto;
+.container{
+  width:min(1180px,92%);
+  margin:auto;
 }
 
-section {
-    padding: 95px 0;
-}
-
-h1,
-h2,
-h3,
-h4 {
-    font-family: "Cormorant Garamond", serif;
-    line-height: 1.05;
-}
-
-h2 {
-    font-size: clamp(2.5rem, 5vw, 4.5rem);
-    margin: 12px 0 20px;
-}
-
-h2 em {
-    color: #9a6a2f;
-    font-style: italic;
-}
-
-.eyebrow {
-    font-size: .72rem;
-    letter-spacing: .18em;
-    font-weight: 700;
-    color: #9a6a2f;
-}
-
-.heading {
-    max-width: 720px;
-    margin-bottom: 45px;
-}
-
-.heading p:last-child {
-    color: #71685a;
-    max-width: 650px;
-}
-
-.btn {
-    display: inline-block;
-    padding: 14px 23px;
-    border-radius: 999px;
-    text-decoration: none;
-    border: 1px solid transparent;
-    font-weight: 700;
-    margin: 5px;
-    transition: .25s ease;
-}
-
-.btn:hover {
-    transform: translateY(-2px);
-}
-
-.btn.gold {
-    background: #9a6a2f;
-    color: white;
-}
-
-.btn.light {
-    background: rgba(255,255,255,.13);
-    color: white;
-    border-color: rgba(255,255,255,.6);
-}
-
-.link {
-    color: #9a6a2f;
-    font-weight: 700;
-    text-decoration: none;
-}
 
 /* =========================================================
-   HEADER
+   NAVIGATION
 ========================================================= */
 
-header {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 100;
-    padding: 18px 0;
+.navbar{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(255,253,247,.96);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid rgba(35,69,31,.08);
 }
 
-.header-inner {
-    width: min(1240px, calc(100% - 30px));
-    margin: auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
+.nav-inner{
+  min-height:78px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:25px;
 }
 
-.brand {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    text-decoration: none;
+.logo{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  font-weight:800;
+  font-size:22px;
+  color:var(--green);
 }
 
-.brand img {
-    width: 65px;
-    height: 65px;
-    object-fit: contain;
-    display: block;
+.logo img{
+  width:52px;
+  height:52px;
+  object-fit:cover;
+  border-radius:50%;
 }
 
-.brand-name {
-    font-family: "Cormorant Garamond", serif;
-    font-size: 30px;
-    font-weight: 700;
-    color: white;
-    letter-spacing: 1px;
+.nav-links{
+  display:flex;
+  align-items:center;
+  gap:24px;
 }
 
-nav {
-    display: flex;
-    align-items: center;
-    gap: 17px;
+.nav-links a{
+  font-size:15px;
+  font-weight:600;
+  color:var(--text);
+  transition:.3s ease;
 }
 
-nav > a {
-    color: white;
-    text-decoration: none;
-    font-size: .86rem;
-    font-weight: 600;
+.nav-links a:hover{
+  color:var(--green-2);
 }
 
-nav > a:hover {
-    opacity: .75;
+.nav-order{
+  background:var(--green);
+  color:white !important;
+  padding:11px 18px;
+  border-radius:30px;
 }
 
-.pill {
-    padding: 10px 18px;
-    border: 1px solid rgba(255,255,255,.6);
-    border-radius: 999px;
+.nav-order:hover{
+  background:var(--green-2);
 }
 
-.menu {
-    display: none;
-    border: 0;
-    background: transparent;
-    color: white;
-    font-size: 27px;
-    cursor: pointer;
-}
 
 /* =========================================================
-   LANGUAGE
+   HERO VIDEO SLIDER
 ========================================================= */
 
-.language-selector {
-    position: relative;
+.hero{
+  position:relative;
+  min-height:650px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  color:white;
+  background:var(--green);
 }
 
-.language-button {
-    display: inline-flex;
-    align-items: center;
-    gap: 7px;
-    padding: 9px 13px;
-    border: 1px solid rgba(255,255,255,.5);
-    border-radius: 999px;
-    background: rgba(0,0,0,.2);
-    color: white;
-    cursor: pointer;
-    font-weight: 600;
+.hero-videos{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  overflow:hidden;
+  z-index:0;
 }
 
-.language-menu {
-    display: none;
-    position: absolute;
-    right: 0;
-    top: calc(100% + 9px);
-    min-width: 160px;
-    padding: 7px;
-    background: #fffdf8;
-    border-radius: 13px;
-    box-shadow: 0 15px 40px rgba(0,0,0,.25);
+.hero-video-slide{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  opacity:0;
+  visibility:hidden;
+  transform:scale(1.03);
+  transition:
+    opacity 1.2s ease,
+    transform 8s ease;
 }
 
-.language-selector.open .language-menu {
-    display: block;
+.hero-video-slide.active{
+  opacity:1;
+  visibility:visible;
+  transform:scale(1);
 }
 
-.language-menu button {
-    width: 100%;
-    padding: 10px 12px;
-    border: 0;
-    background: transparent;
-    text-align: left;
-    border-radius: 8px;
-    cursor: pointer;
-    color: #30291f;
+.hero-overlay{
+  position:absolute;
+  inset:0;
+  z-index:1;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(20,45,18,.72),
+      rgba(20,45,18,.62),
+      rgba(20,45,18,.72)
+    );
 }
 
-.language-menu button:hover {
-    background: #f0e6d5;
+.hero .container{
+  position:relative;
+  z-index:2;
+  width:min(1180px,92%);
 }
+
+.hero-content{
+  width:100%;
+  max-width:850px;
+  margin:0 auto;
+  padding:90px 0;
+  text-align:center;
+}
+
+.eyebrow{
+  display:inline-block;
+  margin-bottom:18px;
+  padding:8px 15px;
+  border:1px solid rgba(255,255,255,.35);
+  background:rgba(255,255,255,.10);
+  border-radius:30px;
+  font-size:14px;
+  font-weight:700;
+}
+
+.hero h1{
+  font-size:clamp(45px,7vw,76px);
+  line-height:1.05;
+  margin-bottom:25px;
+  letter-spacing:-2px;
+}
+
+.hero h1 span{
+  color:#e1bb6b;
+}
+
+.hero p{
+  max-width:750px;
+  margin:0 auto 30px;
+  font-size:18px;
+  color:rgba(255,255,255,.91);
+}
+
+.hero-buttons{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:14px;
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:50px;
+  padding:0 24px;
+  border-radius:30px;
+  font-weight:700;
+  transition:.3s ease;
+}
+
+.btn-primary{
+  background:var(--gold);
+  color:white;
+}
+
+.btn-primary:hover{
+  transform:translateY(-2px);
+  background:#c69a4a;
+}
+
+.btn-outline{
+  border:1px solid rgba(255,255,255,.7);
+  color:white;
+  background:rgba(255,255,255,.06);
+}
+
+.btn-outline:hover{
+  background:white;
+  color:var(--green);
+}
+
+.hero-note{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  align-items:center;
+  gap:18px;
+  margin-top:28px;
+  font-size:14px;
+  font-weight:600;
+}
+
+.hero-note span{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+}
+
 
 /* =========================================================
-   HERO
+   HERO NAVIGATION DOTS
 ========================================================= */
 
-.hero-video {
-    position: relative;
-    height: 75svh;
-    min-height: 620px;
-    overflow: hidden;
-    background: #17150f;
-    color: white;
+.hero-dots{
+  position:absolute;
+  z-index:5;
+  left:50%;
+  bottom:28px;
+  transform:translateX(-50%);
+  display:flex;
+  align-items:center;
+  gap:9px;
 }
 
-.hero-videos {
-    position: absolute;
-    inset: 0;
+.hero-dot{
+  width:11px;
+  height:11px;
+  padding:0;
+  border-radius:50%;
+  border:1px solid white;
+  background:rgba(255,255,255,.45);
+  cursor:pointer;
+  transition:.3s ease;
 }
 
-.hero-video-slide {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0;
-    transition: opacity 1.2s ease;
+.hero-dot.active{
+  background:#d4a64b;
+  transform:scale(1.25);
 }
 
-.hero-video-slide.active {
-    opacity: 1;
+
+/* =========================================================
+   SECTION STYLES
+========================================================= */
+
+section{
+  padding:90px 0;
 }
 
-.hero-video-overlay {
-    position: absolute;
-    inset: 0;
-    background:
-        linear-gradient(90deg, rgba(0,0,0,.7), rgba(0,0,0,.3)),
-        linear-gradient(0deg, rgba(0,0,0,.5), transparent);
+.section-heading{
+  max-width:720px;
+  margin:0 auto 50px;
+  text-align:center;
 }
 
-.hero-content {
-    position: relative;
-    z-index: 3;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    max-width: 1180px;
+.section-heading .eyebrow{
+  color:var(--green);
+  border-color:rgba(35,69,31,.18);
+  background:rgba(35,69,31,.05);
+  margin-bottom:12px;
 }
 
-.hero-content h1 {
-    font-size: clamp(3.5rem, 8vw, 7rem);
-    margin: 10px 0 20px;
-    max-width: 850px;
+.section-heading h2{
+  font-size:clamp(32px,5vw,48px);
+  color:var(--green);
+  line-height:1.15;
+  margin-bottom:15px;
 }
 
-.hero-content h1 span {
-    color: #e0bb7c;
+.section-heading p{
+  color:var(--muted);
 }
 
-.hero-content > p:not(.eyebrow) {
-    max-width: 650px;
-    font-size: 1.05rem;
-}
-
-.hero-video-dots {
-    position: absolute;
-    bottom: 25px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 5;
-    display: flex;
-    gap: 9px;
-}
-
-.hero-video-dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    border: 1px solid white;
-    background: transparent;
-    cursor: pointer;
-}
-
-.hero-video-dot.active {
-    width: 30px;
-    border-radius: 20px;
-    background: white;
-}
 
 /* =========================================================
    ABOUT
 ========================================================= */
 
-.two {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 70px;
-    align-items: center;
+.about{
+  background:var(--cream);
 }
 
-.two p {
-    color: #675f52;
+.about-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:55px;
+  align-items:center;
 }
+
+.about-image{
+  border-radius:var(--radius);
+  overflow:hidden;
+  box-shadow:var(--shadow);
+}
+
+.about-image img{
+  width:100%;
+  height:520px;
+  object-fit:cover;
+}
+
+.about-content h2{
+  color:var(--green);
+  font-size:42px;
+  line-height:1.15;
+  margin-bottom:20px;
+}
+
+.about-content p{
+  color:var(--muted);
+  margin-bottom:18px;
+}
+
+.about-list{
+  list-style:none;
+  margin-top:25px;
+}
+
+.about-list li{
+  margin-bottom:12px;
+  font-weight:600;
+}
+
+.about-list span{
+  color:var(--gold);
+  margin-right:8px;
+}
+
 
 /* =========================================================
-   DESTINATIONS
+   PRODUCTS
 ========================================================= */
 
-.destination-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+.products{
+  background:var(--cream-2);
 }
 
-.destination {
-    min-height: 390px;
-    border-radius: 18px;
-    overflow: hidden;
-    position: relative;
-    background-size: cover;
-    background-position: center;
-    color: white;
-    display: flex;
-    align-items: flex-end;
+.product-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:25px;
 }
 
-.destination::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background:
-        linear-gradient(
-            0deg,
-            rgba(0,0,0,.78),
-            rgba(0,0,0,.05) 70%
-        );
+.product-card{
+  background:white;
+  border-radius:var(--radius);
+  overflow:hidden;
+  box-shadow:var(--shadow);
+  border:1px solid rgba(35,69,31,.07);
+  transition:.35s ease;
 }
 
-.destination > div {
-    position: relative;
-    padding: 27px;
-    z-index: 2;
+.product-card:hover{
+  transform:translateY(-7px);
 }
 
-.destination b {
-    font-size: .72rem;
-    letter-spacing: .15em;
-    opacity: .8;
+.product-image{
+  height:235px;
+  overflow:hidden;
 }
 
-.destination h3 {
-    font-size: 2.4rem;
-    margin: 7px 0;
+.product-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:.5s ease;
 }
 
-.destination p {
-    margin: 0 0 12px;
-    color: rgba(255,255,255,.85);
+.product-card:hover .product-image img{
+  transform:scale(1.06);
 }
 
-.destination a {
-    color: white;
-    font-weight: 700;
-    text-decoration: none;
+.product-body{
+  padding:24px;
 }
 
-.mara {
-    background-image: url("mara.jpg");
+.product-body h3{
+  color:var(--green);
+  font-size:22px;
+  margin-bottom:9px;
 }
 
-.amboseli {
-    background-image: url("https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&q=85");
+.product-body p{
+  color:var(--muted);
+  font-size:14px;
+  margin-bottom:18px;
 }
 
-.tsavo {
-    background-image: url("tsavo-east.jpg");
+.product-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:10px 18px;
+  background:var(--green);
+  color:white;
+  border-radius:25px;
+  font-size:14px;
+  font-weight:700;
+  transition:.3s ease;
 }
 
-.olpejeta {
-    background-image: url("samburu-olpejeta.jpg");
+.product-btn:hover{
+  background:var(--green-2);
 }
 
-.north {
-    background-image: url("https://images.unsplash.com/photo-1519659528534-7fd733a832a0?auto=format&fit=crop&w=1200&q=85");
-}
-
-.coast {
-    background-image: url("mombasa.jpg");
-}
 
 /* =========================================================
-   PACKAGE SLIDER
+   FARM PROCESS
 ========================================================= */
 
-.safari-packages {
-    background: #f8f3e9;
+.process{
+  background:var(--cream);
 }
 
-.package-slider-wrap {
-    display: flex;
-    align-items: center;
-    gap: 14px;
+.process-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:25px;
 }
 
-.package-slider {
-    display: flex;
-    gap: 22px;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none;
-    padding: 8px 2px 25px;
-    flex: 1;
+.process-card{
+  background:white;
+  padding:32px;
+  border-radius:var(--radius);
+  text-align:center;
+  box-shadow:var(--shadow);
 }
 
-.package-slider::-webkit-scrollbar {
-    display: none;
+.process-icon{
+  width:65px;
+  height:65px;
+  margin:0 auto 18px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:rgba(183,138,60,.13);
+  font-size:30px;
 }
 
-.package-card {
-    flex: 0 0 calc((100% - 44px) / 3);
-    background: white;
-    border-radius: 18px;
-    overflow: hidden;
-    box-shadow: 0 12px 35px rgba(30,25,15,.1);
-    scroll-snap-align: start;
-    display: flex;
-    flex-direction: column;
+.process-card h3{
+  color:var(--green);
+  margin-bottom:10px;
 }
 
-.package-image {
-    height: 225px;
-    background-size: cover;
-    background-position: center;
+.process-card p{
+  color:var(--muted);
 }
 
-.package-body {
-    padding: 23px;
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-}
-
-.package-days {
-    font-size: .7rem;
-    letter-spacing: .12em;
-    font-weight: 700;
-    opacity: .65;
-}
-
-.package-body h3 {
-    font-size: 2rem;
-    margin: 8px 0;
-}
-
-.package-body p {
-    color: #6d6559;
-    line-height: 1.65;
-    flex: 1;
-}
-
-.package-bottom {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10px;
-    margin-top: 15px;
-}
-
-.package-bottom small {
-    opacity: .65;
-}
-
-.view-package {
-    border: 0;
-    background: #9a6a2f;
-    color: white;
-    border-radius: 999px;
-    padding: 11px 17px;
-    font-weight: 700;
-    cursor: pointer;
-}
-
-.package-arrow {
-    flex: 0 0 48px;
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    border: 1px solid #d5c9b7;
-    background: white;
-    cursor: pointer;
-    font-size: 28px;
-}
-
-.package-slider-hint {
-    text-align: center;
-    font-size: .7rem;
-    letter-spacing: .12em;
-    opacity: .55;
-    margin-top: 7px;
-}
-
-/* PACKAGE PHOTOS */
-
-.pkg-mara {
-    background-image: url("mara.jpg");
-}
-
-.pkg-amboseli {
-    background-image: url("https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&q=85");
-}
-
-.pkg-tsavo-east {
-    background-image: url("tsavo-east.jpg");
-}
-
-.pkg-tsavo-west {
-    background-image: url("https://images.unsplash.com/photo-1549366021-9f761d450615?auto=format&fit=crop&w=1200&q=85");
-}
-
-.pkg-tsavo-both {
-    background-image: url("tsavo-both.jpg");
-}
-
-.pkg-samburu {
-    background-image: url("samburu-olpejeta.jpg");
-}
-
-.pkg-northern {
-    background-image: url("https://images.unsplash.com/photo-1519659528534-7fd733a832a0?auto=format&fit=crop&w=1200&q=85");
-}
-
-.pkg-diani {
-    background-image: url("diani.jpg");
-}
-
-.pkg-mombasa {
-    background-image: url("mombasa.jpg");
-}
-
-/* NEW LAKE NAKURU + HELL'S GATE PHOTO */
-
-.pkg-lake-nakuru-hells-gate {
-    background-image: url("lake-nakuru-hells-gate.jpg");
-}
-
-.pkg-central {
-    background-image: url("https://images.unsplash.com/photo-1523805009345-7448845a9e53?auto=format&fit=crop&w=1200&q=85");
-}
-
-.pkg-nairobi {
-    background-image: url("nairobi.jpg");
-}
-
-.pkg-nairobi-park {
-    background-image: url("nairobi-national-park.jpg");
-}
-
-.pkg-western {
-    background-image: url("western-kenya.jpg");
-}
-
-.pkg-malindi {
-    background-image: url("malindi.jpg");
-}
-
-.pkg-watamu {
-    background-image: url("watamu-kisite.jpg");
-}
-
-
-
-.intl-dubai{background-image:url("https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1200&q=85");}
-.intl-south-africa{background-image:url("https://images.unsplash.com/photo-1580060839134-75a5edca2e99?auto=format&fit=crop&w=1200&q=85");}
-.intl-zanzibar{background-image:url("https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&w=1200&q=85");}
-.intl-seychelles{background-image:url("https://images.unsplash.com/photo-1589979481223-deb893043163?auto=format&fit=crop&w=1200&q=85");}
-.intl-mauritius{background-image:url("https://images.unsplash.com/photo-1578895101408-1a36b834405b?auto=format&fit=crop&w=1200&q=85");}
-.intl-maldives{background-image:url("https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=1200&q=85");}
-.intl-morocco{background-image:url("https://images.unsplash.com/photo-1597212618440-806262de4f6b?auto=format&fit=crop&w=1200&q=85");}
-.intl-egypt{background-image:url("https://images.unsplash.com/photo-1568322445389-f64ac2515020?auto=format&fit=crop&w=1200&q=85");}
-.intl-turkiye{background-image:url("https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?auto=format&fit=crop&w=1200&q=85");}
-.intl-uk{background-image:url("https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=1200&q=85");}
-.intl-france{background-image:url("https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=1200&q=85");}
-.intl-italy{background-image:url("https://images.unsplash.com/photo-1529260830199-42c24126f198?auto=format&fit=crop&w=1200&q=85");}
-.intl-switzerland{background-image:url("https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?auto=format&fit=crop&w=1200&q=85");}
-.intl-spain{background-image:url("https://images.unsplash.com/photo-1539037116277-4db20889f2d4?auto=format&fit=crop&w=1200&q=85");}
-.intl-greece{background-image:url("https://images.unsplash.com/photo-1603565816030-6b389eeb23cb?auto=format&fit=crop&w=1200&q=85");}
-.intl-thailand{background-image:url("https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=1200&q=85");}
-.intl-singapore{background-image:url("https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=1200&q=85");}
-.intl-malaysia{background-image:url("https://images.unsplash.com/photo-1508062878650-88b52897f298?auto=format&fit=crop&w=1200&q=85");}
-.intl-india{background-image:url("https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=1200&q=85");}
-.intl-australia{background-image:url("https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?auto=format&fit=crop&w=1200&q=85");}
-
-/* =========================================================
-   PACKAGE MODAL
-========================================================= */
-
-.package-modal {
-    position: fixed;
-    inset: 0;
-    z-index: 9999;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-}
-
-.package-modal.active {
-    display: flex;
-}
-
-.package-modal-backdrop {
-    position: absolute;
-    inset: 0;
-    background: rgba(10,8,5,.82);
-    backdrop-filter: blur(5px);
-}
-
-.package-modal-content {
-    position: relative;
-    z-index: 2;
-    width: min(920px,100%);
-    max-height: 94vh;
-    overflow-y: auto;
-    background: #fffdf8;
-    border-radius: 22px;
-    box-shadow: 0 30px 90px rgba(0,0,0,.4);
-    animation: modalIn .25s ease;
-}
-
-@keyframes modalIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px) scale(.98);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
-}
-
-.package-modal-close {
-    position: absolute;
-    top: 14px;
-    right: 14px;
-    z-index: 5;
-    width: 45px;
-    height: 45px;
-    border: 0;
-    border-radius: 50%;
-    background: rgba(0,0,0,.65);
-    color: white;
-    font-size: 30px;
-    cursor: pointer;
-}
-
-.package-modal-image {
-    height: 320px;
-    background-size: cover;
-    background-position: center;
-}
-
-.package-modal-body {
-    padding: 32px;
-}
-
-.package-modal-body h2 {
-    margin: 7px 0;
-    font-size: clamp(2.4rem,5vw,4rem);
-}
-
-.package-modal-price {
-    color: #9a6a2f;
-    font-weight: 700;
-    font-size: 1.1rem;
-}
-
-#packageModalIntro {
-    color: #635c51;
-    line-height: 1.8;
-}
-
-.itinerary {
-    margin-top: 28px;
-    display: grid;
-    gap: 12px;
-}
-
-.itinerary-day {
-    padding: 18px;
-    border-left: 3px solid #9a6a2f;
-    background: rgba(154,106,47,.07);
-    border-radius: 0 12px 12px 0;
-}
-
-.itinerary-day h4 {
-    margin: 0 0 7px;
-    font-size: 1.2rem;
-}
-
-.itinerary-day p {
-    margin: 0;
-    color: #625b50;
-}
-
-.package-includes {
-    margin-top: 30px;
-}
-
-.package-includes ul {
-    padding-left: 20px;
-}
-
-.package-book-btn {
-    margin-top: 20px;
-}
-
-/* =========================================================
-   EXPERIENCE
-========================================================= */
-
-.bigphoto {
-    min-height: 520px;
-    border-radius: 20px;
-    background:
-        linear-gradient(rgba(0,0,0,.05),rgba(0,0,0,.1)),
-        url("safari-video-1.mp4");
-    background-size: cover;
-    background-position: center;
-    background-color: #9a6a2f;
-}
-
-.experience ul {
-    list-style: none;
-    padding: 0;
-    margin-top: 30px;
-}
-
-.experience li {
-    display: flex;
-    gap: 18px;
-    margin: 18px 0;
-}
-
-.experience li b {
-    color: #9a6a2f;
-}
-
-.experience li span {
-    display: flex;
-    flex-direction: column;
-}
-
-.experience li strong {
-    margin-bottom: 4px;
-}
 
 /* =========================================================
    GALLERY
 ========================================================= */
 
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    gap: 15px;
+.gallery{
+  background:var(--cream-2);
 }
 
-.g {
-    min-height: 250px;
-    border-radius: 16px;
-    background-size: cover;
-    background-position: center;
+.gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:14px;
 }
 
-.g1 {
-    background-image: url("mara.jpg");
+.gallery-item{
+  height:220px;
+  overflow:hidden;
+  border-radius:18px;
 }
 
-.g2 {
-    background-image: url("samburu-olpejeta.jpg");
+.gallery-item img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:.5s ease;
 }
 
-.g3 {
-    background-image: url("tsavo-east.jpg");
+.gallery-item:hover img{
+  transform:scale(1.08);
 }
 
-.g4 {
-    background-image: url("diani.jpg");
-}
-
-.g5 {
-    background-image: url("mombasa.jpg");
-}
-
-.g6 {
-    background-image: url("nairobi.jpg");
-}
-
-.g7 {
-    background-image: url("https://images.unsplash.com/photo-1610982330184-b26f7ea46541?auto=format&fit=crop&w=1400&q=85");
-}
-
-.g8 {
-    background-image: url("https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1400&q=85");
-}
 
 /* =========================================================
-   FORM
+   ORDER
 ========================================================= */
 
-form {
-    background: white;
-    padding: 30px;
-    border-radius: 20px;
-    box-shadow: 0 12px 35px rgba(30,25,15,.08);
+.order{
+  background:var(--cream);
 }
 
-.row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 18px;
+.order-wrapper{
+  display:grid;
+  grid-template-columns:.8fr 1.2fr;
+  gap:40px;
+  align-items:stretch;
 }
 
-label {
-    display: block;
-    font-weight: 600;
-    margin-bottom: 17px;
+.order-info{
+  background:var(--green);
+  color:white;
+  padding:45px;
+  border-radius:var(--radius);
 }
 
-input,
-select,
-textarea {
-    display: block;
-    width: 100%;
-    margin-top: 7px;
-    padding: 13px 14px;
-    border: 1px solid #d9d0c1;
-    border-radius: 10px;
-    background: #fffdf8;
-    outline: none;
+.order-info h2{
+  font-size:40px;
+  line-height:1.15;
+  margin-bottom:18px;
 }
 
-textarea {
-    resize: vertical;
+.order-info p{
+  color:rgba(255,255,255,.82);
+  margin-bottom:25px;
 }
 
-input:focus,
-select:focus,
-textarea:focus {
-    border-color: #9a6a2f;
+.order-contact{
+  display:grid;
+  gap:15px;
 }
 
-.contact-mini {
-    display: grid;
-    gap: 8px;
-    margin-top: 25px;
+.order-contact div{
+  padding:15px 18px;
+  background:rgba(255,255,255,.08);
+  border-radius:14px;
 }
 
-.contact-mini a {
-    text-decoration: none;
-    color: #9a6a2f;
-    font-weight: 700;
+.order-contact strong{
+  display:block;
+  color:#e1bb6b;
+  margin-bottom:3px;
 }
+
+.order-form{
+  background:white;
+  padding:40px;
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+}
+
+.form-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+}
+
+.form-group{
+  display:flex;
+  flex-direction:column;
+  gap:7px;
+}
+
+.form-group.full{
+  grid-column:1/-1;
+}
+
+.form-group label{
+  font-size:14px;
+  font-weight:700;
+  color:var(--green);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea{
+  width:100%;
+  border:1px solid #dce1d9;
+  background:#fbfcf9;
+  padding:13px 15px;
+  border-radius:12px;
+  outline:none;
+  color:var(--text);
+  transition:.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus{
+  border-color:var(--leaf);
+  background:white;
+}
+
+.form-group textarea{
+  min-height:130px;
+  resize:vertical;
+}
+
+.form-submit{
+  margin-top:20px;
+  width:100%;
+  border:0;
+  cursor:pointer;
+  padding:15px;
+  border-radius:30px;
+  background:var(--green);
+  color:white;
+  font-weight:800;
+  transition:.3s ease;
+}
+
+.form-submit:hover{
+  background:var(--green-2);
+  transform:translateY(-2px);
+}
+
 
 /* =========================================================
    CONTACT
 ========================================================= */
 
-.details {
-    display: grid;
-    gap: 13px;
+.contact{
+  background:var(--cream-2);
 }
 
-.details a {
-    text-decoration: none;
+.contact-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:25px;
 }
 
-.socials {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    margin-top: 15px;
+.contact-card{
+  text-align:center;
+  padding:35px 25px;
+  background:white;
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
 }
 
- .socials a {
-    color: #9a6a2f;
+.contact-icon{
+  font-size:35px;
+  margin-bottom:12px;
 }
 
-.social-name {
-    color: #9a6a2f;
-    font-size: 1rem;
-    display: block;
-    margin-bottom: 10px;
+.contact-card h3{
+  color:var(--green);
+  margin-bottom:8px;
 }
 
-.social-icons {
-    display: flex;
-    align-items: center;
-    gap: 12px;
+.contact-card p{
+  color:var(--muted);
 }
 
-.social-icons a {
-    width: 38px;
-    height: 38px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid rgba(154,106,47,.35);
-    border-radius: 50%;
-    transition: transform .25s ease, background .25s ease, color .25s ease;
-}
-
-.social-icons a:hover {
-    transform: translateY(-3px);
-    background: #9a6a2f;
-    color: #fff;
-}
-
-.social-icons svg {
-    width: 19px;
-    height: 19px;
-}
 
 /* =========================================================
    FOOTER
 ========================================================= */
 
-footer {
-    background: #211c15;
-    color: white;
-    padding: 30px 0;
+footer{
+  background:var(--green);
+  color:white;
+  padding:60px 0 25px;
 }
 
-.foot {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-    flex-wrap: wrap;
+.footer-grid{
+  display:grid;
+  grid-template-columns:1.3fr 1fr 1fr 1fr;
+  gap:35px;
 }
 
-.footer-brand {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+.footer-logo{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  font-size:24px;
+  font-weight:800;
+  margin-bottom:18px;
 }
 
-.footer-brand img {
-    width: 50px;
-    height: 50px;
-    object-fit: contain;
+.footer-logo img{
+  width:50px;
+  height:50px;
+  object-fit:cover;
+  border-radius:50%;
 }
 
-/* =========================================================
-   RESPONSIVE
-========================================================= */
-
-@media(max-width:1100px) {
-
-    nav {
-        gap: 10px;
-    }
-
-    .package-card {
-        flex-basis: calc((100% - 22px)/2);
-    }
-
+.footer-column p{
+  color:rgba(255,255,255,.72);
+  font-size:14px;
 }
 
-@media(max-width:850px) {
-
-    .menu {
-        display: block;
-    }
-
-    nav {
-        display: none;
-        position: absolute;
-        top: 82px;
-        left: 15px;
-        right: 15px;
-        padding: 20px;
-        background: rgba(25,22,17,.97);
-        border-radius: 15px;
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    nav.open {
-        display: flex;
-    }
-
-    nav > a {
-        padding: 8px;
-    }
-
-    .language-selector {
-        width: 100%;
-    }
-
-    .language-button {
-        width: 100%;
-        justify-content: space-between;
-    }
-
-    .language-menu {
-        position: relative;
-        top: 5px;
-        width: 100%;
-    }
-
-    .two {
-        grid-template-columns: 1fr;
-        gap: 35px;
-    }
-
-    .destination-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-
+.footer-column h3{
+  margin-bottom:15px;
+  color:#e1bb6b;
 }
 
-@media(max-width:650px) {
-
-    section {
-        padding: 70px 0;
-    }
-
-    .container {
-        width: min(100% - 28px,1180px);
-    }
-
-    .brand img {
-        width: 52px;
-        height: 52px;
-    }
-
-    .brand-name {
-        font-size: 24px;
-    }
-
-    .hero-video {
-        min-height: 680px;
-        height: 72svh;
-    }
-
-    .hero-content h1 {
-        font-size: clamp(3.1rem,14vw,5rem);
-    }
-
-    .destination-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .destination {
-        min-height: 350px;
-    }
-
-    .package-card {
-        flex-basis: 88%;
-    }
-
-    .package-arrow {
-        display: none;
-    }
-
-    .package-modal {
-        padding: 7px;
-    }
-
-    .package-modal-content {
-        max-height: 96vh;
-        border-radius: 16px;
-    }
-
-    .package-modal-image {
-        height: 220px;
-    }
-
-    .package-modal-body {
-        padding: 23px 19px 28px;
-    }
-
-    .row {
-        grid-template-columns: 1fr;
-        gap: 0;
-    }
-
-    .gallery {
-        grid-template-columns: 1fr 1fr;
-    }
-
+.footer-column ul{
+  list-style:none;
 }
 
-
-
-/* =========================================================
-   INTERNATIONAL PACKAGES
-========================================================= */
-
-.international-packages {
-    background: #fffdf8;
+.footer-column li{
+  margin-bottom:8px;
 }
 
-.international-packages .heading h2 em {
-    color: #9a6a2f;
+.footer-column a{
+  color:rgba(255,255,255,.78);
+  font-size:14px;
 }
 
-.international-slider-wrap {
-    display: flex;
-    align-items: center;
-    gap: 14px;
+.footer-column a:hover{
+  color:white;
 }
 
-.international-slider {
-    display: flex;
-    gap: 22px;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none;
-    padding: 8px 2px 25px;
-    flex: 1;
+.footer-bottom{
+  border-top:1px solid rgba(255,255,255,.12);
+  margin-top:40px;
+  padding-top:20px;
+  text-align:center;
+  color:rgba(255,255,255,.62);
+  font-size:13px;
 }
 
-.international-slider::-webkit-scrollbar {
-    display: none;
-}
-
-.international-card {
-    flex: 0 0 calc((100% - 44px) / 3);
-    background: white;
-    border-radius: 18px;
-    overflow: hidden;
-    box-shadow: 0 12px 35px rgba(30,25,15,.08);
-    scroll-snap-align: start;
-    display: flex;
-    flex-direction: column;
-    transition: transform .25s ease, box-shadow .25s ease;
-}
-
-.international-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 18px 45px rgba(30,25,15,.13);
-}
-
-.international-image {
-    height: 225px;
-    background-size: cover;
-    background-position: center;
-}
-
-.international-body {
-    padding: 23px;
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-}
-
-.international-body h3 {
-    margin: 8px 0 8px;
-}
-
-.international-body p {
-    color: #635c51;
-    line-height: 1.7;
-    margin: 0;
-}
-
-.international-bottom {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10px;
-    margin-top: 15px;
-}
-
-.international-bottom strong {
-    font-size: .95rem;
-}
-
-.international-bottom small {
-    font-weight: 500;
-    opacity: .65;
-}
-
-.international-view-package {
-    border: 0;
-    background: #9a6a2f;
-    color: white;
-    border-radius: 999px;
-    padding: 11px 17px;
-    font-weight: 700;
-    cursor: pointer;
-    white-space: nowrap;
-}
-
-.international-arrow {
-    flex: 0 0 48px;
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    border: 1px solid #d5c9b7;
-    background: white;
-    cursor: pointer;
-    font-size: 28px;
-    line-height: 1;
-}
-
-.international-slider-hint {
-    text-align: center;
-    font-size: .7rem;
-    letter-spacing: .12em;
-    opacity: .55;
-    margin-top: 7px;
-}
-
-/* International popup uses the same visual language as the Kenya package popup. */
-.international-modal {
-    position: fixed;
-    inset: 0;
-    z-index: 10000;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-}
-
-.international-modal.active {
-    display: flex;
-}
-
-.international-modal-backdrop {
-    position: absolute;
-    inset: 0;
-    background: rgba(10,8,5,.82);
-    backdrop-filter: blur(5px);
-}
-
-.international-modal-content {
-    position: relative;
-    z-index: 2;
-    width: min(920px,100%);
-    max-height: 94vh;
-    overflow-y: auto;
-    background: #fffdf8;
-    border-radius: 22px;
-    box-shadow: 0 30px 90px rgba(0,0,0,.4);
-    animation: modalIn .25s ease;
-}
-
-.international-modal-close {
-    position: absolute;
-    top: 14px;
-    right: 14px;
-    z-index: 5;
-    width: 45px;
-    height: 45px;
-    border: 0;
-    border-radius: 50%;
-    background: rgba(0,0,0,.65);
-    color: white;
-    font-size: 30px;
-    cursor: pointer;
-}
-
-.international-modal-image {
-    height: 320px;
-    background-size: cover;
-    background-position: center;
-}
-
-.international-modal-body {
-    padding: 32px;
-}
-
-.international-modal-body h2 {
-    margin: 7px 0;
-    font-size: clamp(2.4rem,5vw,4rem);
-}
-
-.international-modal-price {
-    color: #9a6a2f;
-    font-weight: 700;
-    font-size: 1.1rem;
-}
-
-.international-modal-intro {
-    color: #635c51;
-    line-height: 1.8;
-}
-
-.international-itinerary {
-    margin-top: 28px;
-    display: grid;
-    gap: 12px;
-}
-
-.international-itinerary-day {
-    padding: 18px;
-    border-left: 3px solid #9a6a2f;
-    background: rgba(154,106,47,.07);
-    border-radius: 0 12px 12px 0;
-}
-
-.international-itinerary-day h4 {
-    margin: 0 0 7px;
-    font-size: 1.2rem;
-}
-
-.international-itinerary-day p {
-    margin: 0;
-    color: #625b50;
-    line-height: 1.7;
-}
-
-.international-highlights {
-    margin-top: 30px;
-}
-
-.international-highlights ul {
-    padding-left: 20px;
-}
-
-.international-book-btn {
-    margin-top: 20px;
-}
-
-@media (max-width: 1100px) {
-    .international-card {
-        flex-basis: calc((100% - 22px) / 2);
-    }
-}
-
-@media (max-width: 650px) {
-    .international-card {
-        flex-basis: 88%;
-    }
-
-    .international-arrow {
-        display: none;
-    }
-
-    .international-modal-body {
-        padding: 24px;
-    }
-
-    .international-modal-image {
-        height: 240px;
-    }
-
-    .international-bottom {
-        align-items: flex-start;
-        flex-direction: column;
-    }
-}
-
-
-
-/* =========================================================
-   INTERNATIONAL DESTINATION CARD
-========================================================= */
-
-.international-destination {
-    background-image: url("https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1400&q=85");
-}
-
-.international-destination h3 {
-    font-size: 2rem;
-}
-
-.culture-heritage {
-    background-image: url("https://images.unsplash.com/photo-1640119259111-acc19f7c38f2?auto=format&fit=crop&w=1400&q=85");
-}
-
-.culture-heritage h3 {
-    font-size: 2rem;
-}
 
 /* =========================================================
    WHATSAPP FLOATING BUTTON
 ========================================================= */
 
-.whatsapp-float {
-    position: fixed;
-    right: 22px;
-    bottom: 22px;
-    width: 58px;
-    height: 58px;
-    border-radius: 50%;
-    background: #25d366;
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    z-index: 9998;
-    box-shadow: 0 10px 28px rgba(0,0,0,.22);
-    transition: transform .25s ease, box-shadow .25s ease;
+.whatsapp{
+  position:fixed;
+  right:22px;
+  bottom:22px;
+  z-index:999;
+  width:58px;
+  height:58px;
+  border-radius:50%;
+  background:#25D366;
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 10px 30px rgba(0,0,0,.2);
+  transition:.3s ease;
 }
 
-.whatsapp-float:hover {
-    transform: translateY(-4px) scale(1.04);
-    box-shadow: 0 14px 34px rgba(0,0,0,.28);
+.whatsapp:hover{
+  transform:scale(1.08);
 }
 
-.whatsapp-float svg {
-    width: 31px;
-    height: 31px;
-    fill: currentColor;
+.whatsapp svg{
+  width:34px;
+  height:34px;
+  display:block;
 }
 
-.whatsapp-tooltip {
-    position: absolute;
-    right: 68px;
-    top: 50%;
-    transform: translateY(-50%);
-    background: #30291f;
-    color: #fff;
-    padding: 8px 12px;
-    border-radius: 8px;
-    font-size: .78rem;
-    font-weight: 700;
-    white-space: nowrap;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity .2s ease;
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:1050px){
+
+  .product-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .gallery-grid{
+    grid-template-columns:repeat(3,1fr);
+  }
+
+  .footer-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
 }
 
-.whatsapp-float:hover .whatsapp-tooltip {
-    opacity: 1;
+
+@media(max-width:800px){
+
+  .nav-inner{
+    min-height:70px;
+  }
+
+  .nav-links{
+    display:none;
+  }
+
+  .hero{
+    min-height:650px;
+  }
+
+  .hero-content{
+    padding:80px 0;
+    text-align:center;
+  }
+
+  .hero h1{
+    font-size:48px;
+  }
+
+  .hero p{
+    font-size:16px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  .hero-buttons{
+    justify-content:center;
+  }
+
+  .hero-note{
+    justify-content:center;
+  }
+
+  .about-grid,
+  .order-wrapper{
+    grid-template-columns:1fr;
+  }
+
+  .about-image img{
+    height:400px;
+  }
+
+  .process-grid{
+    grid-template-columns:1fr;
+  }
+
+  .contact-grid{
+    grid-template-columns:1fr;
+  }
+
 }
 
-@media (max-width: 650px) {
-    .international-destination h3 {
-        font-size: 1.8rem;
-    }
 
-    .whatsapp-float {
-        width: 54px;
-        height: 54px;
-        right: 16px;
-        bottom: 16px;
-    }
+@media(max-width:600px){
 
-    .whatsapp-tooltip {
-        display: none;
-    }
+  section{
+    padding:70px 0;
+  }
+
+  .product-grid{
+    grid-template-columns:1fr;
+  }
+
+  .gallery-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .gallery-item{
+    height:180px;
+  }
+
+  .form-grid{
+    grid-template-columns:1fr;
+  }
+
+  .form-group.full{
+    grid-column:auto;
+  }
+
+  .order-info,
+  .order-form{
+    padding:28px;
+  }
+
+  .hero{
+    min-height:680px;
+  }
+
+  .hero-content{
+    padding:70px 0;
+    text-align:center;
+  }
+
+  .hero h1{
+    font-size:42px;
+    letter-spacing:-1px;
+  }
+
+  .hero p{
+    font-size:16px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  .hero-buttons{
+    flex-direction:column;
+    align-items:stretch;
+    justify-content:center;
+  }
+
+  .btn{
+    width:100%;
+  }
+
+  .hero-note{
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+  }
+
+  .footer-grid{
+    grid-template-columns:1fr;
+  }
+
 }
 
 </style>
@@ -1522,190 +998,221 @@ footer {
 <body>
 
 <!-- =====================================================
-     WHATSAPP QUICK CONTACT
+     NAVIGATION
 ===================================================== -->
 
-<a
-    class="whatsapp-float"
-    href="https://wa.me/254710666222?text=Hello%20Elah%20Safaris%2C%20I%20would%20like%20to%20plan%20a%20trip."
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="Chat with Elah Safaris on WhatsApp">
+<header class="navbar">
 
-    <span class="whatsapp-tooltip">Chat with us on WhatsApp</span>
-
-    <svg viewBox="0 0 32 32" aria-hidden="true">
-        <path d="M16.02 3C8.84 3 3 8.83 3 16c0 2.29.6 4.53 1.74 6.51L3.1 28.88l6.55-1.62A12.94 12.94 0 0 0 16.02 29C23.18 29 29 23.17 29 16S23.18 3 16.02 3Zm0 23.74c-2.03 0-4.01-.55-5.74-1.59l-.41-.24-3.89.96 1-3.78-.27-.43A10.7 10.7 0 1 1 16.02 26.74Zm5.87-8.02c-.32-.16-1.9-.94-2.2-1.04-.29-.11-.51-.16-.73.16-.21.32-.84 1.04-1.03 1.25-.19.22-.38.24-.7.08-.32-.16-1.34-.49-2.55-1.57-.94-.84-1.57-1.87-1.75-2.18-.19-.32-.02-.49.14-.65.14-.14.32-.38.48-.57.16-.19.21-.32.32-.54.11-.21.05-.41-.03-.57-.08-.16-.73-1.75-1-2.4-.26-.62-.53-.54-.73-.55h-.62c-.21 0-.57.08-.87.41-.3.32-1.14 1.11-1.14 2.7s1.17 3.13 1.33 3.35c.16.21 2.29 3.5 5.54 4.91.77.33 1.37.53 1.84.68.77.25 1.47.21 2.02.13.62-.09 1.9-.78 2.17-1.53.27-.75.27-1.4.19-1.53-.08-.14-.29-.22-.62-.38Z"/>
-    </svg>
-
-</a>
+  <div class="container nav-inner">
 
 
-<!-- =====================================================
-     HEADER
-===================================================== -->
+<a href="#home" class="logo">
 
-<header>
+  <img
+    src="logo.jpg"
+    alt="Elah Farm Logo">
 
-<div class="header-inner">
-
-<a class="brand" href="#home">
-
-<img src="logo.png" alt="Elah Safaris Logo">
-
-<span class="brand-name">
-Elah Safaris
-</span>
+  <span>
+    Elah Farm
+  </span>
 
 </a>
 
-<button
-class="menu"
-id="menuButton"
-type="button"
-aria-label="Open navigation menu">
 
-☰
+<nav class="nav-links">
 
-</button>
+  <a href="#home">
+    Home
+  </a>
 
-<nav id="nav">
+  <a href="#about">
+    About
+  </a>
 
-<a href="#home">Home</a>
-<a href="#about">About</a>
-<a href="#safaris">Safaris</a>
-<a href="#destinations">Destinations</a>
-<a href="#experiences">Experiences</a>
-<a href="#gallery">Gallery</a>
-<a href="#contact">Contact</a>
+  <a href="#products">
+    Products
+  </a>
 
-<div class="language-selector" id="languageSelector">
+  <a href="#gallery">
+    Gallery
+  </a>
 
-<button
-class="language-button"
-id="languageButton"
-type="button"
-aria-expanded="false">
+  <a href="#order">
+    Order
+  </a>
 
-🌐
-<span>Language</span>
-⌄
+  <a href="#contact">
+    Contact
+  </a>
 
-</button>
-
-<div class="language-menu">
-
-<button type="button" data-lang="en">
-🇬🇧 English
-</button>
-
-<button type="button" data-lang="fr">
-🇫🇷 Français
-</button>
-
-<button type="button" data-lang="de">
-🇩🇪 Deutsch
-</button>
-
-<button type="button" data-lang="es">
-🇪🇸 Español
-</button>
-
-<button type="button" data-lang="it">
-🇮🇹 Italiano
-</button>
-
-</div>
-
-</div>
-
-<a class="pill" href="#booking">
-Book Now
-</a>
+  <a href="#order" class="nav-order">
+    Order Now
+  </a>
 
 </nav>
 
-</div>
+
+  </div>
 
 </header>
 
 <!-- =====================================================
-     HERO
+     HERO VIDEO SLIDER
 ===================================================== -->
 
-<section
-class="hero-video"
-id="home">
+<section class="hero" id="home">
 
-<div class="hero-videos">
+  <div class="hero-videos" aria-hidden="true">
 
-<video
-class="hero-video-slide active"
-src="safari-video-1.mp4"
-muted
-playsinline
-autoplay
-preload="auto">
-</video>
 
 <video
-class="hero-video-slide"
-src="safari-video-2.mp4"
-muted
-playsinline
-preload="metadata">
+  class="hero-video-slide active"
+  autoplay
+  muted
+  playsinline
+  preload="auto">
+
+  <source
+    src="farm-video-1.mp4"
+    type="video/mp4">
+
 </video>
+
 
 <video
-class="hero-video-slide"
-src="safari-video-3.mp4"
-muted
-playsinline
-preload="metadata">
+  class="hero-video-slide"
+  muted
+  playsinline
+  preload="auto">
+
+  <source
+    src="farm-video-2.mp4"
+    type="video/mp4">
+
 </video>
 
-<div class="hero-video-overlay"></div>
+
+<video
+  class="hero-video-slide"
+  muted
+  playsinline
+  preload="auto">
+
+  <source
+    src="farm-video-3.mp4"
+    type="video/mp4">
+
+</video>
+
+
+  </div>
+
+  <div class="hero-overlay"></div>
+
+  <div class="container">
+
+
+<div class="hero-content">
+
+
+  <div class="eyebrow">
+    🌱 Farm Fresh • Grown in Kenya
+  </div>
+
+
+  <h1>
+
+    From Our Farm<br>
+
+    <span>
+      To Your Table.
+    </span>
+
+  </h1>
+
+
+  <p>
+
+    Discover quality farm products from Elah Farm in
+    Ikutha, Kitui, Kenya. We bring you natural honey,
+    cashew nuts, Kenyan coffee, Galla goat meat,
+    bee venom, macadamia nuts, avocado oil, ground nuts
+    and fresh kienyeji eggs.
+
+  </p>
+
+
+  <div class="hero-buttons">
+
+
+    <a
+      href="#products"
+      class="btn btn-primary">
+
+      Explore Products
+
+    </a>
+
+
+    <a
+      href="#order"
+      class="btn btn-outline">
+
+      Order Now
+
+    </a>
+
+
+  </div>
+
+
+  <div class="hero-note">
+
+    <span>
+      ✓ Direct from farm
+    </span>
+
+    <span>
+      ✓ Grown in Kenya
+    </span>
+
+    <span>
+      ✓ Quality focused
+    </span>
+
+  </div>
+
 
 </div>
 
-<div class="container hero-content">
 
-<p class="eyebrow">
-ELAH SAFARIS • KENYA
-</p>
+  </div>
 
-<h1>
-Explore. Dream.
-<br>
-<span>Discover Africa.</span>
-</h1>
+  <div class="hero-dots">
 
-<p>
-Offering bespoke Sub-Saharan safari and cultural tours
-designed around your journey, your interests and your dreams.
-</p>
 
-<div>
+<button
+  class="hero-dot active"
+  type="button"
+  aria-label="Show farm video 1">
+</button>
 
-<a class="btn gold" href="#safaris">
-Explore Safaris
-</a>
 
-<a class="btn light" href="#booking">
-Plan My Safari
-</a>
+<button
+  class="hero-dot"
+  type="button"
+  aria-label="Show farm video 2">
+</button>
 
-</div>
 
-</div>
+<button
+  class="hero-dot"
+  type="button"
+  aria-label="Show farm video 3">
+</button>
 
-<div class="hero-video-dots">
 
-<button class="hero-video-dot active" data-video="0"></button>
-<button class="hero-video-dot" data-video="1"></button>
-<button class="hero-video-dot" data-video="2"></button>
-
-</div>
+  </div>
 
 </section>
 
@@ -1713,1323 +1220,614 @@ Plan My Safari
      ABOUT
 ===================================================== -->
 
-<section id="about">
+<section class="about" id="about">
 
-<div class="container two">
+  <div class="container">
 
-<div>
 
-<p class="eyebrow">
-WELCOME TO ELAH SAFARIS
-</p>
+<div class="about-grid">
 
-<h2>
-Journeys shaped around
-<em>you.</em>
-</h2>
+
+  <div class="about-image">
+
+    <img
+      src="farm-gallery-1.jpg"
+      alt="Elah Farm in Kenya">
+
+  </div>
+
+
+  <div class="about-content">
+
+
+    <div class="eyebrow">
+      About Elah Farm
+    </div>
+
+
+    <h2>
+      Growing Quality Products From Kenya
+    </h2>
+
+
+    <p>
+
+      Elah Farm is a Kenyan agricultural enterprise
+      based in Ikutha, Kitui County. We are committed
+      to producing and sourcing quality farm products
+      for customers in Kenya and beyond.
+
+    </p>
+
+
+    <p>
+
+      From natural honey and farm-fresh eggs to
+      cashew nuts, coffee, goat meat and other
+      agricultural products, our goal is to connect
+      customers with quality products from Kenya.
+
+    </p>
+
+
+    <ul class="about-list">
+
+
+      <li>
+        <span>✓</span>
+        Quality-focused farming
+      </li>
+
+
+      <li>
+        <span>✓</span>
+        Kenyan-grown and sourced products
+      </li>
+
+
+      <li>
+        <span>✓</span>
+        Direct farm supply
+      </li>
+
+
+      <li>
+        <span>✓</span>
+        Serving customers with care
+      </li>
+
+
+    </ul>
+
+
+  </div>
+
 
 </div>
 
-<div>
 
-<p>
-Elah Safaris is a Nairobi-based safari and cultural tour
-company creating thoughtful journeys across Kenya and
-the wider Sub-Saharan region. We combine wildlife,
-landscapes, culture and warm Kenyan hospitality to
-create memorable experiences.
-</p>
-
-<a class="link" href="#contact">
-Talk to our safari team →
-</a>
-
-</div>
-
-</div>
+  </div>
 
 </section>
 
 <!-- =====================================================
-     DESTINATIONS
+     PRODUCTS
 ===================================================== -->
 
-<section id="destinations">
+<section class="products" id="products">
 
-<div class="container">
+  <div class="container">
 
-<div class="heading">
 
-<p class="eyebrow">
-WHERE WE TAKE YOU
-</p>
+<div class="section-heading">
 
-<h2>
-Discover Kenya's
-<em>wild side.</em>
-</h2>
 
-<p>
-From iconic savannahs to remote northern landscapes
-and the Indian Ocean coast.
-</p>
+  <div class="eyebrow">
+    Our Products
+  </div>
 
-</div>
 
-<div class="destination-grid">
+  <h2>
+    Quality From Farm to Market
+  </h2>
 
-<article class="destination mara">
 
-<div>
+  <p>
 
-<b>01</b>
+    Explore our range of Kenyan farm products and
+    contact us to place your order.
 
-<h3>
-Maasai Mara
-</h3>
+  </p>
 
-<p>
-Big cats, endless savannah and unforgettable
-wildlife encounters.
-</p>
-
-<a href="#safaris">
-Explore →
-</a>
 
 </div>
 
-</article>
 
-<article class="destination amboseli">
+<div class="product-grid">
 
-<div>
 
-<b>02</b>
+  <article class="product-card">
 
-<h3>
-Amboseli
-</h3>
+    <div class="product-image">
 
-<p>
-Elephants beneath the spectacular backdrop
-of Mount Kilimanjaro.
-</p>
+      <img
+        src="honey.jpg"
+        alt="Natural Honey from Elah Farm">
 
-<a href="#safaris">
-Explore →
-</a>
+    </div>
+
+
+    <div class="product-body">
+
+      <h3>
+        Natural Honey
+      </h3>
+
+
+      <p>
+
+        Quality natural honey sourced from Kenyan
+        beekeeping and agricultural production.
+
+      </p>
+
+
+      <a
+        href="#order"
+        class="product-btn"
+        data-product="Honey">
+
+        Order Honey
+
+      </a>
+
+    </div>
+
+  </article>
+
+
+  <article class="product-card">
+
+    <div class="product-image">
+
+      <img
+        src="cashew-nuts.jpg"
+        alt="Cashew Nuts from Kenya">
+
+    </div>
+
+
+    <div class="product-body">
+
+      <h3>
+        Cashew Nuts
+      </h3>
+
+
+      <p>
+
+        Quality Kenyan cashew nuts suitable for
+        personal consumption and commercial supply.
+
+      </p>
+
+
+      <a
+        href="#order"
+        class="product-btn"
+        data-product="Cashew Nuts">
+
+        Order Cashew Nuts
+
+      </a>
+
+    </div>
+
+  </article>
+
+
+  <article class="product-card">
+
+    <div class="product-image">
+
+      <img
+        src="coffee.jpg"
+        alt="Kenyan Coffee">
+
+    </div>
+
+
+    <div class="product-body">
+
+      <h3>
+        Kenyan Coffee
+      </h3>
+
+
+      <p>
+
+        Quality Kenyan coffee selected for customers
+        looking for authentic Kenyan coffee.
+
+      </p>
+
+
+      <a
+        href="#order"
+        class="product-btn"
+        data-product="Coffee">
+
+        Order Coffee
+
+      </a>
+
+    </div>
+
+  </article>
+
+
+  <article class="product-card">
+
+    <div class="product-image">
+
+      <img
+        src="galla-goat.jpg"
+        alt="Galla Goat Meat">
+
+    </div>
+
+
+    <div class="product-body">
+
+      <h3>
+        Galla Goat Meat
+      </h3>
+
+
+      <p>
+
+        Quality Galla goat products supplied according
+        to availability and customer requirements.
+
+      </p>
+
+
+      <a
+        href="#order"
+        class="product-btn"
+        data-product="Galla Goat Meat">
+
+        Order Goat Meat
+
+      </a>
+
+    </div>
+
+  </article>
+
+
+  <article class="product-card">
+
+    <div class="product-image">
+
+      <img
+        src="bee-venom.jpg"
+        alt="Bee Venom">
+
+    </div>
+
+
+    <div class="product-body">
+
+      <h3>
+        Bee Venom
+      </h3>
+
+
+      <p>
+
+        Bee venom supplied for appropriate research,
+        processing and commercial applications.
+
+      </p>
+
+
+      <a
+        href="#order"
+        class="product-btn"
+        data-product="Bee Venom">
+
+        Inquire
+
+      </a>
+
+    </div>
+
+  </article>
+
+
+  <article class="product-card">
+
+    <div class="product-image">
+
+      <img
+        src="macadamia.jpg"
+        alt="Kenyan Macadamia Nuts">
+
+    </div>
+
+
+    <div class="product-body">
+
+      <h3>
+        Macadamia Nuts
+      </h3>
+
+
+      <p>
+
+        Quality Kenyan macadamia nuts supplied for
+        individual and commercial customers.
+
+      </p>
+
+
+      <a
+        href="#order"
+        class="product-btn"
+        data-product="Macadamia Nuts">
+
+        Order Macadamia
+
+      </a>
+
+    </div>
+
+  </article>
+
+
+  <article class="product-card">
+
+    <div class="product-image">
+
+      <img
+        src="avocado-oil.jpg"
+        alt="Avocado Oil">
+
+    </div>
+
+
+    <div class="product-body">
+
+      <h3>
+        Avocado Oil
+      </h3>
+
+
+      <p>
+
+        Quality avocado oil from Kenyan agricultural
+        production.
+
+      </p>
+
+
+      <a
+        href="#order"
+        class="product-btn"
+        data-product="Avocado Oil">
+
+        Order Avocado Oil
+
+      </a>
+
+    </div>
+
+  </article>
+
+
+  <article class="product-card">
+
+    <div class="product-image">
+
+      <img
+        src="ground-nuts.jpg"
+        alt="Ground Nuts">
+
+    </div>
+
+
+    <div class="product-body">
+
+      <h3>
+        Ground Nuts
+      </h3>
+
+
+      <p>
+
+        Quality Kenyan ground nuts suitable for
+        households, retailers and commercial buyers.
+
+      </p>
+
+
+      <a
+        href="#order"
+        class="product-btn"
+        data-product="Ground Nuts">
+
+        Order Ground Nuts
+
+      </a>
+
+    </div>
+
+  </article>
+
+
+  <article class="product-card">
+
+    <div class="product-image">
+
+      <img
+        src="kienyeji-eggs.jpg"
+        alt="Fresh Kienyeji Eggs from Elah Farm">
+
+    </div>
+
+
+    <div class="product-body">
+
+      <h3>
+        Kienyeji Eggs
+      </h3>
+
+
+      <p>
+
+        Fresh, quality kienyeji eggs from naturally
+        raised chickens, supplied according to
+        availability and customer requirements.
+
+      </p>
+
+
+      <a
+        href="#order"
+        class="product-btn"
+        data-product="Kienyeji Eggs">
+
+        Order Eggs
+
+      </a>
+
+    </div>
+
+  </article>
+
 
 </div>
 
-</article>
 
-<article class="destination tsavo">
-
-<div>
-
-<b>03</b>
-
-<h3>
-Tsavo
-</h3>
-
-<p>
-Vast wilderness, red elephants and
-remarkable landscapes.
-</p>
-
-<a href="#safaris">
-Explore →
-</a>
-
-</div>
-
-</article>
-
-<article class="destination olpejeta">
-
-<div>
-
-<b>04</b>
-
-<h3>
-Ol Pejeta
-</h3>
-
-<p>
-Wildlife conservation, rhinos and intimate
-safari experiences.
-</p>
-
-<a href="#safaris">
-Explore →
-</a>
-
-</div>
-
-</article>
-
-<article class="destination north">
-
-<div>
-
-<b>05</b>
-
-<h3>
-Northern Kenya
-</h3>
-
-<p>
-Remote beauty, ancient cultures and
-extraordinary adventures.
-</p>
-
-<a href="#safaris">
-Explore →
-</a>
-
-</div>
-
-</article>
-
-<article class="destination coast">
-
-<div>
-
-<b>06</b>
-
-<h3>
-Kenya Coast
-</h3>
-
-<p>
-Indian Ocean beaches, Swahili heritage
-and tropical relaxation.
-</p>
-
-<a href="#safaris">
-Explore →
-</a>
-
-</div>
-
-</article>
-
-<article class="destination international-destination">
-
-<div>
-
-<b>07</b>
-
-<h3>
-International Destinations
-</h3>
-
-<p>
-Dubai, Zanzibar, Europe, Asia, island escapes
-and unforgettable journeys around the world.
-</p>
-
-<a href="#international-packages">
-Explore →
-</a>
-
-</div>
-
-</article>
-
-<article class="destination culture-heritage">
-
-<div>
-
-<b>08</b>
-
-<h3>
-Culture &amp; Heritage
-</h3>
-
-<p>
-Meet local communities, discover living traditions,
-and experience the rich cultures and heritage of Kenya.
-</p>
-
-<a href="#safaris">
-Explore →
-</a>
-
-</div>
-
-</article>
-
-</div>
-
-</div>
+  </div>
 
 </section>
 
 <!-- =====================================================
-     SAFARI PACKAGES
+     PROCESS
 ===================================================== -->
 
-<section
-class="safari-packages"
-id="safaris">
+<section class="process">
 
-<div class="container">
+  <div class="container">
 
-<div class="heading">
 
-<p class="eyebrow">
-ELAH SAFARIS PACKAGES
-</p>
+<div class="section-heading">
 
-<h2>
-Journeys worth
-<em>remembering.</em>
-</h2>
 
-<p>
-Explore our handpicked Kenya safari, cultural and
-coastal journeys. Select <strong>View Package</strong>
-to see the complete itinerary and package highlights.
-</p>
+  <div class="eyebrow">
+    Why Elah Farm
+  </div>
 
-</div>
 
-<div class="package-slider-wrap">
+  <h2>
+    From Farm to Customer
+  </h2>
 
-<button
-class="package-arrow prev"
-type="button">
-‹
-</button>
 
-<div
-class="package-slider"
-id="packageSlider">
+  <p>
 
-<!-- 1 -->
+    We focus on quality, reliability and direct
+    connections with our customers.
 
-<article
-class="package-card"
-data-package="mara">
+  </p>
 
-<div class="package-image pkg-mara"></div>
-
-<div class="package-body">
-
-<span class="package-days">
-3 DAYS • WILDLIFE
-</span>
-
-<h3>
-Maasai Mara
-</h3>
-
-<p>
-Explore Maasai Mara National Reserve with Big Five
-game drives, Great Rift Valley scenery and a
-Maasai cultural experience.
-</p>
-
-<div class="package-bottom">
-
-<strong>
-From USD 3,000
-<small>/ person</small>
-</strong>
-
-<button class="view-package" type="button">
-View Package
-</button>
 
 </div>
 
-</div>
 
-</article>
+<div class="process-grid">
 
-<!-- 2 -->
 
-<article
-class="package-card"
-data-package="amboseli">
+  <div class="process-card">
 
-<div class="package-image pkg-amboseli"></div>
 
-<div class="package-body">
+    <div class="process-icon">
+      🌱
+    </div>
 
-<span class="package-days">
-3 DAYS • WILDLIFE
-</span>
 
-<h3>
-Amboseli
-</h3>
+    <h3>
+      Quality Products
+    </h3>
 
-<p>
-Discover Amboseli National Park, large elephant
-herds, Observation Hill and spectacular
-Mount Kilimanjaro views.
-</p>
 
-<div class="package-bottom">
+    <p>
 
-<strong>
-From USD 3,000
-<small>/ person</small>
-</strong>
+      We focus on quality farm products including
+      honey, nuts, coffee, goat products and
+      kienyeji eggs.
 
-<button class="view-package" type="button">
-View Package
-</button>
+    </p>
 
-</div>
 
-</div>
+  </div>
 
-</article>
 
-<!-- 3 -->
+  <div class="process-card">
 
-<article
-class="package-card"
-data-package="tsavo-east">
 
-<div class="package-image pkg-tsavo-east"></div>
+    <div class="process-icon">
+      🚜
+    </div>
 
-<div class="package-body">
 
-<span class="package-days">
-3 DAYS • WILDLIFE
-</span>
+    <h3>
+      Farm Direct
+    </h3>
 
-<h3>
-Tsavo East
-</h3>
 
-<p>
-Experience Tsavo East National Park, famous red
-elephants, Galana River, Aruba Dam and
-expansive savannah.
-</p>
+    <p>
 
-<div class="package-bottom">
+      Our goal is to connect customers directly
+      with agricultural products from Kenya.
 
-<strong>
-From USD 3,000
-<small>/ person</small>
-</strong>
+    </p>
 
-<button class="view-package" type="button">
-View Package
-</button>
+
+  </div>
+
+
+  <div class="process-card">
+
+
+    <div class="process-icon">
+      📦
+    </div>
+
+
+    <h3>
+      Easy Ordering
+    </h3>
+
+
+    <p>
+
+      Choose your product, tell us what you need
+      and contact us through WhatsApp to place
+      your order.
+
+    </p>
+
+
+  </div>
+
 
 </div>
 
-</div>
 
-</article>
-
-<!-- 4 -->
-
-<article
-class="package-card"
-data-package="tsavo-west">
-
-<div class="package-image pkg-tsavo-west"></div>
-
-<div class="package-body">
-
-<span class="package-days">
-3 DAYS • WILDLIFE
-</span>
-
-<h3>
-Tsavo West
-</h3>
-
-<p>
-Visit Mzima Springs, explore volcanic landscapes
-and enjoy game drives through Tsavo West.
-</p>
-
-<div class="package-bottom">
-
-<strong>
-From USD 3,000
-<small>/ person</small>
-</strong>
-
-<button class="view-package" type="button">
-View Package
-</button>
-
-</div>
-
-</div>
-
-</article>
-
-<!-- 5 -->
-
-<article
-class="package-card"
-data-package="tsavo-both">
-
-<div class="package-image pkg-tsavo-both"></div>
-
-<div class="package-body">
-
-<span class="package-days">
-5 DAYS • WILDLIFE
-</span>
-
-<h3>
-Tsavo East & West
-</h3>
-
-<p>
-Explore both Tsavo ecosystems including red
-elephants, Mzima Springs, volcanic scenery
-and extensive game drives.
-</p>
-
-<div class="package-bottom">
-
-<strong>
-From USD 4,000
-<small>/ person</small>
-</strong>
-
-<button class="view-package" type="button">
-View Package
-</button>
-
-</div>
-
-</div>
-
-</article>
-
-<!-- 6 -->
-
-<article
-class="package-card"
-data-package="samburu-olpejeta">
-
-<div class="package-image pkg-samburu"></div>
-
-<div class="package-body">
-
-<span class="package-days">
-5 DAYS • WILDLIFE & CONSERVATION
-</span>
-
-<h3>
-Samburu & Ol Pejeta
-</h3>
-
-<p>
-Combine Ol Pejeta Conservancy with Samburu
-National Reserve and encounter unique
-northern species.
-</p>
-
-<div class="package-bottom">
-
-<strong>
-From USD 4,000
-<small>/ person</small>
-</strong>
-
-<button class="view-package" type="button">
-View Package
-</button>
-
-</div>
-
-</div>
-
-</article>
-
-<!-- 7 -->
-
-<article
-class="package-card"
-data-package="northern">
-
-<div class="package-image pkg-northern"></div>
-
-<div class="package-body">
-
-<span class="package-days">
-6 DAYS • NORTHERN KENYA
-</span>
-
-<h3>
-Northern Kenya
-</h3>
-
-<p>
-Travel through Samburu, Marsabit and the Chalbi
-region for landscapes, wildlife and authentic
-northern Kenyan experiences.
-</p>
-
-<div class="package-bottom">
-
-<strong>
-Price on request
-</strong>
-
-<button class="view-package" type="button">
-View Package
-</button>
-
-</div>
-
-</div>
-
-</article>
-
-<!-- 8 -->
-
-<article
-class="package-card"
-data-package="diani">
-
-<div class="package-image pkg-diani"></div>
-
-<div class="package-body">
-
-<span class="package-days">
-4 DAYS • BEACH
-</span>
-
-<h3>
-Diani — Fly In
-</h3>
-
-<p>
-Fly from Nairobi to the coast and enjoy Diani
-Beach, marine activities and beach relaxation.
-</p>
-
-<div class="package-bottom">
-
-<strong>
-From USD 3,500
-<small>/ person</small>
-</strong>
-
-<button class="view-package" type="button">
-View Package
-</button>
-
-</div>
-
-</div>
-
-</article>
-
-<!-- 9 -->
-
-<article
-class="package-card"
-data-package="mombasa">
-
-<div class="package-image pkg-mombasa"></div>
-
-<div class="package-body">
-
-<span class="package-days">
-3 DAYS • COAST & CULTURE
-</span>
-
-<h3>
-Mombasa Kenya
-</h3>
-
-<p>
-Explore Fort Jesus, Mombasa Old Town, Swahili
-culture, spice markets and the Indian Ocean coast.
-</p>
-
-<div class="package-bottom">
-
-<strong>
-From USD 3,000
-<small>/ person</small>
-</strong>
-
-<button class="view-package" type="button">
-View Package
-</button>
-
-</div>
-
-</div>
-
-</article>
-
-<!-- 10 NEW PACKAGE -->
-
-<article
-class="package-card"
-data-package="lake-nakuru-hells-gate">
-
-<div class="package-image pkg-lake-nakuru-hells-gate"></div>
-
-<div class="package-body">
-
-<span class="package-days">
-3 DAYS • WILDLIFE & ADVENTURE
-</span>
-
-<h3>
-Lake Nakuru & Hell's Gate
-</h3>
-
-<p>
-Discover Lake Nakuru National Park's rhinos and
-wildlife before exploring Lake Naivasha and the
-dramatic landscapes of Hell's Gate National Park.
-</p>
-
-<div class="package-bottom">
-
-<strong>
-From USD 3,000
-<small>/ person</small>
-</strong>
-
-<button class="view-package" type="button">
-View Package
-</button>
-
-</div>
-
-</div>
-
-</article>
-
-<!-- 11 -->
-
-<article
-class="package-card"
-data-package="central">
-
-<div class="package-image pkg-central"></div>
-
-<div class="package-body">
-
-<span class="package-days">
-5 DAYS • CENTRAL KENYA
-</span>
-
-<h3>
-Central Kenya Circuit
-</h3>
-
-<p>
-Visit Lake Naivasha, Aberdare landscapes,
-Ol Pejeta Conservancy and the scenic
-central highlands.
-</p>
-
-<div class="package-bottom">
-
-<strong>
-From USD 4,000
-<small>/ person</small>
-</strong>
-
-<button class="view-package" type="button">
-View Package
-</button>
-
-</div>
-
-</div>
-
-</article>
-
-<!-- 12 -->
-
-<article
-class="package-card"
-data-package="nairobi">
-
-<div class="package-image pkg-nairobi"></div>
-
-<div class="package-body">
-
-<span class="package-days">
-3 DAYS • CITY & CULTURE
-</span>
-
-<h3>
-Nairobi
-</h3>
-
-<p>
-Discover Nairobi National Park, Giraffe Centre,
-Karen heritage and selected cultural attractions.
-</p>
-
-<div class="package-bottom">
-
-<strong>
-From USD 3,000
-<small>/ person</small>
-</strong>
-
-<button class="view-package" type="button">
-View Package
-</button>
-
-</div>
-
-</div>
-
-</article>
-
-<!-- 13 -->
-
-<article
-class="package-card"
-data-package="nairobi-park">
-
-<div class="package-image pkg-nairobi-park"></div>
-
-<div class="package-body">
-
-<span class="package-days">
-2 DAYS • WILDLIFE
-</span>
-
-<h3>
-Nairobi National Park
-</h3>
-
-<p>
-Enjoy game drives close to the city with opportunities
-to see lions, rhinos, giraffes, zebras and buffalo.
-</p>
-
-<div class="package-bottom">
-
-<strong>
-Price on request
-</strong>
-
-<button class="view-package" type="button">
-View Package
-</button>
-
-</div>
-
-</div>
-
-</article>
-
-<!-- 14 -->
-
-<article
-class="package-card"
-data-package="western">
-
-<div class="package-image pkg-western"></div>
-
-<div class="package-body">
-
-<span class="package-days">
-4 DAYS • CULTURE & WILDLIFE
-</span>
-
-<h3>
-Western Kenya Circuit
-</h3>
-
-<p>
-Explore Lake Nakuru, Lake Naivasha and western
-Kenya with wildlife, culture and scenic countryside.
-</p>
-
-<div class="package-bottom">
-
-<strong>
-From USD 3,500
-<small>/ person</small>
-</strong>
-
-<button class="view-package" type="button">
-View Package
-</button>
-
-</div>
-
-</div>
-
-</article>
-
-<!-- 15 -->
-
-<article
-class="package-card"
-data-package="malindi">
-
-<div class="package-image pkg-malindi"></div>
-
-<div class="package-body">
-
-<span class="package-days">
-3 DAYS • COAST
-</span>
-
-<h3>
-Malindi
-</h3>
-
-<p>
-Discover Malindi Marine National Park, Vasco da
-Gama Pillar, beaches and Swahili coastal heritage.
-</p>
-
-<div class="package-bottom">
-
-<strong>
-From USD 3,000
-<small>/ person</small>
-</strong>
-
-<button class="view-package" type="button">
-View Package
-</button>
-
-</div>
-
-</div>
-
-</article>
-
-<!-- 16 -->
-
-<article
-class="package-card"
-data-package="watamu">
-
-<div class="package-image pkg-watamu"></div>
-
-<div class="package-body">
-
-<span class="package-days">
-4 DAYS • MARINE & COAST
-</span>
-
-<h3>
-Watamu & Kisite-Mpunguti
-</h3>
-
-<p>
-Experience Watamu's marine environment,
-snorkeling, boat excursions and a Kisite-Mpunguti
-marine adventure.
-</p>
-
-<div class="package-bottom">
-
-<strong>
-From USD 3,500
-<small>/ person</small>
-</strong>
-
-<button class="view-package" type="button">
-View Package
-</button>
-
-</div>
-
-</div>
-
-</article>
-
-</div>
-
-<button
-class="package-arrow next"
-type="button">
-›
-</button>
-
-</div>
-
-<div class="package-slider-hint">
-SWIPE TO EXPLORE • <strong>16 PACKAGES</strong>
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- =====================================================
-     INTERNATIONAL PACKAGES
-===================================================== -->
-
-<section class="international-packages" id="international-packages">
-
-<div class="container">
-
-<div class="heading">
-
-<p class="eyebrow">ELAH SAFARIS INTERNATIONAL</p>
-
-<h2>See the world.<br><em>Travel beautifully.</em></h2>
-
-<p>
-Beyond Kenya, discover handpicked international holidays,
-beach escapes, city breaks and cultural journeys. Select
-<strong>View Package</strong> to explore the suggested itinerary.
-</p>
-
-</div>
-
-<div class="international-slider-wrap">
-
-<button class="international-arrow prev" type="button" aria-label="Previous international packages">‹</button>
-
-<div class="international-slider" id="internationalSlider">
-
-<article class="international-card" data-international-package="dubai">
-<div class="international-image intl-dubai"></div><div class="international-body">
-<span class="package-days">5 DAYS / 4 NIGHTS • CITY & LUXURY</span><h3>🇦🇪 Dubai</h3>
-<p>Luxury, iconic architecture, desert adventures and unforgettable Arabian hospitality.</p>
-<div class="international-bottom"><strong>From USD 3,650 <small>/ person</small></strong><button class="international-view-package" type="button">View Package</button></div>
-</div></article>
-
-<article class="international-card" data-international-package="south-africa">
-<div class="international-image intl-south-africa"></div><div class="international-body">
-<span class="package-days">7 DAYS / 6 NIGHTS • WILDLIFE & CITY</span><h3>🇿🇦 South Africa</h3>
-<p>Combine Cape Town scenery, cultural experiences and a memorable Big Five safari.</p>
-<div class="international-bottom"><strong>From USD 4,450 <small>/ person</small></strong><button class="international-view-package" type="button">View Package</button></div>
-</div></article>
-
-<article class="international-card" data-international-package="zanzibar">
-<div class="international-image intl-zanzibar"></div><div class="international-body">
-<span class="package-days">5 DAYS / 4 NIGHTS • BEACH & CULTURE</span><h3>🇹🇿 Zanzibar</h3>
-<p>Relax on tropical beaches while discovering Stone Town, spice culture and the Indian Ocean.</p>
-<div class="international-bottom"><strong>From USD 3,350 <small>/ person</small></strong><button class="international-view-package" type="button">View Package</button></div>
-</div></article>
-
-<article class="international-card" data-international-package="seychelles">
-<div class="international-image intl-seychelles"></div><div class="international-body">
-<span class="package-days">6 DAYS / 5 NIGHTS • ISLAND ESCAPE</span><h3>🇸🇨 Seychelles</h3>
-<p>Pristine beaches, island scenery, marine adventures and slow tropical living.</p>
-<div class="international-bottom"><strong>From USD 4,650 <small>/ person</small></strong><button class="international-view-package" type="button">View Package</button></div>
-</div></article>
-
-<article class="international-card" data-international-package="mauritius">
-<div class="international-image intl-mauritius"></div><div class="international-body">
-<span class="package-days">7 DAYS / 6 NIGHTS • BEACH & LEISURE</span><h3>🇲🇺 Mauritius</h3>
-<p>Discover turquoise lagoons, volcanic landscapes, island culture and refined beach relaxation.</p>
-<div class="international-bottom"><strong>From USD 4,750 <small>/ person</small></strong><button class="international-view-package" type="button">View Package</button></div>
-</div></article>
-
-<article class="international-card" data-international-package="maldives">
-<div class="international-image intl-maldives"></div><div class="international-body">
-<span class="package-days">6 DAYS / 5 NIGHTS • LUXURY BEACH</span><h3>🇲🇻 Maldives</h3>
-<p>Stay beside crystal-clear lagoons with island excursions, snorkeling and pure relaxation.</p>
-<div class="international-bottom"><strong>From USD 4,950 <small>/ person</small></strong><button class="international-view-package" type="button">View Package</button></div>
-</div></article>
-
-<article class="international-card" data-international-package="morocco">
-<div class="international-image intl-morocco"></div><div class="international-body">
-<span class="package-days">8 DAYS / 7 NIGHTS • CULTURE & CITY</span><h3>🇲🇦 Morocco</h3>
-<p>Explore Marrakech, historic medinas, Moroccan cuisine and dramatic landscapes.</p>
-<div class="international-bottom"><strong>From USD 4,850 <small>/ person</small></strong><button class="international-view-package" type="button">View Package</button></div>
-</div></article>
-
-<article class="international-card" data-international-package="egypt">
-<div class="international-image intl-egypt"></div><div class="international-body">
-<span class="package-days">7 DAYS / 6 NIGHTS • HISTORY & CULTURE</span><h3>🇪🇬 Egypt</h3>
-<p>Experience the Pyramids, Cairo, the Nile and ancient Egyptian heritage.</p>
-<div class="international-bottom"><strong>From USD 4,350 <small>/ person</small></strong><button class="international-view-package" type="button">View Package</button></div>
-</div></article>
-
-<article class="international-card" data-international-package="turkiye">
-<div class="international-image intl-turkiye"></div><div class="international-body">
-<span class="package-days">8 DAYS / 7 NIGHTS • CULTURE & CITY</span><h3>🇹🇷 Türkiye</h3>
-<p>Discover Istanbul, Cappadocia, bazaars, historic landmarks and distinctive Turkish cuisine.</p>
-<div class="international-bottom"><strong>From USD 4,650 <small>/ person</small></strong><button class="international-view-package" type="button">View Package</button></div>
-</div></article>
-
-<article class="international-card" data-international-package="uk">
-<div class="international-image intl-uk"></div><div class="international-body">
-<span class="package-days">8 DAYS / 7 NIGHTS • CITY & HERITAGE</span><h3>🇬🇧 United Kingdom</h3>
-<p>Explore London landmarks, royal heritage, museums and a scenic day beyond the capital.</p>
-<div class="international-bottom"><strong>From USD 5,400 <small>/ person</small></strong><button class="international-view-package" type="button">View Package</button></div>
-</div></article>
-
-<article class="international-card" data-international-package="france">
-<div class="international-image intl-france"></div><div class="international-body">
-<span class="package-days">7 DAYS / 6 NIGHTS • ART & ROMANCE</span><h3>🇫🇷 France</h3>
-<p>Enjoy Paris icons, art, cuisine and charming French neighbourhoods and day trips.</p>
-<div class="international-bottom"><strong>From USD 5,250 <small>/ person</small></strong><button class="international-view-package" type="button">View Package</button></div>
-</div></article>
-
-<article class="international-card" data-international-package="italy">
-<div class="international-image intl-italy"></div><div class="international-body">
-<span class="package-days">8 DAYS / 7 NIGHTS • HISTORY & CUISINE</span><h3>🇮🇹 Italy</h3>
-<p>Travel through Rome, Florence and Venice for an elegant journey through art and history.</p>
-<div class="international-bottom"><strong>From USD 5,450 <small>/ person</small></strong><button class="international-view-package" type="button">View Package</button></div>
-</div></article>
-
-<article class="international-card" data-international-package="switzerland">
-<div class="international-image intl-switzerland"></div><div class="international-body">
-<span class="package-days">8 DAYS / 7 NIGHTS • ALPINE ESCAPE</span><h3>🇨🇭 Switzerland</h3>
-<p>Discover alpine scenery, beautiful lakes, scenic rail journeys and charming Swiss towns.</p>
-<div class="international-bottom"><strong>From USD 5,950 <small>/ person</small></strong><button class="international-view-package" type="button">View Package</button></div>
-</div></article>
-
-<article class="international-card" data-international-package="spain">
-<div class="international-image intl-spain"></div><div class="international-body">
-<span class="package-days">8 DAYS / 7 NIGHTS • CULTURE & LEISURE</span><h3>🇪🇸 Spain</h3>
-<p>Explore Barcelona and Madrid through architecture, cuisine, culture and vibrant city life.</p>
-<div class="international-bottom"><strong>From USD 5,350 <small>/ person</small></strong><button class="international-view-package" type="button">View Package</button></div>
-</div></article>
-
-<article class="international-card" data-international-package="greece">
-<div class="international-image intl-greece"></div><div class="international-body">
-<span class="package-days">7 DAYS / 6 NIGHTS • ISLANDS & HISTORY</span><h3>🇬🇷 Greece</h3>
-<p>Combine Athens heritage with island relaxation, Mediterranean cuisine and sea views.</p>
-<div class="international-bottom"><strong>From USD 5,150 <small>/ person</small></strong><button class="international-view-package" type="button">View Package</button></div>
-</div></article>
-
-<article class="international-card" data-international-package="thailand">
-<div class="international-image intl-thailand"></div><div class="international-body">
-<span class="package-days">8 DAYS / 7 NIGHTS • BEACH & CULTURE</span><h3>🇹🇭 Thailand</h3>
-<p>Experience Bangkok energy, Thai culture, island beaches and unforgettable cuisine.</p>
-<div class="international-bottom"><strong>From USD 4,650 <small>/ person</small></strong><button class="international-view-package" type="button">View Package</button></div>
-</div></article>
-
-<article class="international-card" data-international-package="singapore">
-<div class="international-image intl-singapore"></div><div class="international-body">
-<span class="package-days">6 DAYS / 5 NIGHTS • CITY ESCAPE</span><h3>🇸🇬 Singapore</h3>
-<p>A polished city break featuring Marina Bay, Gardens by the Bay, culture and modern attractions.</p>
-<div class="international-bottom"><strong>From USD 4,350 <small>/ person</small></strong><button class="international-view-package" type="button">View Package</button></div>
-</div></article>
-
-<article class="international-card" data-international-package="malaysia">
-<div class="international-image intl-malaysia"></div><div class="international-body">
-<span class="package-days">7 DAYS / 6 NIGHTS • CITY & CULTURE</span><h3>🇲🇾 Malaysia</h3>
-<p>Discover Kuala Lumpur, heritage districts, local cuisine and tropical island experiences.</p>
-<div class="international-bottom"><strong>From USD 4,450 <small>/ person</small></strong><button class="international-view-package" type="button">View Package</button></div>
-</div></article>
-
-<article class="international-card" data-international-package="india">
-<div class="international-image intl-india"></div><div class="international-body">
-<span class="package-days">8 DAYS / 7 NIGHTS • HERITAGE & CULTURE</span><h3>🇮🇳 India</h3>
-<p>Experience Delhi, Agra and Jaipur on a colourful journey through India's Golden Triangle.</p>
-<div class="international-bottom"><strong>From USD 4,300 <small>/ person</small></strong><button class="international-view-package" type="button">View Package</button></div>
-</div></article>
-
-<article class="international-card" data-international-package="australia">
-<div class="international-image intl-australia"></div><div class="international-body">
-<span class="package-days">10 DAYS / 9 NIGHTS • CITY & NATURE</span><h3>🇦🇺 Australia</h3>
-<p>Discover Sydney highlights, coastal scenery, wildlife and memorable Australian experiences.</p>
-<div class="international-bottom"><strong>From USD 6,800 <small>/ person</small></strong><button class="international-view-package" type="button">View Package</button></div>
-</div></article>
-
-</div>
-
-<button class="international-arrow next" type="button" aria-label="Next international packages">›</button>
-
-</div>
-
-<div class="international-slider-hint">
-SWIPE TO EXPLORE • <strong>20 INTERNATIONAL PACKAGES</strong>
-</div>
-
-</div>
-
-</section>
-
-<!-- =====================================================
-     INTERNATIONAL PACKAGE MODAL
-===================================================== -->
-
-<div class="international-modal" id="internationalModal" aria-hidden="true">
-<div class="international-modal-backdrop" data-close-international></div>
-<div class="international-modal-content" role="dialog" aria-modal="true" aria-labelledby="internationalModalTitle">
-<button class="international-modal-close" type="button" data-close-international aria-label="Close">×</button>
-<div class="international-modal-image" id="internationalModalImage"></div>
-<div class="international-modal-body">
-<span class="package-days" id="internationalModalDays"></span>
-<h2 id="internationalModalTitle"></h2>
-<p class="international-modal-price" id="internationalModalPrice"></p>
-<p class="international-modal-intro" id="internationalModalIntro"></p>
-<div class="international-itinerary" id="internationalModalItinerary"></div>
-<div class="international-highlights"><h3>Package Highlights</h3><ul id="internationalModalHighlights"></ul></div>
-<a class="btn gold international-book-btn" id="internationalBookButton" href="#booking">Book This Package</a>
-</div>
-</div>
-</div>
-
-<!-- =====================================================
-     PACKAGE MODAL
-===================================================== -->
-
-<div
-class="package-modal"
-id="packageModal"
-aria-hidden="true">
-
-<div
-class="package-modal-backdrop"
-data-close-package>
-</div>
-
-<div
-class="package-modal-content"
-role="dialog"
-aria-modal="true">
-
-<button
-class="package-modal-close"
-type="button"
-data-close-package
-aria-label="Close">
-×
-</button>
-
-<div
-class="package-modal-image"
-id="packageModalImage">
-</div>
-
-<div class="package-modal-body">
-
-<span
-class="package-days"
-id="packageModalDays">
-</span>
-
-<h2 id="packageModalTitle"></h2>
-
-<p
-class="package-modal-price"
-id="packageModalPrice">
-</p>
-
-<p id="packageModalIntro"></p>
-
-<div
-class="itinerary"
-id="packageModalItinerary">
-</div>
-
-<div class="package-includes">
-
-<h3>
-Package Highlights
-</h3>
-
-<ul id="packageModalHighlights"></ul>
-
-</div>
-
-<a
-class="btn gold package-book-btn"
-id="packageBookButton"
-href="#booking">
-
-Book This Package
-
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- =====================================================
-     EXPERIENCES
-===================================================== -->
-
-<section id="experiences">
-
-<div class="container two experience">
-
-<div
-class="bigphoto"
-style="
-background-image:url('mara.jpg');
-">
-</div>
-
-<div>
-
-<p class="eyebrow">
-MORE THAN A SAFARI
-</p>
-
-<h2>
-Travel with purpose.
-<br>
-<em>Return with stories.</em>
-</h2>
-
-<p>
-Our journeys are designed to connect you with the
-people, wildlife and landscapes that make Kenya
-extraordinary.
-</p>
-
-<ul>
-
-<li>
-
-<b>01</b>
-
-<span>
-<strong>Bespoke planning</strong>
-Tailor-made trips built around you.
-</span>
-
-</li>
-
-<li>
-
-<b>02</b>
-
-<span>
-<strong>Local insight</strong>
-Knowledgeable guides and genuine experiences.
-</span>
-
-</li>
-
-<li>
-
-<b>03</b>
-
-<span>
-<strong>Seamless service</strong>
-Support before and throughout your journey.
-</span>
-
-</li>
-
-</ul>
-
-</div>
-
-</div>
+  </div>
 
 </section>
 
@@ -3037,204 +1835,353 @@ Support before and throughout your journey.
      GALLERY
 ===================================================== -->
 
-<section id="gallery">
+<section class="gallery" id="gallery">
 
-<div class="container">
+  <div class="container">
 
-<div class="heading">
 
-<p class="eyebrow">
-THE ELAH MOMENT
-</p>
+<div class="section-heading">
 
-<h2>
-Wild places.
-<em>Beautiful memories.</em>
-</h2>
 
-</div>
+  <div class="eyebrow">
+    Farm Gallery
+  </div>
 
-<div class="gallery">
 
-<div class="g g1"></div>
-<div class="g g2"></div>
-<div class="g g3"></div>
-<div class="g g4"></div>
-<div class="g g5"></div>
-<div class="g g6"></div>
-<div class="g g7"></div>
-<div class="g g8"></div>
+  <h2>
+    Life at Elah Farm
+  </h2>
+
+
+  <p>
+
+    A glimpse of our farm, products and agricultural
+    activities in Kenya.
+
+  </p>
+
 
 </div>
 
+
+<div class="gallery-grid">
+
+
+  <div class="gallery-item">
+    <img
+      src="farm-gallery-1.jpg"
+      alt="Elah Farm">
+  </div>
+
+
+  <div class="gallery-item">
+    <img
+      src="farm-gallery-2.jpg"
+      alt="Elah Farm agriculture">
+  </div>
+
+
+  <div class="gallery-item">
+    <img
+      src="farm-gallery-3.jpg"
+      alt="Farm products">
+  </div>
+
+
+  <div class="gallery-item">
+    <img
+      src="farm-gallery-4.jpg"
+      alt="Kenyan farming">
+  </div>
+
+
+  <div class="gallery-item">
+    <img
+      src="farm-gallery-5.jpg"
+      alt="Elah Farm products">
+  </div>
+
+
+  <div class="gallery-item">
+    <img
+      src="farm-gallery-6.jpg"
+      alt="Agricultural production">
+  </div>
+
+
+  <div class="gallery-item">
+    <img
+      src="farm-gallery-7.jpg"
+      alt="Farm activities">
+  </div>
+
+
+  <div class="gallery-item">
+    <img
+      src="farm-gallery-8.jpg"
+      alt="Kenyan farm">
+  </div>
+
+
+  <div class="gallery-item">
+    <img
+      src="farm-gallery-9.jpg"
+      alt="Farm products Kenya">
+  </div>
+
+
+  <div class="gallery-item">
+    <img
+      src="farm-gallery-10.jpg"
+      alt="Elah Farm Kenya">
+  </div>
+
+
 </div>
+
+
+  </div>
 
 </section>
 
 <!-- =====================================================
-     BOOKING
+     ORDER SECTION
 ===================================================== -->
 
-<section id="booking">
+<section class="order" id="order">
 
-<div class="container two">
+  <div class="container">
 
-<div>
 
-<p class="eyebrow">
-START YOUR JOURNEY
-</p>
+<div class="order-wrapper">
 
-<h2>
-Tell us your
-<em>dream safari.</em>
-</h2>
 
-<p>
-Send us a few details and our team will help shape
-the perfect itinerary.
-</p>
+  <div class="order-info">
 
-<div class="contact-mini">
 
-<a href="tel:+254710666222">
-+254 710 666 222
-</a>
+    <h2>
+      Place Your Order
+    </h2>
 
-<a href="mailto:elah.safaris@gmail.com">
-elah.safaris@gmail.com
-</a>
 
-<span>
-Nairobi, Kenya
-</span>
+    <p>
+
+      Select the product you are interested in,
+      tell us the quantity and send your request.
+      We will get back to you through WhatsApp.
+
+    </p>
+
+
+    <div class="order-contact">
+
+
+      <div>
+
+        <strong>
+          📍 Location
+        </strong>
+
+        Ikutha, Kitui, Kenya
+
+      </div>
+
+
+      <div>
+
+        <strong>
+          📞 Phone
+        </strong>
+
+        +254 710 666 222
+
+      </div>
+
+
+      <div>
+
+        <strong>
+          💬 WhatsApp
+        </strong>
+
+        +254 710 666 222
+
+      </div>
+
+
+      <div>
+
+        <strong>
+          ✉ Email
+        </strong>
+
+        elah.farm@gmail.com
+
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+  <form
+    class="order-form"
+    id="orderForm">
+
+
+    <div class="form-grid">
+
+
+      <div class="form-group">
+
+        <label for="name">
+          Your Name
+        </label>
+
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Enter your name"
+          required>
+
+      </div>
+
+
+      <div class="form-group">
+
+        <label for="phone">
+          Phone Number
+        </label>
+
+        <input
+          type="tel"
+          id="phone"
+          name="phone"
+          placeholder="e.g. 0710 666 222"
+          required>
+
+      </div>
+
+
+      <div class="form-group">
+
+        <label for="product">
+          Product
+        </label>
+
+        <select
+          id="product"
+          name="product"
+          required>
+
+
+          <option value="">
+            Choose a product
+          </option>
+
+
+          <option value="Honey">
+            Natural Honey
+          </option>
+
+
+          <option value="Cashew Nuts">
+            Cashew Nuts
+          </option>
+
+
+          <option value="Coffee">
+            Kenyan Coffee
+          </option>
+
+
+          <option value="Galla Goat Meat">
+            Galla Goat Meat
+          </option>
+
+
+          <option value="Bee Venom">
+            Bee Venom
+          </option>
+
+
+          <option value="Macadamia Nuts">
+            Macadamia Nuts
+          </option>
+
+
+          <option value="Avocado Oil">
+            Avocado Oil
+          </option>
+
+
+          <option value="Ground Nuts">
+            Ground Nuts
+          </option>
+
+
+          <option value="Kienyeji Eggs">
+            Kienyeji Eggs
+          </option>
+
+
+        </select>
+
+      </div>
+
+
+      <div class="form-group">
+
+        <label for="quantity">
+          Quantity
+        </label>
+
+        <input
+          type="text"
+          id="quantity"
+          name="quantity"
+          placeholder="e.g. 5 kg, 2 trays"
+          required>
+
+      </div>
+
+
+      <div class="form-group full">
+
+        <label for="message">
+          Additional Message
+        </label>
+
+        <textarea
+          id="message"
+          name="message"
+          placeholder="Tell us anything else about your order..."></textarea>
+
+      </div>
+
+
+    </div>
+
+
+    <button
+      type="submit"
+      class="form-submit">
+
+      Send Order via WhatsApp
+
+    </button>
+
+
+  </form>
+
 
 </div>
 
-</div>
 
-<form
-id="form"
-onsubmit="sendInquiryToWhatsApp(event)">
-
-<div class="row">
-
-<label>
-Full name
-
-<input
-required
-name="name"
-placeholder="Your name">
-
-</label>
-
-<label>
-Email
-
-<input
-required
-type="email"
-name="email"
-placeholder="you@example.com">
-
-</label>
-
-</div>
-
-<div class="row">
-
-<label>
-Phone / WhatsApp
-
-<input
-name="phone"
-placeholder="+254...">
-
-</label>
-
-<label>
-Travel dates
-
-<input
-name="dates"
-placeholder="e.g. 10–18 September">
-
-</label>
-
-</div>
-
-<label>
-
-Destination
-
-<select name="destination">
-
-<option>Maasai Mara</option>
-<option>Amboseli</option>
-<option>Tsavo East</option>
-<option>Tsavo West</option>
-<option>Tsavo East & West</option>
-<option>Samburu & Ol Pejeta</option>
-<option>Northern Kenya</option>
-<option>Diani — Flight In</option>
-<option>Mombasa Kenya</option>
-<option>Lake Nakuru & Hell's Gate</option>
-<option>Central Kenya Circuit</option>
-<option>Nairobi</option>
-<option>Nairobi National Park</option>
-<option>Western Kenya Circuit</option>
-<option>Malindi</option>
-<option>Watamu & Kisite-Mpunguti</option>
-<option>Dubai</option>
-<option>South Africa</option>
-<option>Zanzibar</option>
-<option>Seychelles</option>
-<option>Mauritius</option>
-<option>Maldives</option>
-<option>Morocco</option>
-<option>Egypt</option>
-<option>Türkiye</option>
-<option>United Kingdom</option>
-<option>France</option>
-<option>Italy</option>
-<option>Switzerland</option>
-<option>Spain</option>
-<option>Greece</option>
-<option>Thailand</option>
-<option>Singapore</option>
-<option>Malaysia</option>
-<option>India</option>
-<option>Australia</option>
-<option>Multiple destinations</option>
-
-</select>
-
-</label>
-
-<label>
-
-Tell us about your trip
-
-<textarea
-name="message"
-rows="5"
-placeholder="Number of travellers, interests, accommodation, budget, etc.">
-</textarea>
-
-</label>
-
-<button
-class="btn gold"
-type="submit">
-
-Send Safari Enquiry
-
-</button>
-
-</form>
-
-</div>
+  </div>
 
 </section>
 
@@ -3242,62 +2189,96 @@ Send Safari Enquiry
      CONTACT
 ===================================================== -->
 
-<section id="contact">
+<section class="contact" id="contact">
 
-<div class="container two">
+  <div class="container">
 
-<div>
 
-<p class="eyebrow">
-CONTACT ELAH SAFARIS
-</p>
+<div class="section-heading">
 
-<h2>
-Let's make Africa
-<em>your next story.</em>
-</h2>
 
-</div>
+  <div class="eyebrow">
+    Contact Elah Farm
+  </div>
 
-<div class="details">
 
-<a href="tel:+254710666222">
-📞 +254 710 666 222
-</a>
+  <h2>
+    Let's Connect
+  </h2>
 
-<a href="mailto:elah.safaris@gmail.com">
-✉ elah.safaris@gmail.com
-</a>
 
-<span>
-📍 Nairobi, Kenya
-</span>
+  <p>
 
-<div class="socials">
+    Contact us for product availability, orders,
+    wholesale inquiries and other questions.
 
-<strong class="social-name">Elah Safaris</strong>
+  </p>
 
-<div class="social-icons" aria-label="Elah Safaris social media">
-
-<a href="#" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
-</a>
-
-<a href="#" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14 8h3V4h-3c-3.31 0-5 1.69-5 5v3H6v4h3v8h4v-8h3.5l.5-4H13V9c0-.67.33-1 1-1Z"/></svg>
-</a>
-
-<a href="#" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
-<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M15 3h3c.3 1.7 1.2 3 3 3v3c-1.5 0-2.9-.5-4-1.4V15a6 6 0 1 1-6-6c.35 0 .68.03 1 .09v3.1a3 3 0 1 0 2 2.81V3Z"/></svg>
-</a>
 
 </div>
 
-</div>
+
+<div class="contact-grid">
+
+
+  <div class="contact-card">
+
+    <div class="contact-icon">
+      📍
+    </div>
+
+    <h3>
+      Location
+    </h3>
+
+    <p>
+
+      Ikutha, Kitui County<br>
+      Kenya
+
+    </p>
+
+  </div>
+
+
+  <div class="contact-card">
+
+    <div class="contact-icon">
+      📞
+    </div>
+
+    <h3>
+      Phone & WhatsApp
+    </h3>
+
+    <p>
+      +254 710 666 222
+    </p>
+
+  </div>
+
+
+  <div class="contact-card">
+
+    <div class="contact-icon">
+      ✉
+    </div>
+
+    <h3>
+      Email
+    </h3>
+
+    <p>
+      elah.farm@gmail.com
+    </p>
+
+  </div>
+
 
 </div>
 
-</div>
+
+  </div>
 
 </section>
 
@@ -3307,162 +2288,241 @@ Let's make Africa
 
 <footer>
 
-<div class="container foot">
+  <div class="container">
 
-<div class="footer-brand">
 
-<img
-src="logo.png"
-alt="Elah Safaris Logo">
+<div class="footer-grid">
 
-<strong>
-Elah Safaris
-</strong>
+
+  <div class="footer-column">
+
+
+    <div class="footer-logo">
+
+
+      <img
+        src="logo.jpg"
+        alt="Elah Farm Logo">
+
+
+      <span>
+        Elah Farm
+      </span>
+
+
+    </div>
+
+
+    <p>
+
+      Quality Kenyan farm products from Ikutha,
+      Kitui. From our farm to your table.
+
+    </p>
+
+
+  </div>
+
+
+  <div class="footer-column">
+
+
+    <h3>
+      Products
+    </h3>
+
+
+    <ul>
+
+
+      <li>
+        <a href="#products">
+          Natural Honey
+        </a>
+      </li>
+
+
+      <li>
+        <a href="#products">
+          Cashew Nuts
+        </a>
+      </li>
+
+
+      <li>
+        <a href="#products">
+          Kenyan Coffee
+        </a>
+      </li>
+
+
+      <li>
+        <a href="#products">
+          Galla Goat Meat
+        </a>
+      </li>
+
+
+      <li>
+        <a href="#products">
+          Kienyeji Eggs
+        </a>
+      </li>
+
+
+    </ul>
+
+
+  </div>
+
+
+  <div class="footer-column">
+
+
+    <h3>
+      More Products
+    </h3>
+
+
+    <ul>
+
+
+      <li>
+        <a href="#products">
+          Bee Venom
+        </a>
+      </li>
+
+
+      <li>
+        <a href="#products">
+          Macadamia Nuts
+        </a>
+      </li>
+
+
+      <li>
+        <a href="#products">
+          Avocado Oil
+        </a>
+      </li>
+
+
+      <li>
+        <a href="#products">
+          Ground Nuts
+        </a>
+      </li>
+
+
+    </ul>
+
+
+  </div>
+
+
+  <div class="footer-column">
+
+
+    <h3>
+      Quick Links
+    </h3>
+
+
+    <ul>
+
+
+      <li>
+        <a href="#home">
+          Home
+        </a>
+      </li>
+
+
+      <li>
+        <a href="#about">
+          About
+        </a>
+      </li>
+
+
+      <li>
+        <a href="#gallery">
+          Gallery
+        </a>
+      </li>
+
+
+      <li>
+        <a href="#order">
+          Order Now
+        </a>
+      </li>
+
+
+      <li>
+        <a href="#contact">
+          Contact
+        </a>
+      </li>
+
+
+    </ul>
+
+
+  </div>
+
 
 </div>
 
-<span>
-Offering bespoke Sub-Saharan safari and cultural tours.
-</span>
 
-<span>
-© <b id="year"></b> Elah Safaris
-</span>
+<div class="footer-bottom">
+
+  © 2026 Elah Farm. All Rights Reserved.
+  | Ikutha, Kitui, Kenya
 
 </div>
+
+
+  </div>
 
 </footer>
 
+<!-- =====================================================
+     FLOATING WHATSAPP BUTTON
+===================================================== -->
+
+<a
+class="whatsapp"
+href="https://wa.me/254710666222"
+target="_blank"
+rel="noopener noreferrer"
+aria-label="Chat with Elah Farm on WhatsApp">
+
+<svg
+ xmlns="http://www.w3.org/2000/svg"
+ viewBox="0 0 32 32"
+ aria-hidden="true">
+
+```
+<path
+  fill="currentColor"
+  d="M19.11 17.19c-.27-.14-1.59-.78-1.83-.87-.25-.09-.43-.14-.61.14-.18.27-.7.87-.86 1.05-.16.18-.32.2-.59.07-.27-.14-1.14-.42-2.17-1.34-.8-.71-1.34-1.59-1.5-1.86-.16-.27-.02-.42.12-.56.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.01-.22-.53-.45-.46-.61-.47h-.52c-.18 0-.48.07-.73.34-.25.27-.96.94-.96 2.3s.98 2.67 1.12 2.85c.14.18 1.92 2.93 4.65 4.11.65.28 1.15.45 1.54.57.65.21 1.24.18 1.71.11.52-.08 1.59-.65 1.81-1.28.23-.63.23-1.17.16-1.28-.07-.11-.25-.18-.52-.32z"/>
+
+<path
+  fill="currentColor"
+  d="M16.03 3.2c-7.07 0-12.8 5.73-12.8 12.8 0 2.25.59 4.36 1.62 6.19L3.2 28.8l6.8-1.78a12.74 12.74 0 0 0 6.03 1.52h.01c7.07 0 12.8-5.73 12.8-12.8S23.1 3.2 16.03 3.2zm0 23.2h-.01c-1.98 0-3.92-.53-5.62-1.53l-.4-.24-4.04 1.06 1.08-3.94-.26-.41a10.37 10.37 0 0 1-1.59-5.54c0-5.74 4.67-10.41 10.42-10.41 2.78 0 5.39 1.08 7.35 3.05a10.34 10.34 0 0 1 3.05 7.36c0 5.74-4.67 10.41-10.41 10.41z"/>
+```
+
+  </svg>
+
+</a>
+
+<!-- =====================================================
+     JAVASCRIPT
+========================================================= -->
+
 <script>
-
-/* =========================================================
-   YEAR
-========================================================= */
-
-document.getElementById("year").textContent =
-new Date().getFullYear();
-
-
-/* =========================================================
-   MOBILE MENU
-========================================================= */
-
-const menuButton =
-document.getElementById("menuButton");
-
-const nav =
-document.getElementById("nav");
-
-menuButton.addEventListener("click", function() {
-
-    nav.classList.toggle("open");
-
-});
-
-document.querySelectorAll("#nav > a").forEach(function(link) {
-
-    link.addEventListener("click", function() {
-
-        nav.classList.remove("open");
-
-    });
-
-});
-
-
-/* =========================================================
-   LANGUAGE MENU
-========================================================= */
-
-const languageSelector =
-document.getElementById("languageSelector");
-
-const languageButton =
-document.getElementById("languageButton");
-
-languageButton.addEventListener("click", function(event) {
-
-    event.stopPropagation();
-
-    languageSelector.classList.toggle("open");
-
-    languageButton.setAttribute(
-        "aria-expanded",
-        languageSelector.classList.contains("open")
-    );
-
-});
-
-document.addEventListener("click", function(event) {
-
-    if (!languageSelector.contains(event.target)) {
-
-        languageSelector.classList.remove("open");
-
-        languageButton.setAttribute(
-            "aria-expanded",
-            "false"
-        );
-
-    }
-
-});
-
-
-/* =========================================================
-   GOOGLE TRANSLATE
-========================================================= */
-
-function googleTranslateElementInit() {
-
-    new google.translate.TranslateElement({
-
-        pageLanguage: "en",
-
-        includedLanguages: "en,fr,de,es,it",
-
-        autoDisplay: false
-
-    }, "google_translate_element");
-
-}
-
-
-function changeLanguage(lang) {
-
-    const select =
-        document.querySelector(".goog-te-combo");
-
-    if (!select) {
-
-        alert(
-            "The translation service is still loading. Please try again in a moment."
-        );
-
-        return;
-
-    }
-
-    select.value = lang;
-
-    select.dispatchEvent(new Event("change"));
-
-    languageSelector.classList.remove("open");
-
-}
-
-
-document.querySelectorAll("[data-lang]").forEach(function(button) {
-
-    button.addEventListener("click", function() {
-
-        changeLanguage(
-            this.getAttribute("data-lang")
-        );
-
-    });
-
-});
 
 
 /* =========================================================
@@ -3470,1790 +2530,225 @@ document.querySelectorAll("[data-lang]").forEach(function(button) {
 ========================================================= */
 
 const heroVideos =
-document.querySelectorAll(".hero-video-slide");
+  document.querySelectorAll(".hero-video-slide");
 
 const heroDots =
-document.querySelectorAll(".hero-video-dot");
+  document.querySelectorAll(".hero-dot");
 
-let currentVideo = 0;
-
-let videoTimer;
+let currentHeroVideo = 0;
 
 
-function showVideo(index) {
+function showHeroVideo(index){
 
-    currentVideo = index;
+  if(
+    index === currentHeroVideo &&
+    heroVideos[index].classList.contains("active")
+  ){
 
-    heroVideos.forEach(function(video, i) {
+    return;
 
-        video.classList.toggle(
-            "active",
-            i === index
-        );
-
-        if (i === index) {
-
-            video.currentTime = 0;
-
-            video.play().catch(function() {});
-
-        } else {
-
-            video.pause();
-
-        }
-
-    });
-
-    heroDots.forEach(function(dot, i) {
-
-        dot.classList.toggle(
-            "active",
-            i === index
-        );
-
-    });
-
-    clearTimeout(videoTimer);
-
-    const activeVideo =
-        heroVideos[index];
-
-    activeVideo.onended = function() {
-
-        showVideo(
-            (currentVideo + 1) % heroVideos.length
-        );
-
-    };
-
-}
+  }
 
 
-heroDots.forEach(function(dot, index) {
+  heroVideos[currentHeroVideo].pause();
 
-    dot.addEventListener("click", function() {
+  heroVideos[currentHeroVideo]
+    .classList.remove("active");
 
-        showVideo(index);
+  heroDots[currentHeroVideo]
+    .classList.remove("active");
+
+
+  currentHeroVideo = index;
+
+
+  heroVideos[currentHeroVideo]
+    .classList.add("active");
+
+  heroDots[currentHeroVideo]
+    .classList.add("active");
+
+
+  heroVideos[currentHeroVideo].currentTime = 0;
+
+
+  heroVideos[currentHeroVideo]
+    .play()
+    .catch(function(error){
+
+      console.log(
+        "Video autoplay was prevented:",
+        error
+      );
 
     });
 
-});
-
-
-showVideo(0);
-
-
-/* =========================================================
-   PACKAGE SLIDER
-   Automatically moves ONE package at a time every 5 seconds.
-========================================================= */
-
-const packageSlider =
-document.getElementById("packageSlider");
-
-const packageCards =
-Array.from(document.querySelectorAll(".package-card"));
-
-const nextButton =
-document.querySelector(".package-arrow.next");
-
-const prevButton =
-document.querySelector(".package-arrow.prev");
-
-let currentPackage = 0;
-let packageAutoTimer = null;
-
-
-function getPackageStep() {
-
-    if (!packageCards.length) return 0;
-
-    const card = packageCards[0];
-
-    const styles =
-    window.getComputedStyle(packageSlider);
-
-    const gap =
-    parseFloat(styles.columnGap) ||
-    parseFloat(styles.gap) ||
-    0;
-
-    return card.getBoundingClientRect().width + gap;
 }
 
 
-function showPackage(index) {
+heroVideos.forEach(function(video,index){
 
-    if (!packageCards.length) return;
+  video.addEventListener(
+    "ended",
+    function(){
 
-    currentPackage =
-    (index + packageCards.length) %
-    packageCards.length;
+      const nextIndex =
+        (index + 1) % heroVideos.length;
 
-    packageSlider.scrollTo({
-
-        left:
-        currentPackage * getPackageStep(),
-
-        behavior: "smooth"
-
-    });
-}
-
-
-function nextPackage() {
-
-    showPackage(currentPackage + 1);
-
-}
-
-
-function previousPackage() {
-
-    showPackage(currentPackage - 1);
-
-}
-
-
-function startPackageAutoSlide() {
-
-    clearInterval(packageAutoTimer);
-
-    packageAutoTimer =
-    setInterval(function() {
-
-        nextPackage();
-
-    }, 5000);
-
-}
-
-
-if (nextButton) {
-
-    nextButton.addEventListener("click", function() {
-
-        nextPackage();
-        startPackageAutoSlide();
-
-    });
-
-}
-
-
-if (prevButton) {
-
-    prevButton.addEventListener("click", function() {
-
-        previousPackage();
-        startPackageAutoSlide();
-
-    });
-
-}
-
-
-packageSlider.addEventListener("mouseenter", function() {
-
-    clearInterval(packageAutoTimer);
-
-});
-
-
-packageSlider.addEventListener("mouseleave", function() {
-
-    startPackageAutoSlide();
-
-});
-
-
-packageSlider.addEventListener("touchstart", function() {
-
-    clearInterval(packageAutoTimer);
-
-}, { passive: true });
-
-
-packageSlider.addEventListener("touchend", function() {
-
-    startPackageAutoSlide();
-
-}, { passive: true });
-
-
-window.addEventListener("resize", function() {
-
-    packageSlider.scrollTo({
-
-        left:
-        currentPackage * getPackageStep(),
-
-        behavior: "auto"
-
-    });
-
-});
-
-
-showPackage(0);
-startPackageAutoSlide();
-
-
-/* =========================================================
-   PACKAGE DATA
-========================================================= */
-
-const packages = {
-
-mara: {
-
-title: "Maasai Mara",
-
-days: "3 DAYS • WILDLIFE",
-
-price: "From USD 3,000 per person",
-
-image: "mara.jpg",
-
-intro:
-"An unforgettable three-day safari through the Maasai Mara National Reserve, with extensive game drives, beautiful savannah landscapes and an authentic Maasai cultural experience.",
-
-itinerary: [
-
-[
-"Day 1 — Nairobi to Maasai Mara",
-"Depart Nairobi in the morning and travel through the Great Rift Valley. Stop at a scenic viewpoint before continuing through Narok towards the Maasai Mara. Arrive for lunch, check in and enjoy an afternoon game drive through the reserve. Look for elephants, buffaloes, giraffes, zebras, antelopes and predators before returning to camp for dinner and overnight."
-],
-
-[
-"Day 2 — Full-Day Maasai Mara Safari",
-"Begin with an early morning game drive when wildlife is particularly active. Return for breakfast before continuing with a full-day exploration of the reserve. Search for lions, leopards, cheetahs, elephants, buffaloes, giraffes and other wildlife. Enjoy a picnic lunch in the reserve before an afternoon game drive and return to your accommodation in the evening."
-],
-
-[
-"Day 3 — Sunrise Safari, Maasai Village & Nairobi",
-"Enjoy a final early morning game drive across the Mara plains followed by breakfast. Visit a Maasai community for an introduction to traditional homes, crafts, cultural practices and daily life. After the visit, begin the journey back to Nairobi with lunch en route and arrive in the afternoon or evening."
-]
-
-],
-
-highlights: [
-"Maasai Mara National Reserve",
-"Big Five game viewing",
-"Sunrise and afternoon game drives",
-"Great Rift Valley viewpoint",
-"Maasai cultural experience",
-"Professional safari guide"
-]
-
-},
-
-
-amboseli: {
-
-title: "Amboseli",
-
-days: "3 DAYS • WILDLIFE",
-
-price: "From USD 3,000 per person",
-
-image:
-"https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&q=85",
-
-intro:
-"Discover Amboseli National Park, one of Kenya's most scenic safari destinations, famous for its elephants and spectacular views of Mount Kilimanjaro.",
-
-itinerary: [
-
-[
-"Day 1 — Nairobi to Amboseli",
-"Depart Nairobi and travel south through the Kenyan countryside towards Amboseli. After arrival and lunch, enter the park for an afternoon game drive. Explore the plains and wetland areas while looking for elephants, zebras, wildebeest, giraffes, buffaloes and other wildlife. Return to your lodge or camp for dinner and overnight."
-],
-
-[
-"Day 2 — Full-Day Amboseli National Park",
-"Start with an early morning game drive with opportunities for wildlife viewing and, when conditions allow, spectacular views of Mount Kilimanjaro. Return for breakfast before continuing the safari. Visit Observation Hill for panoramic views of the park and its surrounding landscape, followed by more game viewing around the swamps and open plains. Return for dinner and overnight."
-],
-
-[
-"Day 3 — Final Game Drive & Nairobi",
-"Enjoy an early morning game drive before breakfast, taking advantage of the cooler hours for wildlife viewing and photography. Check out and begin the journey back to Nairobi with lunch along the way."
-]
-
-],
-
-highlights: [
-"Amboseli National Park",
-"Large elephant herds",
-"Mount Kilimanjaro views",
-"Observation Hill",
-"Morning and afternoon game drives",
-"Amboseli wetlands"
-]
-
-},
-
-
-"tsavo-east": {
-
-title: "Tsavo East",
-
-days: "3 DAYS • WILDLIFE",
-
-price: "From USD 3,000 per person",
-
-image: "tsavo-east.jpg",
-
-intro:
-"Explore the vast wilderness of Tsavo East National Park, famous for its red elephants, open savannah and spectacular wildlife.",
-
-itinerary: [
-
-[
-"Day 1 — Nairobi to Tsavo East",
-"Depart Nairobi and travel towards Tsavo East National Park. Enter the park and continue to your lodge or camp for lunch. Enjoy an afternoon game drive through the park, exploring open plains and wildlife areas while searching for elephants, lions, giraffes, zebras, buffaloes and other species. Dinner and overnight at your accommodation."
-],
-
-[
-"Day 2 — Full-Day Tsavo East",
-"Enjoy a full-day safari exploring different areas of Tsavo East. Visit the area around Aruba Dam, an important water source for wildlife, and explore routes towards the Galana River. Enjoy a picnic lunch or lodge lunch before continuing your game drive in search of elephants, predators, giraffes, zebras and other wildlife."
-],
-
-[
-"Day 3 — Morning Game Drive & Nairobi",
-"Enjoy an early morning game drive for a final opportunity to see wildlife before breakfast. Check out and begin your journey to Nairobi, with lunch en route and arrival later in the day."
-]
-
-],
-
-highlights: [
-"Tsavo East National Park",
-"Red elephants",
-"Aruba Dam",
-"Galana River",
-"Yatta Plateau scenery",
-"Full-day game viewing"
-]
-
-},
-
-
-"tsavo-west": {
-
-title: "Tsavo West",
-
-days: "3 DAYS • WILDLIFE",
-
-price: "From USD 3,000 per person",
-
-image:
-"https://images.unsplash.com/photo-1549366021-9f761d450615?auto=format&fit=crop&w=1200&q=85",
-
-intro:
-"Experience the dramatic landscapes of Tsavo West, including volcanic scenery, Mzima Springs and diverse wildlife.",
-
-itinerary: [
-
-[
-"Day 1 — Nairobi to Tsavo West",
-"Depart Nairobi and travel south towards Tsavo West National Park. Enter the park and proceed to your lodge or camp for lunch. Enjoy an afternoon game drive through volcanic landscapes, lava fields and open plains while looking for elephants, buffaloes, giraffes, zebras and predators."
-],
-
-[
-"Day 2 — Mzima Springs & Tsavo West",
-"After breakfast, explore Tsavo West on a morning game drive before visiting Mzima Springs, a natural oasis fed by underground water from the surrounding volcanic region. Continue exploring the park and, where suitable, visit areas such as the Shetani Lava Flow. Enjoy an afternoon game drive before returning for dinner and overnight."
-],
-
-[
-"Day 3 — Morning Game Drive & Nairobi",
-"Enjoy an early morning game drive before breakfast and check-out. Begin your journey back to Nairobi with lunch en route."
-]
-
-],
-
-highlights: [
-"Tsavo West National Park",
-"Mzima Springs",
-"Shetani Lava Flow",
-"Volcanic landscapes",
-"Wildlife game drives",
-"Scenic viewpoints"
-]
-
-},
-
-
-"tsavo-both": {
-
-title: "Tsavo East & West",
-
-days: "5 DAYS • WILDLIFE",
-
-price: "From USD 4,000 per person",
-
-image: "tsavo-both.jpg",
-
-intro:
-"Experience both Tsavo East and Tsavo West on an extended safari combining red elephants, volcanic landscapes, Mzima Springs and extensive game drives.",
-
-itinerary: [
-
-[
-"Day 1 — Nairobi to Tsavo East",
-"Depart Nairobi and travel to Tsavo East National Park. After lunch, enter the park for an afternoon game drive exploring the savannah and wildlife-rich areas. Dinner and overnight in the Tsavo East area."
-],
-
-[
-"Day 2 — Full-Day Tsavo East",
-"Enjoy an early morning game drive followed by breakfast. Continue exploring Tsavo East around Aruba Dam and the Galana River, with opportunities to see elephants, lions, giraffes, zebras, buffaloes and other wildlife. Continue with an afternoon game drive before returning to camp."
-],
-
-[
-"Day 3 — Tsavo East to Tsavo West",
-"Enjoy a morning game drive before breakfast and check-out. Travel across the Tsavo ecosystem towards Tsavo West. Arrive for lunch followed by an afternoon game drive through volcanic landscapes. Dinner and overnight in Tsavo West."
-],
-
-[
-"Day 4 — Full-Day Tsavo West",
-"Explore Tsavo West with morning and afternoon game drives. Visit Mzima Springs and explore the park's volcanic scenery, including suitable viewpoints and lava landscapes. Return to your lodge or camp for dinner and overnight."
-],
-
-[
-"Day 5 — Final Safari & Nairobi",
-"Enjoy an early morning game drive before breakfast. Check out and begin the return journey to Nairobi with lunch en route."
-]
-
-],
-
-highlights: [
-"Tsavo East",
-"Tsavo West",
-"Red elephants",
-"Mzima Springs",
-"Aruba Dam",
-"Galana River",
-"Shetani Lava Flow",
-"Extended game drives"
-]
-
-},
-
-
-"samburu-olpejeta": {
-
-title: "Samburu & Ol Pejeta",
-
-days: "5 DAYS • WILDLIFE & CONSERVATION",
-
-price: "From USD 4,000 per person",
-
-image: "samburu-olpejeta.jpg",
-
-intro:
-"A unique northern Kenya safari combining the conservation work of Ol Pejeta Conservancy with the wildlife and culture of Samburu National Reserve.",
-
-itinerary: [
-
-[
-"Day 1 — Nairobi to Ol Pejeta",
-"Depart Nairobi and travel through Kenya's central highlands towards Nanyuki and Ol Pejeta Conservancy. After lunch, enjoy an afternoon game drive with opportunities to see rhinos, elephants, buffaloes, lions, zebras and other wildlife. Dinner and overnight in the Ol Pejeta area."
-],
-
-[
-"Day 2 — Full-Day Ol Pejeta Conservation Safari",
-"Enjoy a full day exploring Ol Pejeta Conservancy. Take part in wildlife viewing and conservation-focused experiences, with opportunities to learn about rhino conservation and the protection of endangered species. Continue with game drives across the conservancy before returning for dinner and overnight."
-],
-
-[
-"Day 3 — Ol Pejeta to Samburu",
-"Enjoy a morning experience before departing north towards Samburu National Reserve. Travel through the dramatic landscapes of northern Kenya and arrive for lunch. Enjoy an afternoon game drive along the Ewaso Ng'iro River and surrounding wildlife areas."
-],
-
-[
-"Day 4 — Full-Day Samburu National Reserve",
-"Spend the day exploring Samburu National Reserve. Search for elephants, lions, leopards, giraffes and northern species such as Grevy's zebra, reticulated giraffe, Beisa oryx and gerenuk. Enjoy a picnic or lodge lunch followed by an afternoon game drive."
-],
-
-[
-"Day 5 — Samburu to Nairobi",
-"Enjoy a final early morning game drive followed by breakfast. Check out and begin the return journey to Nairobi, with lunch en route."
-]
-
-],
-
-highlights: [
-"Ol Pejeta Conservancy",
-"Samburu National Reserve",
-"Rhino conservation",
-"Grevy's zebra",
-"Reticulated giraffe",
-"Gerenuk",
-"Samburu culture"
-]
-
-},
-
-
-northern: {
-
-title: "Northern Kenya",
-
-days: "6 DAYS • NORTHERN KENYA",
-
-price: "Price on request",
-
-image:
-"https://images.unsplash.com/photo-1519659528534-7fd733a832a0?auto=format&fit=crop&w=1200&q=85",
-
-intro:
-"Journey deep into northern Kenya through remote landscapes, wildlife areas and communities with rich cultural traditions.",
-
-itinerary: [
-
-[
-"Day 1 — Nairobi to Samburu",
-"Travel north from Nairobi towards Samburu National Reserve. Arrive for lunch and enjoy an afternoon game drive through the reserve."
-],
-
-[
-"Day 2 — Full-Day Samburu",
-"Enjoy a full day exploring Samburu National Reserve. Search for northern species and other wildlife while exploring the Ewaso Ng'iro River area. An optional cultural visit to a Samburu community can be arranged."
-],
-
-[
-"Day 3 — Samburu to Marsabit Region",
-"Depart Samburu and continue north through increasingly arid landscapes. Stop at suitable viewpoints and communities along the way before arriving in the Marsabit region."
-],
-
-[
-"Day 4 — Marsabit Exploration",
-"Explore the unique Marsabit landscape, including the forested highlands and surrounding arid country. Enjoy wildlife viewing and scenic exploration before returning to your accommodation."
-],
-
-[
-"Day 5 — Marsabit to Chalbi Region",
-"Continue towards the Chalbi Desert region. Experience the dramatic transition into one of Kenya's most distinctive desert landscapes and visit local communities where appropriate."
-],
-
-[
-"Day 6 — Northern Kenya Return Journey",
-"Enjoy a final northern Kenya experience before beginning the return journey. Travel south through the changing landscapes of northern Kenya towards your onward destination."
-]
-
-],
-
-highlights: [
-"Samburu National Reserve",
-"Marsabit region",
-"Chalbi Desert region",
-"Remote northern landscapes",
-"Samburu culture",
-"Unique northern wildlife",
-"Off-the-beaten-track adventure"
-]
-
-},
-
-
-diani: {
-
-title: "Diani — Fly In",
-
-days: "4 DAYS • BEACH",
-
-price: "From USD 3,500 per person",
-
-image: "diani.jpg",
-
-intro:
-"A relaxing coastal escape beginning with a flight from Nairobi to Kenya's spectacular south coast and Diani Beach.",
-
-itinerary: [
-
-[
-"Day 1 — Nairobi to Diani",
-"Take a scheduled flight from Nairobi to the Kenyan coast and transfer to your Diani accommodation. Check in, have lunch and spend the afternoon relaxing on the beach or enjoying the resort facilities."
-],
-
-[
-"Day 2 — Diani Beach Experience",
-"Enjoy a full coastal day at Diani Beach. Relax beside the Indian Ocean or choose optional activities such as kayaking, paddleboarding, boat excursions or other available water sports."
-],
-
-[
-"Day 3 — Marine Excursion",
-"Enjoy an optional marine excursion depending on your selected experience. Activities may include snorkeling, boat exploration or an excursion towards Wasini Island. Return to Diani for an evening by the ocean."
-],
-
-[
-"Day 4 — Diani & Departure",
-"Enjoy a relaxed breakfast and final beach time before transferring to the airport for your return flight."
-]
-
-],
-
-highlights: [
-"Diani Beach",
-"Flight from Nairobi",
-"Indian Ocean",
-"Beach relaxation",
-"Optional marine activities",
-"Coastal dining"
-]
-
-},
-
-
-mombasa: {
-
-title: "Mombasa Kenya",
-
-days: "3 DAYS • COAST & CULTURE",
-
-price: "From USD 3,000 per person",
-
-image: "mombasa.jpg",
-
-intro:
-"Discover Mombasa's Swahili heritage, historic Old Town, Fort Jesus, coastal cuisine and beautiful Indian Ocean surroundings.",
-
-itinerary: [
-
-[
-"Day 1 — Mombasa Old Town & Fort Jesus",
-"Begin your Mombasa experience with a guided exploration of historic Old Town. Walk through its narrow streets and admire Swahili architecture before visiting Fort Jesus and learning about the city's maritime history. Enjoy a coastal dinner and overnight."
-],
-
-[
-"Day 2 — Swahili Culture & Coastal Life",
-"Enjoy a cultural day exploring local markets, Swahili traditions, coastal cuisine and selected attractions. Experience the atmosphere of Mombasa's historic trading areas before relaxing by the Indian Ocean."
-],
-
-[
-"Day 3 — Beach & Departure",
-"Enjoy breakfast and relaxed beach time before your departure or onward transfer."
-]
-
-],
-
-highlights: [
-"Mombasa Old Town",
-"Fort Jesus",
-"Swahili culture",
-"Local markets",
-"Coastal cuisine",
-"Indian Ocean coastline"
-]
-
-},
-
-
-"lake-nakuru-hells-gate": {
-
-title: "Lake Nakuru National Park & Hell's Gate",
-
-days: "3 DAYS • WILDLIFE & ADVENTURE",
-
-price: "From USD 3,000 per person",
-
-image: "lake-nakuru-hells-gate.jpg",
-
-intro:
-"A spectacular three-day Great Rift Valley adventure combining the wildlife-rich landscapes of Lake Nakuru National Park with the dramatic cliffs, gorges and outdoor experiences of Hell's Gate National Park.",
-
-itinerary: [
-
-[
-"Day 1 — Nairobi → Great Rift Valley → Lake Nakuru",
-"Depart Nairobi in the morning and travel towards the Great Rift Valley. Stop at a scenic viewpoint for panoramic views and photography before continuing towards Nakuru. Arrive at your lodge or camp for check-in and lunch. In the afternoon, enter Lake Nakuru National Park for a game drive. Explore the park's woodland, grassland and lakeshore habitats while looking for white and black rhinos, lions, buffaloes, giraffes, zebras, baboons and other wildlife. Return to your accommodation for dinner and overnight."
-],
-
-[
-"Day 2 — Full-Day Lake Nakuru Safari → Lake Naivasha",
-"Enjoy an early morning game drive when wildlife is active and the light is ideal for photography. Continue exploring Lake Nakuru National Park, searching for rhinos, giraffes, buffaloes, zebras, lions and the park's diverse birdlife. Return to the lodge for breakfast and check-out. Travel towards Lake Naivasha and enjoy lunch in the Naivasha area. In the afternoon, take an optional boat excursion on Lake Naivasha for opportunities to see hippos and water birds. Continue to the Hell's Gate area for dinner and overnight."
-],
-
-[
-"Day 3 — Hell's Gate National Park Adventure → Nairobi",
-"After breakfast, enter Hell's Gate National Park and explore its dramatic volcanic landscape. Enjoy a guided walking or cycling experience where available and permitted. Explore the spectacular cliffs, rock formations and gorge area while looking for wildlife such as zebras, giraffes, buffaloes, elands and baboons. Learn about the area's volcanic and geothermal features before departing for lunch in the Naivasha area. Begin the return journey to Nairobi and arrive in the afternoon or evening."
-]
-
-],
-
-highlights: [
-"Lake Nakuru National Park",
-"Great Rift Valley viewpoint",
-"White and black rhinoceros",
-"Lions, giraffes and buffaloes",
-"Lake Nakuru birdlife",
-"Lake Naivasha",
-"Optional Lake Naivasha boat excursion",
-"Hell's Gate National Park",
-"Hell's Gate Gorge",
-"Walking or cycling adventure",
-"Volcanic cliffs and landscapes"
-]
-
-},
-
-
-central: {
-
-title: "Central Kenya Circuit",
-
-days: "5 DAYS • CENTRAL KENYA",
-
-price: "From USD 4,000 per person",
-
-image:
-"https://images.unsplash.com/photo-1523805009345-7448845a9e53?auto=format&fit=crop&w=1200&q=85",
-
-intro:
-"Explore Kenya's scenic central highlands combining wildlife, lakes, conservation and beautiful countryside.",
-
-itinerary: [
-
-[
-"Day 1 — Nairobi to Lake Naivasha",
-"Travel from Nairobi to Lake Naivasha. After arrival, enjoy lunch followed by an optional boat excursion on the lake to view hippos and water birds."
-],
-
-[
-"Day 2 — Naivasha to Aberdare",
-"Enjoy breakfast before travelling towards the Aberdare region. Explore the scenic central highlands and surrounding countryside before dinner and overnight."
-],
-
-[
-"Day 3 — Aberdare to Ol Pejeta",
-"Continue towards Nanyuki and Ol Pejeta Conservancy. Arrive for lunch followed by an afternoon game drive."
-],
-
-[
-"Day 4 — Full-Day Ol Pejeta",
-"Spend a full day exploring Ol Pejeta Conservancy with game drives and conservation experiences. Look for rhinos, elephants, buffaloes, lions and other wildlife."
-],
-
-[
-"Day 5 — Ol Pejeta to Nairobi",
-"Enjoy a final morning experience before checking out and returning to Nairobi."
-]
-
-],
-
-highlights: [
-"Lake Naivasha",
-"Aberdare highlands",
-"Ol Pejeta Conservancy",
-"Wildlife",
-"Central Kenya scenery",
-"Conservation experiences"
-]
-
-},
-
-
-nairobi: {
-
-title: "Nairobi",
-
-days: "3 DAYS • CITY & CULTURE",
-
-price: "From USD 3,000 per person",
-
-image: "nairobi.jpg",
-
-intro:
-"Discover Nairobi's combination of wildlife, culture, history and modern Kenyan city life.",
-
-itinerary: [
-
-[
-"Day 1 — Nairobi National Park",
-"Enjoy a game drive in Nairobi National Park, one of the world's few wildlife parks located beside a capital city. Explore the park's plains and wetlands while looking for lions, rhinos, giraffes, zebras, buffaloes and other wildlife."
-],
-
-[
-"Day 2 — Giraffe Centre & Karen",
-"Visit the Giraffe Centre and learn about conservation efforts involving the Rothschild's giraffe. Continue into Karen and explore selected heritage and cultural attractions before enjoying lunch and an afternoon at leisure."
-],
-
-[
-"Day 3 — Culture & Departure",
-"Explore selected cultural attractions or local experiences according to your interests. Enjoy lunch before transferring to the airport or continuing with your onward journey."
-]
-
-],
-
-highlights: [
-"Nairobi National Park",
-"Giraffe Centre",
-"Karen",
-"Nairobi culture",
-"City sightseeing",
-"Wildlife close to the city"
-]
-
-},
-
-
-"nairobi-park": {
-
-title: "Nairobi National Park",
-
-days: "2 DAYS • WILDLIFE",
-
-price: "Price on request",
-
-image: "nairobi-national-park.jpg",
-
-intro:
-"Enjoy a short but rewarding wildlife safari inside Nairobi National Park, located only a short distance from the city centre.",
-
-itinerary: [
-
-[
-"Day 1 — Nairobi National Park",
-"Enjoy an afternoon game drive inside Nairobi National Park. Explore the park's open plains and wetland areas while looking for lions, black rhinos, giraffes, zebras, buffaloes and other wildlife. Return to your accommodation in the evening."
-],
-
-[
-"Day 2 — Morning Safari",
-"Enjoy an early morning game drive before breakfast when wildlife is often active. Continue your safari before returning to Nairobi for your onward journey."
-]
-
-],
-
-highlights: [
-"Nairobi National Park",
-"Black rhinos",
-"Lions",
-"Giraffes",
-"Zebras",
-"Buffaloes",
-"Convenient city safari"
-]
-
-},
-
-
-western: {
-
-title: "Western Kenya Circuit",
-
-days: "4 DAYS • CULTURE & WILDLIFE",
-
-price: "From USD 3,500 per person",
-
-image: "western-kenya.jpg",
-
-intro:
-"Discover western Kenya through wildlife, lakes, countryside scenery and authentic cultural experiences.",
-
-itinerary: [
-
-[
-"Day 1 — Nairobi to Lake Nakuru",
-"Travel from Nairobi through the Great Rift Valley towards Lake Nakuru. Enjoy lunch before an afternoon game drive in Lake Nakuru National Park and surrounding wildlife areas."
-],
-
-[
-"Day 2 — Lake Nakuru to Lake Naivasha",
-"Enjoy a morning game drive before breakfast and check-out. Continue to Lake Naivasha for lunch and an optional lakeside or boat experience."
-],
-
-[
-"Day 3 — Western Kenya",
-"Continue west through scenic countryside. Experience local communities, cultural traditions and the landscapes of western Kenya before dinner and overnight."
-],
-
-[
-"Day 4 — Western Kenya to Nairobi",
-"Enjoy a final local experience or scenic stop before beginning the return journey to Nairobi."
-]
-
-],
-
-highlights: [
-"Lake Nakuru",
-"Lake Naivasha",
-"Western Kenya",
-"Wildlife",
-"Countryside scenery",
-"Cultural experiences"
-]
-
-},
-
-
-malindi: {
-
-title: "Malindi",
-
-days: "3 DAYS • COAST",
-
-price: "From USD 3,000 per person",
-
-image: "malindi.jpg",
-
-intro:
-"Explore Malindi's marine environment, historic sites, beaches and Swahili coastal heritage.",
-
-itinerary: [
-
-[
-"Day 1 — Arrival in Malindi",
-"Arrive in Malindi and transfer to your coastal accommodation. Enjoy lunch followed by a relaxed afternoon exploring the beach and coastal surroundings."
-],
-
-[
-"Day 2 — Marine & Historic Malindi",
-"Enjoy a marine experience in the Malindi area followed by a visit to selected historic attractions, including the Vasco da Gama Pillar. Continue exploring the town and its Swahili coastal heritage."
-],
-
-[
-"Day 3 — Beach & Departure",
-"Enjoy breakfast and a relaxed morning on the coast before your departure or onward transfer."
-]
-
-],
-
-highlights: [
-"Malindi",
-"Malindi Marine National Park",
-"Vasco da Gama Pillar",
-"Indian Ocean",
-"Swahili heritage",
-"Beach relaxation"
-]
-
-},
-
-
-watamu: {
-
-title: "Watamu & Kisite-Mpunguti",
-
-days: "4 DAYS • MARINE & COAST",
-
-price: "From USD 3,500 per person",
-
-image: "watamu-kisite.jpg",
-
-intro:
-"Enjoy a coastal marine adventure combining Watamu's spectacular marine environment with a separate Kisite-Mpunguti experience.",
-
-itinerary: [
-
-[
-"Day 1 — Arrival in Watamu",
-"Arrive in Watamu and transfer to your coastal accommodation. Check in and enjoy lunch before spending a relaxed afternoon by the Indian Ocean."
-],
-
-[
-"Day 2 — Watamu Marine Experience",
-"Enjoy a marine excursion in the Watamu area. Depending on conditions and the selected activity, enjoy snorkeling, boat exploration and time around the marine environment before returning to your accommodation."
-],
-
-[
-"Day 3 — Kisite-Mpunguti Marine Adventure",
-"Enjoy a separate marine excursion around Kisite-Mpunguti. Spend time on the water with opportunities for snorkeling and marine wildlife viewing before returning to the coast."
-],
-
-[
-"Day 4 — Beach & Departure",
-"Enjoy breakfast and final beach time before your departure or onward transfer."
-]
-
-],
-
-highlights: [
-"Watamu Marine National Park",
-"Kisite-Mpunguti",
-"Snorkeling",
-"Boat excursions",
-"Indian Ocean",
-"Beach relaxation"
-]
-
-}
-
-};
-
-
-
-
-/* =========================================================
-   INTERNATIONAL PACKAGE SLIDER
-   Automatically moves one destination at a time every 5 seconds.
-========================================================= */
-
-const internationalSlider = document.getElementById("internationalSlider");
-const internationalCards = Array.from(document.querySelectorAll(".international-card"));
-const internationalNext = document.querySelector(".international-arrow.next");
-const internationalPrev = document.querySelector(".international-arrow.prev");
-
-let currentInternational = 0;
-let internationalAutoTimer = null;
-
-function getInternationalStep() {
-    if (!internationalCards.length || !internationalSlider) return 0;
-    const card = internationalCards[0];
-    const styles = window.getComputedStyle(internationalSlider);
-    const gap = parseFloat(styles.columnGap) || parseFloat(styles.gap) || 0;
-    return card.getBoundingClientRect().width + gap;
-}
-
-function showInternational(index) {
-    if (!internationalCards.length || !internationalSlider) return;
-    currentInternational = (index + internationalCards.length) % internationalCards.length;
-    internationalSlider.scrollTo({
-        left: currentInternational * getInternationalStep(),
-        behavior: "smooth"
-    });
-}
-
-function nextInternational() {
-    showInternational(currentInternational + 1);
-}
-
-function previousInternational() {
-    showInternational(currentInternational - 1);
-}
-
-function startInternationalAutoSlide() {
-    clearInterval(internationalAutoTimer);
-    internationalAutoTimer = setInterval(nextInternational, 5000);
-}
-
-if (internationalNext) {
-    internationalNext.addEventListener("click", function() {
-        nextInternational();
-        startInternationalAutoSlide();
-    });
-}
-
-if (internationalPrev) {
-    internationalPrev.addEventListener("click", function() {
-        previousInternational();
-        startInternationalAutoSlide();
-    });
-}
-
-if (internationalSlider) {
-    internationalSlider.addEventListener("mouseenter", function() {
-        clearInterval(internationalAutoTimer);
-    });
-
-    internationalSlider.addEventListener("mouseleave", startInternationalAutoSlide);
-
-    internationalSlider.addEventListener("touchstart", function() {
-        clearInterval(internationalAutoTimer);
-    }, { passive: true });
-
-    internationalSlider.addEventListener("touchend", startInternationalAutoSlide, { passive: true });
-}
-
-window.addEventListener("resize", function() {
-    if (internationalSlider) {
-        internationalSlider.scrollTo({
-            left: currentInternational * getInternationalStep(),
-            behavior: "auto"
-        });
-    }
-});
-
-startInternationalAutoSlide();
-
-
-/* =========================================================
-   INTERNATIONAL PACKAGE DATA
-========================================================= */
-
-const internationalPackages = {
-    "dubai": {
-        days: "5 DAYS / 4 NIGHTS • CITY & LUXURY",
-        title: "🇦🇪 Dubai",
-        price: "From USD 3,650 / person",
-        intro: "A stylish Dubai escape combining iconic landmarks, desert adventure, shopping and Arabian hospitality.",
-        image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1200&q=85",
-        itinerary: [
-            ["Day 1 — Arrival in Dubai", "Arrive in Dubai, meet your representative and transfer to your hotel. Enjoy the evening at leisure."],
-            ["Day 2 — Modern Dubai", "Visit Downtown Dubai, Burj Khalifa area, Dubai Mall and enjoy views of the city's spectacular skyline."],
-            ["Day 3 — Desert Safari", "Spend the afternoon and evening on a desert safari with dune experiences, sunset views, cultural entertainment and dinner."],
-            ["Day 4 — Old Dubai & Leisure", "Explore Al Fahidi Historical District, Dubai Creek and the traditional souks before enjoying free time for shopping or relaxation."],
-            ["Day 5 — Departure", "Enjoy breakfast and final leisure time before your airport transfer and departure."]
-        ],
-        highlights: ["Burj Khalifa area", "Dubai Mall", "Desert safari", "Al Fahidi Historical District", "Dubai Creek & souks"]
-    },
-    "south-africa": {
-        days: "7 DAYS / 6 NIGHTS • WILDLIFE & CITY",
-        title: "🇿🇦 South Africa",
-        price: "From USD 4,450 / person",
-        intro: "A balanced South African journey combining Cape Town's scenery and culture with a memorable safari experience.",
-        image: "https://images.unsplash.com/photo-1580060839134-75a5edca2e99?auto=format&fit=crop&w=1200&q=85",
-        itinerary: [
-            ["Day 1 — Arrival in Cape Town", "Arrive in Cape Town, transfer to your hotel and enjoy a relaxed evening."],
-            ["Day 2 — Table Mountain & City", "Explore central Cape Town and visit the Table Mountain area, followed by leisure time along the V&A Waterfront."],
-            ["Day 3 — Cape Peninsula", "Take a scenic Cape Peninsula excursion through coastal viewpoints and charming seaside communities."],
-            ["Day 4 — Cape Winelands", "Enjoy a day among the Cape Winelands with scenic landscapes, heritage towns and optional tasting experiences."],
-            ["Day 5 — Safari Transfer", "Fly or transfer to a selected safari region and settle into your lodge or camp before an afternoon wildlife activity."],
-            ["Day 6 — Big Five Safari", "Enjoy morning and afternoon game drives in search of Africa's iconic wildlife, with time to relax between activities."],
-            ["Day 7 — Departure", "Enjoy breakfast and depart for your onward journey."]
-        ],
-        highlights: ["Cape Town", "Table Mountain", "Cape Peninsula", "Winelands", "Big Five safari"]
-    },
-    "zanzibar": {
-        days: "5 DAYS / 4 NIGHTS • BEACH & CULTURE",
-        title: "🇹🇿 Zanzibar",
-        price: "From USD 3,350 / person",
-        intro: "A tropical Zanzibar holiday blending beach relaxation, Stone Town heritage, spice culture and Indian Ocean experiences.",
-        image: "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&w=1200&q=85",
-        itinerary: [
-            ["Day 1 — Arrival & Beach", "Arrive in Zanzibar and transfer to your beach hotel. Spend the rest of the day relaxing beside the Indian Ocean."],
-            ["Day 2 — Stone Town", "Explore Stone Town's historic streets, markets and cultural landmarks before enjoying an evening at leisure."],
-            ["Day 3 — Spice Experience", "Visit a spice farm and learn about Zanzibar's famous cloves, cinnamon and other tropical crops, followed by beach time."],
-            ["Day 4 — Ocean & Leisure", "Enjoy a marine excursion or optional snorkeling experience, then return to the beach for a relaxed afternoon."],
-            ["Day 5 — Departure", "Enjoy breakfast and final beach moments before your transfer to the airport or ferry terminal."]
-        ],
-        highlights: ["Stone Town", "Spice farm", "Indian Ocean beaches", "Snorkeling", "Swahili culture"]
-    },
-    "seychelles": {
-        days: "6 DAYS / 5 NIGHTS • ISLAND ESCAPE",
-        title: "🇸🇨 Seychelles",
-        price: "From USD 4,650 / person",
-        intro: "An elegant island escape focused on pristine beaches, tropical scenery, marine experiences and relaxed Seychelles hospitality.",
-        image: "https://images.unsplash.com/photo-1589979481223-deb893043163?auto=format&fit=crop&w=1200&q=85",
-        itinerary: [
-            ["Day 1 — Arrival on Mahé", "Arrive in Seychelles and transfer to your hotel. Relax and enjoy the tropical surroundings."],
-            ["Day 2 — Mahé Island Discovery", "Explore Victoria and scenic viewpoints before visiting some of Mahé's beautiful beaches."],
-            ["Day 3 — Marine Adventure", "Enjoy an optional boat and snorkeling excursion among the islands and surrounding marine environment."],
-            ["Day 4 — Praslin & La Digue", "Take a day trip to Praslin and La Digue, discovering famous beaches, island scenery and local life."],
-            ["Day 5 — Beach Leisure", "Enjoy a free day for swimming, relaxation, optional water activities or a private island experience."],
-            ["Day 6 — Departure", "Enjoy breakfast before your airport transfer and departure."]
-        ],
-        highlights: ["Mahé", "Victoria", "Praslin", "La Digue", "Snorkeling & island cruise"]
-    },
-    "mauritius": {
-        days: "7 DAYS / 6 NIGHTS • BEACH & LEISURE",
-        title: "🇲🇺 Mauritius",
-        price: "From USD 4,750 / person",
-        intro: "Discover Mauritius through its lagoons, beaches, volcanic landscapes, cultural heritage and relaxed island lifestyle.",
-        image: "https://images.unsplash.com/photo-1578895101408-1a36b834405b?auto=format&fit=crop&w=1200&q=85",
-        itinerary: [
-            ["Day 1 — Arrival in Mauritius", "Arrive and transfer to your beach resort. Relax and settle into island life."],
-            ["Day 2 — Port Louis & Heritage", "Explore Port Louis, local markets and selected cultural landmarks before returning to the coast."],
-            ["Day 3 — Scenic South", "Discover volcanic landscapes, viewpoints and the natural beauty of the island's southern region."],
-            ["Day 4 — Lagoon Experience", "Enjoy a day on the water with an optional catamaran or boat excursion and time for swimming."],
-            ["Day 5 — Island Leisure", "Spend a relaxed day at the resort or choose optional activities such as snorkeling, golf or a spa experience."],
-            ["Day 6 — Northern Mauritius", "Visit selected northern beaches and local attractions before a final evening by the ocean."],
-            ["Day 7 — Departure", "Breakfast and transfer to the airport for your onward journey."]
-        ],
-        highlights: ["Port Louis", "Mauritian culture", "Volcanic scenery", "Lagoon cruise", "Beach relaxation"]
-    },
-    "maldives": {
-        days: "6 DAYS / 5 NIGHTS • LUXURY BEACH",
-        title: "🇲🇻 Maldives",
-        price: "From USD 4,950 / person",
-        intro: "A serene Maldives escape built around turquoise lagoons, white-sand beaches, snorkeling and effortless relaxation.",
-        image: "https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=1200&q=85",
-        itinerary: [
-            ["Day 1 — Arrival & Island Transfer", "Arrive in Malé and transfer by speedboat or domestic connection to your selected island resort."],
-            ["Day 2 — Resort Leisure", "Enjoy the beach and lagoon, with optional snorkeling, kayaking or other water activities."],
-            ["Day 3 — Marine Experience", "Take an optional snorkeling or reef excursion to discover the Maldives' colourful underwater world."],
-            ["Day 4 — Island & Sunset", "Enjoy a relaxed island day followed by an optional sunset cruise or local island visit."],
-            ["Day 5 — Pure Relaxation", "Spend the day at leisure with optional spa, diving, water sports or private beach experiences."],
-            ["Day 6 — Departure", "Transfer back to Malé for your onward flight."]
-        ],
-        highlights: ["Private island resort", "Turquoise lagoons", "Snorkeling", "Sunset cruise", "Beach relaxation"]
-    },
-    "morocco": {
-        days: "8 DAYS / 7 NIGHTS • CULTURE & CITY",
-        title: "🇲🇦 Morocco",
-        price: "From USD 4,850 / person",
-        intro: "A colourful Moroccan journey through Marrakech, historic medinas, traditional cuisine and dramatic landscapes.",
-        image: "https://images.unsplash.com/photo-1597212618440-806262de4f6b?auto=format&fit=crop&w=1200&q=85",
-        itinerary: [
-            ["Day 1 — Arrival in Marrakech", "Arrive in Marrakech, transfer to your riad or hotel and enjoy the evening atmosphere."],
-            ["Day 2 — Marrakech Medina", "Explore the medina, souks, historic palaces and gardens before experiencing the lively Djemaa el-Fna area."],
-            ["Day 3 — Atlas Mountains", "Take a scenic excursion into the Atlas Mountains with village visits and panoramic landscapes."],
-            ["Day 4 — Marrakech at Leisure", "Enjoy free time for shopping, a hammam or optional culinary and cultural experiences."],
-            ["Day 5 — Essaouira Excursion", "Travel to the Atlantic coast for a day in Essaouira, exploring its medina, harbour and oceanfront."],
-            ["Day 6 — Heritage & Cuisine", "Enjoy a guided cultural experience and Moroccan cooking or food-focused activity."],
-            ["Day 7 — Desert-Style Experience", "Enjoy a scenic day beyond the city with an optional camel or desert-style experience depending on the selected route."],
-            ["Day 8 — Departure", "Breakfast and airport transfer for your onward journey."]
-        ],
-        highlights: ["Marrakech Medina", "Souks", "Atlas Mountains", "Essaouira", "Moroccan cuisine"]
-    },
-    "egypt": {
-        days: "7 DAYS / 6 NIGHTS • HISTORY & CULTURE",
-        title: "🇪🇬 Egypt",
-        price: "From USD 4,350 / person",
-        intro: "Journey through ancient Egypt with the Pyramids, Cairo treasures and a relaxing Nile experience.",
-        image: "https://images.unsplash.com/photo-1568322445389-f64ac2515020?auto=format&fit=crop&w=1200&q=85",
-        itinerary: [
-            ["Day 1 — Arrival in Cairo", "Arrive in Cairo, transfer to your hotel and enjoy an evening at leisure."],
-            ["Day 2 — Pyramids & Sphinx", "Visit the Giza Plateau, the Great Pyramids and the Sphinx, followed by time for local exploration."],
-            ["Day 3 — Cairo Heritage", "Explore the Egyptian Museum area, historic Cairo and traditional markets."],
-            ["Day 4 — Nile Experience", "Travel toward your selected Nile destination and enjoy a relaxed Nile-side or cruise experience."],
-            ["Day 5 — Ancient Temples", "Discover selected ancient monuments and temples with a guided historical experience."],
-            ["Day 6 — Return to Cairo", "Return to Cairo and enjoy final shopping or leisure time."],
-            ["Day 7 — Departure", "Breakfast and transfer to the airport for your onward flight."]
-        ],
-        highlights: ["Giza Pyramids", "Sphinx", "Cairo", "Egyptian heritage", "Nile experience"]
-    },
-    "turkiye": {
-        days: "8 DAYS / 7 NIGHTS • CULTURE & CITY",
-        title: "🇹🇷 Türkiye",
-        price: "From USD 4,650 / person",
-        intro: "A captivating Türkiye journey combining Istanbul's heritage with the extraordinary landscapes of Cappadocia.",
-        image: "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?auto=format&fit=crop&w=1200&q=85",
-        itinerary: [
-            ["Day 1 — Arrival in Istanbul", "Arrive in Istanbul, transfer to your hotel and enjoy the evening at leisure."],
-            ["Day 2 — Historic Istanbul", "Explore the Old City and visit major historic landmarks including the Sultanahmet area."],
-            ["Day 3 — Bosphorus & Bazaars", "Enjoy a Bosphorus experience and explore Istanbul's famous bazaars and neighbourhoods."],
-            ["Day 4 — Cappadocia", "Fly to Cappadocia and enjoy an afternoon discovering its unique rock formations and valleys."],
-            ["Day 5 — Cappadocia Adventure", "Explore underground or cave heritage sites and scenic valleys, with an optional hot-air balloon experience."],
-            ["Day 6 — Return to Istanbul", "Return to Istanbul and enjoy free time for shopping and city exploration."],
-            ["Day 7 — Culinary & Cultural Istanbul", "Enjoy a food and cultural experience before a relaxed final evening."],
-            ["Day 8 — Departure", "Transfer to the airport for your onward flight."]
-        ],
-        highlights: ["Istanbul", "Bosphorus", "Historic Old City", "Cappadocia", "Turkish cuisine"]
-    },
-    "uk": {
-        days: "8 DAYS / 7 NIGHTS • CITY & HERITAGE",
-        title: "🇬🇧 United Kingdom",
-        price: "From USD 5,400 / person",
-        intro: "A classic United Kingdom escape centred on London's landmarks, royal heritage, museums and a scenic excursion beyond the capital.",
-        image: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=1200&q=85",
-        itinerary: [
-            ["Day 1 — Arrival in London", "Arrive in London, transfer to your hotel and enjoy an easy evening in the city."],
-            ["Day 2 — Royal London", "Explore Westminster, Buckingham Palace area, St James's and other iconic central landmarks."],
-            ["Day 3 — London Icons", "Visit the Tower of London area, Tower Bridge and enjoy a Thames-side experience."],
-            ["Day 4 — Museums & West End", "Choose from London's museums and galleries, followed by shopping or an optional West End experience."],
-            ["Day 5 — Windsor", "Take a scenic excursion to Windsor and explore the town and castle area before returning to London."],
-            ["Day 6 — Markets & Neighbourhoods", "Discover selected London neighbourhoods and markets, with free time for shopping."],
-            ["Day 7 — Leisure Day", "Enjoy a flexible day for optional excursions, shopping or personal exploration."],
-            ["Day 8 — Departure", "Breakfast and transfer to the airport."]
-        ],
-        highlights: ["London", "Buckingham Palace area", "Tower Bridge", "Thames", "Windsor"]
-    },
-    "france": {
-        days: "7 DAYS / 6 NIGHTS • ART & ROMANCE",
-        title: "🇫🇷 France",
-        price: "From USD 5,250 / person",
-        intro: "Experience Paris through its iconic landmarks, art, cuisine, elegant neighbourhoods and a scenic day beyond the capital.",
-        image: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=1200&q=85",
-        itinerary: [
-            ["Day 1 — Arrival in Paris", "Arrive in Paris, transfer to your hotel and enjoy an evening walk or dinner."],
-            ["Day 2 — Eiffel Tower & Seine", "Explore the Eiffel Tower area, Champ de Mars and enjoy a scenic Seine experience."],
-            ["Day 3 — Louvre & Historic Paris", "Visit the Louvre area and explore historic neighbourhoods around the Seine and Île de la Cité."],
-            ["Day 4 — Montmartre", "Discover Montmartre, Sacré-Cœur and charming Parisian streets before enjoying free time."],
-            ["Day 5 — Versailles", "Take a day excursion to Versailles and explore its celebrated palace and gardens."],
-            ["Day 6 — Cuisine & Leisure", "Enjoy a flexible day for shopping, cafés, culinary experiences or additional sightseeing."],
-            ["Day 7 — Departure", "Breakfast and airport transfer."]
-        ],
-        highlights: ["Eiffel Tower", "Louvre area", "Seine", "Montmartre", "Versailles"]
-    },
-    "italy": {
-        days: "8 DAYS / 7 NIGHTS • HISTORY & CUISINE",
-        title: "🇮🇹 Italy",
-        price: "From USD 5,450 / person",
-        intro: "A timeless Italian journey through Rome, Florence and Venice, combining art, history, cuisine and iconic scenery.",
-        image: "https://images.unsplash.com/photo-1529260830199-42c24126f198?auto=format&fit=crop&w=1200&q=85",
-        itinerary: [
-            ["Day 1 — Arrival in Rome", "Arrive in Rome and transfer to your hotel. Enjoy a relaxed evening."],
-            ["Day 2 — Ancient Rome", "Explore the Colosseum area, Roman Forum and other ancient landmarks."],
-            ["Day 3 — Vatican & Rome", "Discover the Vatican area and enjoy time in Rome's historic centre."],
-            ["Day 4 — Florence", "Travel to Florence and explore the historic centre, squares and Renaissance heritage."],
-            ["Day 5 — Tuscany", "Enjoy a scenic Tuscan excursion with charming towns, landscapes and local cuisine."],
-            ["Day 6 — Venice", "Travel to Venice and discover its canals, squares and historic streets."],
-            ["Day 7 — Venice Leisure", "Enjoy a relaxed Venetian day with optional lagoon or island experiences."],
-            ["Day 8 — Departure", "Transfer to the airport for your onward journey."]
-        ],
-        highlights: ["Rome", "Colosseum", "Vatican", "Florence", "Venice & canals"]
-    },
-    "switzerland": {
-        days: "8 DAYS / 7 NIGHTS • ALPINE ESCAPE",
-        title: "🇨🇭 Switzerland",
-        price: "From USD 5,950 / person",
-        intro: "An alpine journey featuring Swiss cities, mountain scenery, beautiful lakes and memorable scenic rail experiences.",
-        image: "https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?auto=format&fit=crop&w=1200&q=85",
-        itinerary: [
-            ["Day 1 — Arrival in Zurich", "Arrive in Zurich and transfer to your hotel. Enjoy a relaxed evening."],
-            ["Day 2 — Zurich & Lucerne", "Explore Zurich before travelling to Lucerne for its lakefront and historic centre."],
-            ["Day 3 — Lucerne & Mountains", "Enjoy a mountain excursion from Lucerne with panoramic alpine scenery."],
-            ["Day 4 — Interlaken", "Travel to Interlaken and enjoy the dramatic mountain setting and surrounding lakes."],
-            ["Day 5 — Jungfrau Region", "Take a scenic excursion into the Jungfrau region, subject to weather and operating conditions."],
-            ["Day 6 — Scenic Rail Journey", "Enjoy a memorable Swiss rail journey through alpine landscapes toward your next base."],
-            ["Day 7 — Geneva", "Explore Geneva's lakefront, old town and selected cultural landmarks."],
-            ["Day 8 — Departure", "Breakfast and airport transfer."]
-        ],
-        highlights: ["Zurich", "Lucerne", "Interlaken", "Jungfrau region", "Scenic Swiss rail"]
-    },
-    "spain": {
-        days: "8 DAYS / 7 NIGHTS • CULTURE & LEISURE",
-        title: "🇪🇸 Spain",
-        price: "From USD 5,350 / person",
-        intro: "Explore Spain through Barcelona's architecture and Mediterranean character, followed by Madrid's grand culture and city life.",
-        image: "https://images.unsplash.com/photo-1539037116277-4db20889f2d4?auto=format&fit=crop&w=1200&q=85",
-        itinerary: [
-            ["Day 1 — Arrival in Barcelona", "Arrive in Barcelona, transfer to your hotel and enjoy the evening."],
-            ["Day 2 — Barcelona Icons", "Explore Gaudí's architectural highlights and central Barcelona."],
-            ["Day 3 — Gothic Quarter & Coast", "Discover the Gothic Quarter, local markets and the Mediterranean waterfront."],
-            ["Day 4 — Madrid", "Travel to Madrid and explore its central avenues and historic neighbourhoods."],
-            ["Day 5 — Madrid Heritage", "Visit major cultural landmarks, museums and historic squares."],
-            ["Day 6 — Food & Lifestyle", "Enjoy a Spanish culinary experience and free time for shopping or local exploration."],
-            ["Day 7 — Flexible Excursion", "Enjoy an optional day excursion or additional sightseeing in Madrid."],
-            ["Day 8 — Departure", "Breakfast and transfer to the airport."]
-        ],
-        highlights: ["Barcelona", "Gaudí architecture", "Gothic Quarter", "Madrid", "Spanish cuisine"]
-    },
-    "greece": {
-        days: "7 DAYS / 6 NIGHTS • ISLANDS & HISTORY",
-        title: "🇬🇷 Greece",
-        price: "From USD 5,150 / person",
-        intro: "A Mediterranean Greek escape combining Athens' ancient heritage with island relaxation and local cuisine.",
-        image: "https://images.unsplash.com/photo-1603565816030-6b389eeb23cb?auto=format&fit=crop&w=1200&q=85",
-        itinerary: [
-            ["Day 1 — Arrival in Athens", "Arrive in Athens and transfer to your hotel. Enjoy an evening in the historic centre."],
-            ["Day 2 — Acropolis & Athens", "Explore the Acropolis area and historic Athens with time for local dining."],
-            ["Day 3 — Athens to Island", "Transfer to your selected island and settle into your hotel near the coast."],
-            ["Day 4 — Island Discovery", "Explore villages, viewpoints and beaches with time for swimming and relaxation."],
-            ["Day 5 — Boat & Sea", "Enjoy an optional boat excursion around the island and nearby waters."],
-            ["Day 6 — Return to Athens", "Return to Athens and enjoy a final evening at leisure."],
-            ["Day 7 — Departure", "Breakfast and airport transfer."]
-        ],
-        highlights: ["Athens", "Acropolis", "Greek island", "Mediterranean beaches", "Greek cuisine"]
-    },
-    "thailand": {
-        days: "8 DAYS / 7 NIGHTS • BEACH & CULTURE",
-        title: "🇹🇭 Thailand",
-        price: "From USD 4,650 / person",
-        intro: "A vibrant Thailand holiday blending Bangkok's energy, cultural heritage, tropical beaches and excellent cuisine.",
-        image: "https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=1200&q=85",
-        itinerary: [
-            ["Day 1 — Arrival in Bangkok", "Arrive in Bangkok and transfer to your hotel. Enjoy the evening at leisure."],
-            ["Day 2 — Bangkok Heritage", "Explore major temples, historic areas and local markets."],
-            ["Day 3 — Markets & City Life", "Experience Bangkok's local food culture and enjoy free time for shopping."],
-            ["Day 4 — Fly to the Coast", "Transfer to your selected beach destination and relax by the sea."],
-            ["Day 5 — Island Experience", "Enjoy an optional island-hopping or snorkeling excursion."],
-            ["Day 6 — Beach Leisure", "Spend a relaxed day swimming, exploring or enjoying optional spa and wellness experiences."],
-            ["Day 7 — Local Culture", "Discover local communities, cuisine and coastal scenery before a final evening by the beach."],
-            ["Day 8 — Departure", "Transfer to the airport for your onward flight."]
-        ],
-        highlights: ["Bangkok", "Thai temples", "Street food", "Island excursion", "Tropical beaches"]
-    },
-    "singapore": {
-        days: "6 DAYS / 5 NIGHTS • CITY ESCAPE",
-        title: "🇸🇬 Singapore",
-        price: "From USD 4,350 / person",
-        intro: "A refined Singapore city break featuring modern landmarks, gardens, multicultural neighbourhoods and exceptional cuisine.",
-        image: "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=1200&q=85",
-        itinerary: [
-            ["Day 1 — Arrival in Singapore", "Arrive in Singapore and transfer to your hotel. Enjoy an evening city walk."],
-            ["Day 2 — Marina Bay", "Explore Marina Bay, Gardens by the Bay and Singapore's iconic modern skyline."],
-            ["Day 3 — Cultural Singapore", "Discover Chinatown, Little India and Kampong Glam while sampling local cuisine."],
-            ["Day 4 — Sentosa", "Enjoy a leisure day on Sentosa with optional attractions, beaches and entertainment."],
-            ["Day 5 — Shopping & Leisure", "Enjoy flexible time for shopping, dining and additional city experiences."],
-            ["Day 6 — Departure", "Breakfast and airport transfer."]
-        ],
-        highlights: ["Marina Bay", "Gardens by the Bay", "Chinatown", "Sentosa", "Singapore cuisine"]
-    },
-    "malaysia": {
-        days: "7 DAYS / 6 NIGHTS • CITY & CULTURE",
-        title: "🇲🇾 Malaysia",
-        price: "From USD 4,450 / person",
-        intro: "Discover Malaysia through Kuala Lumpur's skyline, heritage districts, local food and a relaxing tropical escape.",
-        image: "https://images.unsplash.com/photo-1508062878650-88b52897f298?auto=format&fit=crop&w=1200&q=85",
-        itinerary: [
-            ["Day 1 — Arrival in Kuala Lumpur", "Arrive in Kuala Lumpur, transfer to your hotel and enjoy the evening."],
-            ["Day 2 — Kuala Lumpur Highlights", "Explore the city's iconic landmarks, Petronas area and central neighbourhoods."],
-            ["Day 3 — Heritage & Food", "Discover historic quarters, markets and Malaysia's diverse culinary culture."],
-            ["Day 4 — Batu Caves & Highlands", "Visit Batu Caves and enjoy a scenic excursion beyond the city."],
-            ["Day 5 — Tropical Escape", "Travel to a selected coastal or island destination and relax by the sea."],
-            ["Day 6 — Island Leisure", "Enjoy optional snorkeling, boat activities or a relaxed beach day."],
-            ["Day 7 — Departure", "Transfer to the airport for your onward journey."]
-        ],
-        highlights: ["Kuala Lumpur", "Petronas area", "Batu Caves", "Malaysian cuisine", "Tropical coast"]
-    },
-    "india": {
-        days: "8 DAYS / 7 NIGHTS • HERITAGE & CULTURE",
-        title: "🇮🇳 India",
-        price: "From USD 4,300 / person",
-        intro: "Discover India's Golden Triangle through Delhi, Agra and Jaipur, with grand monuments, markets and cultural encounters.",
-        image: "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=1200&q=85",
-        itinerary: [
-            ["Day 1 — Arrival in Delhi", "Arrive in Delhi, transfer to your hotel and enjoy a relaxed evening."],
-            ["Day 2 — Old & New Delhi", "Explore selected heritage sites, markets and major landmarks across Delhi."],
-            ["Day 3 — Delhi to Agra", "Travel to Agra and visit the Taj Mahal area, followed by an evening at leisure."],
-            ["Day 4 — Agra to Jaipur", "Visit Agra Fort before travelling to Jaipur and settling into your hotel."],
-            ["Day 5 — Jaipur Heritage", "Explore Amber Fort, City Palace area and Jaipur's colourful markets."],
-            ["Day 6 — Jaipur Culture", "Enjoy a local cultural experience, traditional cuisine and time for shopping."],
-            ["Day 7 — Return to Delhi", "Travel back to Delhi and enjoy a final evening at leisure."],
-            ["Day 8 — Departure", "Airport transfer for your onward flight."]
-        ],
-        highlights: ["Delhi", "Taj Mahal", "Agra Fort", "Amber Fort", "Jaipur markets"]
-    },
-    "australia": {
-        days: "10 DAYS / 9 NIGHTS • CITY & NATURE",
-        title: "🇦🇺 Australia",
-        price: "From USD 6,800 / person",
-        intro: "A first-class Australian introduction combining Sydney's harbour, coastal scenery, wildlife and memorable city experiences.",
-        image: "https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?auto=format&fit=crop&w=1200&q=85",
-        itinerary: [
-            ["Day 1 — Arrival in Sydney", "Arrive in Sydney, transfer to your hotel and enjoy a relaxed evening."],
-            ["Day 2 — Sydney Harbour", "Explore the Opera House area, Harbour Bridge viewpoints and Circular Quay."],
-            ["Day 3 — Sydney Beaches", "Visit famous coastal areas and enjoy a relaxed beachside experience."],
-            ["Day 4 — Blue Mountains", "Take a scenic excursion into the Blue Mountains for dramatic landscapes and nature."],
-            ["Day 5 — Wildlife Experience", "Enjoy a wildlife-focused excursion with opportunities to see iconic Australian animals."],
-            ["Day 6 — Sydney Leisure", "Enjoy free time for museums, shopping, dining or optional activities."],
-            ["Day 7 — Coastal Experience", "Discover more of the coast with a scenic excursion and local experiences."],
-            ["Day 8 — City & Culture", "Explore additional Sydney neighbourhoods and cultural attractions."],
-            ["Day 9 — Final Leisure", "Enjoy a flexible final day for shopping, harbour activities or personal exploration."],
-            ["Day 10 — Departure", "Breakfast and airport transfer for your onward flight."]
-        ],
-        highlights: ["Sydney Harbour", "Opera House", "Blue Mountains", "Australian wildlife", "Coastal scenery"]
-    }
-};
-
-
-/* =========================================================
-   INTERNATIONAL PACKAGE MODAL
-========================================================= */
-
-const internationalModal = document.getElementById("internationalModal");
-const internationalModalImage = document.getElementById("internationalModalImage");
-const internationalModalDays = document.getElementById("internationalModalDays");
-const internationalModalTitle = document.getElementById("internationalModalTitle");
-const internationalModalPrice = document.getElementById("internationalModalPrice");
-const internationalModalIntro = document.getElementById("internationalModalIntro");
-const internationalModalItinerary = document.getElementById("internationalModalItinerary");
-const internationalModalHighlights = document.getElementById("internationalModalHighlights");
-const internationalBookButton = document.getElementById("internationalBookButton");
-
-function openInternationalPackage(packageId) {
-    const data = internationalPackages[packageId];
-    if (!data) return;
-
-    internationalModalDays.textContent = data.days;
-    internationalModalTitle.textContent = data.title;
-    internationalModalPrice.textContent = data.price;
-    internationalModalIntro.textContent = data.intro;
-    internationalModalImage.style.backgroundImage = `url("${data.image}")`;
-
-    internationalModalItinerary.innerHTML = "";
-    data.itinerary.forEach(function(day) {
-        const dayElement = document.createElement("div");
-        dayElement.className = "international-itinerary-day";
-        const heading = document.createElement("h4");
-        heading.textContent = day[0];
-        const paragraph = document.createElement("p");
-        paragraph.textContent = day[1];
-        dayElement.appendChild(heading);
-        dayElement.appendChild(paragraph);
-        internationalModalItinerary.appendChild(dayElement);
-    });
-
-    internationalModalHighlights.innerHTML = "";
-    data.highlights.forEach(function(highlight) {
-        const li = document.createElement("li");
-        li.textContent = highlight;
-        internationalModalHighlights.appendChild(li);
-    });
-
-    internationalBookButton.href = "#booking";
-    internationalModal.classList.add("active");
-    internationalModal.setAttribute("aria-hidden", "false");
-    document.body.classList.add("modal-open");
-}
-
-function closeInternationalPackage() {
-    internationalModal.classList.remove("active");
-    internationalModal.setAttribute("aria-hidden", "true");
-    document.body.classList.remove("modal-open");
-}
-
-document.querySelectorAll(".international-card").forEach(function(card) {
-    const button = card.querySelector(".international-view-package");
-    button.addEventListener("click", function(event) {
-        event.preventDefault();
-        event.stopPropagation();
-        openInternationalPackage(card.getAttribute("data-international-package"));
-    });
-});
-
-document.querySelectorAll("[data-close-international]").forEach(function(element) {
-    element.addEventListener("click", closeInternationalPackage);
-});
-
-document.addEventListener("keydown", function(event) {
-    if (event.key === "Escape" && internationalModal.classList.contains("active")) {
-        closeInternationalPackage();
-    }
-});
-
-internationalBookButton.addEventListener("click", closeInternationalPackage);
-
-
-/* =========================================================
-   PACKAGE MODAL FUNCTIONS
-========================================================= */
-
-const packageModal =
-document.getElementById("packageModal");
-
-const modalImage =
-document.getElementById("packageModalImage");
-
-const modalDays =
-document.getElementById("packageModalDays");
-
-const modalTitle =
-document.getElementById("packageModalTitle");
-
-const modalPrice =
-document.getElementById("packageModalPrice");
-
-const modalIntro =
-document.getElementById("packageModalIntro");
-
-const modalItinerary =
-document.getElementById("packageModalItinerary");
-
-const modalHighlights =
-document.getElementById("packageModalHighlights");
-
-const packageBookButton =
-document.getElementById("packageBookButton");
-
-
-function openPackage(packageId) {
-
-    const data =
-        packages[packageId];
-
-    if (!data) {
-
-        console.error(
-            "Package not found:",
-            packageId
-        );
-
-        return;
+      showHeroVideo(nextIndex);
 
     }
-
-    modalDays.textContent =
-        data.days;
-
-    modalTitle.textContent =
-        data.title;
-
-    modalPrice.textContent =
-        data.price;
-
-    modalIntro.textContent =
-        data.intro;
-
-    modalImage.style.backgroundImage =
-        `url("${data.image}")`;
-
-    modalItinerary.innerHTML = "";
-
-    data.itinerary.forEach(function(day) {
-
-        const dayElement =
-            document.createElement("div");
-
-        dayElement.className =
-            "itinerary-day";
-
-        const heading =
-            document.createElement("h4");
-
-        heading.textContent =
-            day[0];
-
-        const paragraph =
-            document.createElement("p");
-
-        paragraph.textContent =
-            day[1];
-
-        dayElement.appendChild(heading);
-
-        dayElement.appendChild(paragraph);
-
-        modalItinerary.appendChild(dayElement);
-
-    });
-
-    modalHighlights.innerHTML = "";
-
-    data.highlights.forEach(function(highlight) {
-
-        const li =
-            document.createElement("li");
-
-        li.textContent =
-            highlight;
-
-        modalHighlights.appendChild(li);
-
-    });
-
-    packageBookButton.href =
-        "#booking";
-
-    packageModal.classList.add("active");
-
-    packageModal.setAttribute(
-        "aria-hidden",
-        "false"
-    );
-
-    document.body.classList.add(
-        "modal-open"
-    );
-
-}
-
-
-/* =========================================================
-   CLOSE PACKAGE
-========================================================= */
-
-function closePackage() {
-
-    packageModal.classList.remove(
-        "active"
-    );
-
-    packageModal.setAttribute(
-        "aria-hidden",
-        "true"
-    );
-
-    document.body.classList.remove(
-        "modal-open"
-    );
-
-}
-
-
-/* =========================================================
-   VIEW PACKAGE BUTTONS
-========================================================= */
-
-document.querySelectorAll(".package-card").forEach(function(card) {
-
-    const button =
-        card.querySelector(".view-package");
-
-    button.addEventListener("click", function(event) {
-
-        event.preventDefault();
-
-        event.stopPropagation();
-
-        const packageId =
-            card.getAttribute("data-package");
-
-        openPackage(packageId);
-
-    });
+  );
 
 });
 
 
-/* =========================================================
-   CLOSE MODAL
-========================================================= */
+heroDots.forEach(function(dot,index){
 
-document.querySelectorAll(
-    "[data-close-package]"
-).forEach(function(element) {
-
-    element.addEventListener(
-        "click",
-        closePackage
-    );
-
-});
-
-
-document.addEventListener(
-    "keydown",
-    function(event) {
-
-        if (
-            event.key === "Escape" &&
-            packageModal.classList.contains("active")
-        ) {
-
-            closePackage();
-
-        }
-
-    }
-);
-
-
-/* =========================================================
-   BOOK PACKAGE BUTTON
-========================================================= */
-
-packageBookButton.addEventListener(
+  dot.addEventListener(
     "click",
-    function() {
+    function(){
 
-        closePackage();
+      showHeroVideo(index);
 
     }
+  );
+
+});
+
+
+window.addEventListener(
+  "load",
+  function(){
+
+    heroVideos[0]
+      .play()
+      .catch(function(error){
+
+        console.log(
+          "Hero video autoplay was prevented:",
+          error
+        );
+
+      });
+
+  }
 );
 
-</script>
 
-<!-- GOOGLE TRANSLATE ENGINE -->
+/* =========================================================
+   PRODUCT ORDER BUTTONS
+========================================================= */
 
-<div
-id="google_translate_element"
-style="
-position:fixed;
-left:-9999px;
-top:-9999px;
-">
-</div>
+const productButtons =
+  document.querySelectorAll(".product-btn");
 
-<script
-src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
-</script>
+const productSelect =
+  document.getElementById("product");
 
-<script>
-function sendInquiryToWhatsApp(event) {
-    event.preventDefault();
 
-    const form = document.getElementById("form");
-    const name = form.querySelector('[name="name"]').value.trim();
-    const email = form.querySelector('[name="email"]').value.trim();
-    const phone = form.querySelector('[name="phone"]').value.trim();
-    const dates = form.querySelector('[name="dates"]').value.trim();
-    const destination = form.querySelector('[name="destination"]').value;
-    const message = form.querySelector('[name="message"]').value.trim();
+productButtons.forEach(function(button){
 
-    const whatsappText =
-        `Hello Elah Safaris, I would like to make a safari/travel enquiry.\n\n` +
-        `Full Name: ${name}\n` +
-        `Email: ${email}\n` +
-        `Phone / WhatsApp: ${phone || "Not provided"}\n` +
-        `Travel Dates: ${dates || "Not specified"}\n` +
-        `Destination: ${destination}\n` +
-        `Trip Details: ${message || "Not provided"}`;
+  button.addEventListener(
+    "click",
+    function(){
 
-    const whatsappURL = `https://wa.me/254710666222?text=${encodeURIComponent(whatsappText)}`;
-    window.location.href = whatsappURL;
-}
+      const product =
+        button.getAttribute("data-product");
+
+
+      if(
+        productSelect &&
+        product
+      ){
+
+        productSelect.value = product;
+
+      }
+
+    }
+  );
+
+});
+
+
+/* =========================================================
+   ORDER FORM
+========================================================= */
+
+document
+  .getElementById("orderForm")
+  .addEventListener(
+    "submit",
+    function(event){
+
+      event.preventDefault();
+
+
+      const name =
+        document
+          .getElementById("name")
+          .value
+          .trim();
+
+
+      const phone =
+        document
+          .getElementById("phone")
+          .value
+          .trim();
+
+
+      const product =
+        document
+          .getElementById("product")
+          .value;
+
+
+      const quantity =
+        document
+          .getElementById("quantity")
+          .value
+          .trim();
+
+
+      const message =
+        document
+          .getElementById("message")
+          .value
+          .trim();
+
+
+      const whatsappMessage =
+`Hello Elah Farm,
+
+I would like to place an order.
+
+Name: ${name}
+Phone: ${phone}
+Product: ${product}
+Quantity: ${quantity}
+
+Additional Message:
+${message || "No additional message."}
+
+Thank you.`;
+
+
+      const whatsappURL =
+        "https://wa.me/254710666222?text=" +
+        encodeURIComponent(whatsappMessage);
+
+
+      window.open(
+        whatsappURL,
+        "_blank"
+      );
+
+    }
+  );
+
+
 </script>
 
 </body>
